@@ -68,32 +68,34 @@ def parse_age(text: str) -> int:
     return 0
 
 def is_recent(age_days: int) -> bool:
-    return age_days <= 1
+    return age_days <= 3
 
 # ── scrapers ───────────────────────────────────────────────────────────────────
 
 async def scrape_linkedin(page: Page, keyword: str) -> list[dict]:
     jobs = []
     kw = keyword.replace(" ", "%20")
-    # f_TPR=r86400 = past 24 hours, geoId=102713980 = India
-    url = f"https://www.linkedin.com/jobs/search/?keywords={kw}&f_TPR=r86400&geoId=102713980&sortBy=DD"
+    # f_TPR=r259200 = past 3 days, geoId=102713980 = India
+    url = f"https://www.linkedin.com/jobs/search/?keywords={kw}&f_TPR=r259200&geoId=102713980&sortBy=DD"
     await safe_goto(page, url)
 
     cards = await page.query_selector_all(".base-card, .job-search-card")
     for card in cards:
         try:
-            title_el  = await card.query_selector(".base-search-card__title, h3")
-            company_el= await card.query_selector(".base-search-card__subtitle, h4")
-            link_el   = await card.query_selector("a.base-card__full-link, a")
-            date_el   = await card.query_selector("time, .job-search-card__listdate")
+            title_el   = await card.query_selector(".base-search-card__title, h3")
+            company_el = await card.query_selector(".base-search-card__subtitle, h4")
+            link_el    = await card.query_selector("a.base-card__full-link, a")
+            date_el    = await card.query_selector("time, .job-search-card__listdate")
+            loc_el     = await card.query_selector(".job-search-card__location, .base-search-card__metadata span")
 
             if not (title_el and link_el):
                 continue
 
-            title   = (await title_el.inner_text()).strip()
-            company = (await company_el.inner_text()).strip() if company_el else ""
-            href    = await link_el.get_attribute("href") or ""
-            age_txt = ""
+            title    = (await title_el.inner_text()).strip()
+            company  = (await company_el.inner_text()).strip() if company_el else ""
+            href     = await link_el.get_attribute("href") or ""
+            location = (await loc_el.inner_text()).strip() if loc_el else "India"
+            age_txt  = ""
             if date_el:
                 age_txt = await date_el.get_attribute("datetime") or await date_el.inner_text()
 
@@ -105,8 +107,10 @@ async def scrape_linkedin(page: Page, keyword: str) -> list[dict]:
                 "title":    title,
                 "company":  company,
                 "platform": "LinkedIn",
+                "location": location,
                 "url":      href,
                 "posted":   age_txt[:20] if age_txt else "Recent",
+                "age_days": age,
             })
         except Exception:
             continue
@@ -118,8 +122,8 @@ async def scrape_linkedin(page: Page, keyword: str) -> list[dict]:
 async def scrape_indeed(page: Page, keyword: str) -> list[dict]:
     jobs = []
     kw = keyword.replace(" ", "+")
-    # fromage=1 = last 24 hours, l=India
-    url = f"https://in.indeed.com/jobs?q={kw}&l=India&sort=date&fromage=1"
+    # fromage=3 = last 3 days, l=India
+    url = f"https://in.indeed.com/jobs?q={kw}&l=India&sort=date&fromage=3"
     await safe_goto(page, url)
 
     for sel in ["a.jcs-JobTitle", "[data-testid='job-title'] a", "h2.jobTitle a", ".job_seen_beacon h2 a"]:
@@ -152,13 +156,25 @@ async def scrape_indeed(page: Page, keyword: str) -> list[dict]:
                 except Exception:
                     pass
 
+                # location
+                location = "India"
+                try:
+                    loc = await parent.query_selector("[data-testid='text-location'], .companyLocation")
+                    if loc:
+                        location = (await loc.inner_text()).strip()
+                except Exception:
+                    pass
+
+                age = parse_age(age_txt) if age_txt else 0
                 if title and href:
                     jobs.append({
                         "title":    title,
                         "company":  company or "Unknown",
                         "platform": "Indeed",
+                        "location": location,
                         "url":      href,
                         "posted":   age_txt or "Recent",
+                        "age_days": age,
                     })
             except Exception:
                 continue
