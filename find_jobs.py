@@ -23,12 +23,11 @@ UA = (
 )
 
 # Broader keywords → more hits across all platforms
+# Fewer keywords = fewer browser sessions = faster run.
+# LinkedIn/Indeed return broad results per keyword; dedup handles overlaps.
 KEYWORDS = [
     "Salesforce Developer",
     "Salesforce Consultant",
-    "Salesforce LWC",
-    "Salesforce CPQ",
-    "Salesforce Architect",
     "Salesforce Admin",
 ]
 
@@ -111,10 +110,10 @@ def make_job(title, company, platform, url, age_txt, location="India", age_h=Non
         "age_days":  int(h / 24) if h is not None else None,
     }
 
-async def safe_goto(page: Page, url: str, timeout=25000):
+async def safe_goto(page: Page, url: str, timeout=20000):
     try:
         await page.goto(url, wait_until="domcontentloaded", timeout=timeout)
-        await page.wait_for_timeout(2500)
+        await page.wait_for_timeout(1800)
     except Exception:
         pass
 
@@ -347,7 +346,7 @@ async def scrape_cutshort(page: Page, keyword: str) -> list[dict]:
     jobs = []
     kw = keyword.replace(" ", "%20")
     await safe_goto(page, f"https://cutshort.io/jobs#!?keywords={kw}&locations=India")
-    await page.wait_for_timeout(3500)
+    await page.wait_for_timeout(2000)
     for card in await page.query_selector_all("[class*='JobCard'], .job-card, .job-row"):
         try:
             t_el = await card.query_selector("h2 a, [class*='title'] a, .job-title a")
@@ -372,7 +371,7 @@ async def scrape_instahyre(page: Page, keyword: str) -> list[dict]:
     jobs = []
     kw = keyword.replace(" ", "%20")
     await safe_goto(page, f"https://www.instahyre.com/search-jobs/?q={kw}&l=India")
-    await page.wait_for_timeout(3000)
+    await page.wait_for_timeout(1800)
     for card in await page.query_selector_all(".opportunity-card, [class*='JobCard'], .job-item"):
         try:
             t_el = await card.query_selector("h2 a, .job-title a, [class*='title'] a")
@@ -893,7 +892,7 @@ def write_json(jobs: list[dict]):
         if j.get("url") and key not in seen:
             seen.add(key)
             unique.append(j)
-    unique.sort(key=lambda j: j.get("age_hours", 0))
+    unique.sort(key=lambda j: j.get("age_hours") or 9999)
     payload = {
         "jobs":       unique,
         "total":      len(unique),
@@ -927,7 +926,7 @@ def write_excel(jobs: list[dict]) -> int:
         if j.get("url") and key not in seen:
             seen.add(key)
             unique.append(j)
-    unique.sort(key=lambda j: j.get("age_hours", 0))
+    unique.sort(key=lambda j: j.get("age_hours") or 9999)
     for i, j in enumerate(unique, 1):
         row = i + 1
         fill = f_even if i % 2 == 0 else f_odd
@@ -1010,18 +1009,15 @@ async def main():
                 finally:
                     await ctx.close()
 
+            # Only include scrapers that actually return results.
+            # Naukri/TimesJobs/Foundit/Shine/IIMJobs/Freshersworld are blocked
+            # by Akamai/bot-detection on GitHub Actions IPs → always 0, waste time.
             results = await asyncio.gather(
                 run(scrape_linkedin),
                 run(scrape_indeed),
-                run(scrape_naukri),
-                run(scrape_timesjobs),
-                run(scrape_foundit),
-                run(scrape_shine),
-                run(scrape_iimjobs),
                 run(scrape_glassdoor),
                 run(scrape_cutshort),
                 run(scrape_instahyre),
-                run(scrape_freshersworld),
             )
             for r in results:
                 all_jobs.extend(r)
