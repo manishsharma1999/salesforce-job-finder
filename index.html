@@ -2,182 +2,231 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>SFJobs — Salesforce Jobs India</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --nav:#18181b;--bg:#f6f7f9;--white:#fff;
-  --accent:#7c3aed;--accent2:#a78bfa;--accent-light:#ede9fe;
-  --text:#0f172a;--text2:#64748b;--muted:#94a3b8;
-  --border:#e4e4e7;--border2:#f0f0f2;
-  --green:#16a34a;--green-bg:#dcfce7;
-  --orange:#ea580c;--orange-bg:#fff7ed;
-  --blue:#2563eb;--blue-bg:#eff6ff;
-  --red:#dc2626;--red-bg:#fef2f2;
-  --radius:10px;
+  --green:#00b074;--green-dk:#009962;--green-lt:#e8faf4;
+  --navy:#18181b;--bg:#f6f7f9;--white:#fff;
+  --text:#18181b;--text2:#64748b;--muted:#94a3b8;
+  --border:#e5e7eb;--border2:#f1f5f9;
+  --radius:12px;--radius-sm:8px;
+  --shadow:0 2px 12px rgba(0,0,0,.07);
+  --shadow-card:0 1px 4px rgba(0,0,0,.05),0 2px 16px rgba(0,0,0,.06);
 }
-html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:14px}
-body{background:var(--bg);color:var(--text);display:flex;flex-direction:column;min-height:100vh}
+html,body{min-height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:14px;background:var(--bg);color:var(--text)}
+
+/* ── TOP BAR ── */
+.topbar{background:var(--navy);padding:8px 40px;display:flex;align-items:center;justify-content:space-between;font-size:.75rem;color:rgba(255,255,255,.55);flex-shrink:0}
+.topbar a{color:rgba(255,255,255,.55);text-decoration:none}.topbar a:hover{color:#fff}
+.topbar-left,.topbar-right{display:flex;align-items:center;gap:18px}
 
 /* ── NAV ── */
-nav{background:var(--nav);height:58px;display:flex;align-items:center;padding:0 28px;gap:0;position:sticky;top:0;z-index:200;flex-shrink:0}
-.logo{display:flex;align-items:center;gap:8px;margin-right:28px;text-decoration:none;flex-shrink:0}
-.logo svg{width:28px;height:28px;flex-shrink:0}
-.logo-text{font-size:1rem;font-weight:700;color:#fff;letter-spacing:-.3px}
-.logo-text span{color:var(--accent2)}
-.nav-sep{width:1px;height:20px;background:rgba(255,255,255,.1);margin:0 20px;flex-shrink:0}
-.nav-links{display:flex;align-items:center;gap:2px;flex:1}
-.nav-link{color:rgba(255,255,255,.5);font-size:.82rem;font-weight:500;padding:6px 14px;border-radius:7px;cursor:pointer;transition:all .15s;white-space:nowrap;display:flex;align-items:center;gap:6px}
-.nav-link:hover{color:#fff;background:rgba(255,255,255,.07)}
-.nav-link.active{color:#fff;background:rgba(255,255,255,.1)}
+nav{background:#fff;border-bottom:1px solid var(--border);padding:0 40px;height:64px;display:flex;align-items:center;position:sticky;top:0;z-index:200;box-shadow:0 1px 8px rgba(0,0,0,.04)}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;flex-shrink:0;margin-right:32px}
+.logo svg{width:30px;height:30px}
+.logo-text{font-size:1.15rem;font-weight:800;color:var(--text);letter-spacing:-.5px}
+.logo-text span{color:var(--green)}
+.nav-links{display:flex;align-items:center;gap:4px;flex:1}
+.nav-link{color:var(--text2);font-size:.82rem;font-weight:600;padding:7px 14px;border-radius:7px;cursor:pointer;transition:all .15s;text-decoration:none}
+.nav-link:hover,.nav-link.active{color:var(--text);background:#f1f5f9}
 .nav-right{display:flex;align-items:center;gap:10px;margin-left:auto}
-.last-updated{font-size:.72rem;color:rgba(255,255,255,.35);white-space:nowrap}
-#refresh-btn{display:flex;align-items:center;gap:6px;padding:8px 18px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap;min-width:130px;justify-content:center}
-#refresh-btn:hover:not(.running){background:#6d28d9;transform:translateY(-1px)}
-#refresh-btn.running{opacity:.85;pointer-events:none;background:#5b21b6}
-.spin{display:inline-block;line-height:1}
-.spin.active{animation:spin .8s linear infinite}
+.last-updated{font-size:.72rem;color:var(--muted)}
+#refresh-btn{display:flex;align-items:center;gap:7px;padding:9px 22px;background:var(--green);color:#fff;border:none;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap}
+#refresh-btn:hover:not(.running){background:var(--green-dk);transform:translateY(-1px)}
+#refresh-btn.running{opacity:.8;pointer-events:none}
+.spin.active{display:inline-block;animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.nav-avatar{width:32px;height:32px;background:var(--accent);border-radius:50%;display:grid;place-items:center;color:#fff;font-size:.75rem;font-weight:700;flex-shrink:0;border:2px solid rgba(255,255,255,.15)}
+.nav-avatar{width:34px;height:34px;background:var(--green);border-radius:50%;display:grid;place-items:center;color:#fff;font-size:.75rem;font-weight:700;flex-shrink:0}
 
 /* ── TIMER BANNER ── */
-#timer-banner{display:none;background:linear-gradient(90deg,#18181b,#1e1b4b);border-bottom:1px solid rgba(124,58,237,.3);padding:9px 28px;align-items:center;gap:12px;flex-shrink:0}
+#timer-banner{display:none;background:#ecfdf5;border-bottom:1px solid #6ee7b7;padding:10px 40px;align-items:center;gap:12px}
 #timer-banner.show{display:flex}
-.timer-dot{width:8px;height:8px;background:#a78bfa;border-radius:50%;animation:pulse 1.5s ease-in-out infinite;flex-shrink:0}
+.timer-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 1.5s ease-in-out infinite;flex-shrink:0}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
-.timer-text{font-size:.8rem;color:rgba(255,255,255,.7);flex:1}
-.timer-text strong{color:#a78bfa}
-#timer-countdown{font-size:.85rem;font-weight:800;color:#fff;background:rgba(124,58,237,.4);padding:3px 12px;border-radius:20px;font-variant-numeric:tabular-nums;min-width:60px;text-align:center;letter-spacing:.5px}
-.timer-cancel{color:rgba(255,255,255,.4);font-size:.75rem;cursor:pointer;padding:4px 8px;border-radius:5px;transition:all .15s;border:none;background:transparent}
-.timer-cancel:hover{color:#fff;background:rgba(255,255,255,.08)}
+.timer-text{font-size:.8rem;color:#065f46;flex:1}
+.timer-text strong{color:var(--green-dk)}
+#timer-countdown{font-size:.85rem;font-weight:800;color:#065f46;background:#a7f3d0;padding:3px 12px;border-radius:20px;font-variant-numeric:tabular-nums;min-width:60px;text-align:center}
+.timer-cancel{color:var(--muted);font-size:.75rem;cursor:pointer;padding:4px 8px;border-radius:5px;border:none;background:transparent}
+.timer-cancel:hover{color:var(--text)}
 
-/* ── PAGE HEADER ── */
-.page-header{padding:28px 28px 16px;display:flex;align-items:flex-end;justify-content:space-between;flex-shrink:0}
-.page-title{font-size:1.6rem;font-weight:800;color:var(--text);letter-spacing:-.5px;line-height:1}
-.page-subtitle{font-size:.82rem;color:var(--text2);margin-top:4px}
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,#0f2027,#1a3a2f,#0a3d2e);padding:52px 40px 44px;text-align:center}
+.hero h1{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:6px}
+.hero p{color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:28px}
+.hero-search{display:flex;align-items:center;gap:0;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.18);max-width:740px;margin:0 auto}
+.hs-field{display:flex;align-items:center;gap:8px;padding:0 20px;flex:1;border-right:1px solid var(--border)}
+.hs-field input,.hs-field select{border:none;outline:none;background:transparent;color:var(--text);font-size:.88rem;width:100%;font-family:inherit;padding:16px 0}
+.hs-field select{cursor:pointer}
+.hs-field svg{color:var(--muted);flex-shrink:0}
+.hs-search-btn{padding:0 30px;background:var(--green);color:#fff;border:none;font-size:.88rem;font-weight:700;cursor:pointer;height:56px;transition:background .15s;white-space:nowrap}
+.hs-search-btn:hover{background:var(--green-dk)}
+.hs-clear{padding:0 18px;color:var(--muted);font-size:.82rem;cursor:pointer;border:none;background:transparent;height:56px}
+.hs-clear:hover{color:var(--text)}
 
-/* ── TOOLBAR ── */
-.toolbar{padding:0 28px 16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;flex-shrink:0}
-.tb-btn{display:flex;align-items:center;gap:5px;padding:6px 12px;border-radius:7px;border:1.5px solid var(--border);background:var(--white);color:var(--text2);font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;white-space:nowrap}
-.tb-btn:hover{border-color:var(--accent2);color:var(--accent)}
-.tb-btn.active{border-color:var(--accent);background:var(--accent-light);color:var(--accent)}
-.tb-btn svg{opacity:.6}
-.tb-sep{width:1px;height:20px;background:var(--border);margin:0 4px}
-.tb-search{display:flex;align-items:center;gap:7px;padding:6px 12px;border-radius:7px;border:1.5px solid var(--border);background:var(--white);flex:1;max-width:320px;min-width:180px}
-.tb-search input{border:none;outline:none;background:transparent;color:var(--text);font-size:.8rem;width:100%;font-family:inherit}
-.tb-search input::placeholder{color:var(--muted)}
-.tb-right{margin-left:auto;display:flex;align-items:center;gap:6px}
-.view-btn{width:30px;height:30px;border-radius:6px;border:1.5px solid var(--border);background:var(--white);display:grid;place-items:center;cursor:pointer;color:var(--muted);transition:all .15s}
-.view-btn:hover,.view-btn.active{border-color:var(--accent2);color:var(--accent);background:var(--accent-light)}
+/* ── LAYOUT ── */
+.page{display:flex;gap:0;max-width:1200px;margin:0 auto;padding:32px 20px;align-items:flex-start}
 
-/* ── TABLE WRAPPER ── */
-.table-outer{padding:0 28px 32px;flex:1}
-.table-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.04)}
-table{width:100%;border-collapse:collapse;min-width:700px}
-thead tr{border-bottom:1.5px solid var(--border2)}
-th{padding:11px 16px;font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;white-space:nowrap;background:var(--white);user-select:none;cursor:pointer;text-align:left}
-th:hover{color:var(--accent)}
-th .sort-icon{opacity:.35;margin-left:3px;font-size:.65rem}
-th.sorted .sort-icon{opacity:1;color:var(--accent)}
-tbody tr{border-bottom:1px solid var(--border2);transition:background .12s}
-tbody tr:last-child{border-bottom:none}
-tbody tr:hover{background:#fafafa}
-td{padding:13px 16px;font-size:.82rem;color:var(--text);vertical-align:middle}
+/* ── SIDEBAR ── */
+.sidebar{width:240px;flex-shrink:0;position:sticky;top:80px;margin-right:28px}
+.sidebar-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:24px;margin-bottom:16px;box-shadow:var(--shadow)}
+.sidebar-title{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin-bottom:14px}
+.filter-group{margin-bottom:20px}
+.filter-group:last-child{margin-bottom:0}
+.filter-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:10px}
+.filter-option{display:flex;align-items:center;gap:8px;padding:4px 0;cursor:pointer;font-size:.82rem;color:var(--text2);transition:color .12s;user-select:none}
+.filter-option:hover{color:var(--text)}
+.filter-option input[type=checkbox]{width:15px;height:15px;accent-color:var(--green);cursor:pointer;flex-shrink:0;border-radius:3px}
+.filter-option.active{color:var(--text);font-weight:600}
+.plat-pills{display:flex;flex-direction:column;gap:2px}
+.plat-pill{display:flex;align-items:center;justify-content:space-between;padding:5px 10px;border-radius:6px;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;color:var(--text2)}
+.plat-pill:hover{background:#f1f5f9;color:var(--text)}
+.plat-pill.active{background:var(--green-lt);color:var(--green)}
+.plat-pill .count{background:#e5e7eb;color:var(--text2);font-size:.65rem;padding:1px 6px;border-radius:10px}
+.plat-pill.active .count{background:#a7f3d0;color:#065f46}
+.time-select{width:100%;border:1.5px solid var(--border);border-radius:7px;padding:8px 10px;font-size:.8rem;outline:none;color:var(--text);background:#fff;cursor:pointer;font-family:inherit}
+.time-select:focus{border-color:var(--green)}
 
-/* ── TABLE CELLS ── */
-.td-title{font-weight:700;color:var(--text);line-height:1.3;max-width:260px}
-.td-title .new-dot{width:7px;height:7px;background:#10b981;border-radius:50%;display:inline-block;margin-left:6px;vertical-align:middle;flex-shrink:0}
-.td-company{display:flex;align-items:center;gap:8px}
-.company-av{width:28px;height:28px;border-radius:7px;background:linear-gradient(135deg,var(--accent-light),#ddd6fe);display:grid;place-items:center;font-size:.7rem;font-weight:800;color:var(--accent);flex-shrink:0;border:1px solid rgba(0,0,0,.06)}
-.td-company-name{font-size:.78rem;color:var(--text2);font-weight:600;line-height:1.2}
-.td-platform span,.td-loc span{display:inline-flex;align-items:center;gap:3px;padding:3px 9px;border-radius:20px;font-size:.7rem;font-weight:700}
+/* ── MAIN ── */
+.main{flex:1;min-width:0}
+.results-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.results-count{font-size:.95rem;font-weight:700;color:var(--text)}
+.results-count span{color:var(--text2);font-weight:400;font-size:.82rem}
+.results-right{display:flex;align-items:center;gap:8px}
+.sort-label{font-size:.78rem;color:var(--text2)}
+.sort-select{border:1.5px solid var(--border);border-radius:7px;padding:6px 10px;font-size:.78rem;outline:none;color:var(--text);background:#fff;cursor:pointer;font-family:inherit}
+.sort-select:focus{border-color:var(--green)}
+.view-btns{display:flex;gap:2px}
+.view-btn{width:30px;height:30px;border-radius:6px;border:1.5px solid var(--border);background:#fff;display:grid;place-items:center;cursor:pointer;color:var(--muted);transition:all .15s}
+.view-btn.active,.view-btn:hover{border-color:var(--green);color:var(--green);background:var(--green-lt)}
+
+/* ── JOB CARD ── */
+.job-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;margin-bottom:12px;box-shadow:var(--shadow-card);transition:all .2s;cursor:default;position:relative}
+.job-card:hover{box-shadow:0 4px 24px rgba(0,176,116,.12);border-color:#6ee7b7;transform:translateY(-1px)}
+.jc-top{display:flex;align-items:flex-start;gap:14px}
+.jc-avatar{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--green-lt),#d1fae5);display:grid;place-items:center;font-size:.9rem;font-weight:800;color:var(--green);flex-shrink:0;border:1.5px solid #d1fae5;overflow:hidden}
+.jc-avatar img{width:100%;height:100%;object-fit:cover;border-radius:9px}
+.jc-info{flex:1;min-width:0}
+.jc-title-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:3px}
+.jc-title{font-size:.95rem;font-weight:700;color:var(--text);line-height:1.3}
+.jc-verified{color:var(--green);font-size:.8rem}
+.jc-new-dot{width:7px;height:7px;background:#10b981;border-radius:50%;flex-shrink:0}
+.jc-company{font-size:.78rem;color:var(--text2);margin-bottom:10px}
+.jc-company strong{color:var(--text);font-weight:600}
+.jc-company .in-link{color:var(--green);font-weight:600;text-decoration:none}
+.jc-company .in-link:hover{text-decoration:underline}
+.jc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:0}
+.jc-tag{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:600;background:#f1f5f9;color:var(--text2)}
+.jc-tag.type-full{background:#e0f2fe;color:#0369a1}
+.jc-tag.type-remote{background:#ede9fe;color:#7c3aed}
+.jc-tag.type-hybrid{background:#fef3c7;color:#92400e}
+.jc-tag-plat{padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:700}
 .plat-LinkedIn{background:#e0f2fe;color:#0369a1}
-.seniority-senior{background:#f0fdf4;color:#15803d;font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:20px;white-space:nowrap}
-.seniority-mid{background:#f5f3ff;color:#7c3aed;font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:20px;white-space:nowrap}
-.seniority-junior{background:#fef9c3;color:#854d0e;font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:20px;white-space:nowrap}
 .plat-Indeed{background:#eff6ff;color:#1d4ed8}
 .plat-Greenhouse{background:#dcfce7;color:#15803d}
 .plat-Lever{background:#fdf4ff;color:#9333ea}
 .plat-Workday{background:#fff7ed;color:#c2410c}
+.plat-Glassdoor{background:#fef9c3;color:#854d0e}
+.plat-SmartRecruiters{background:#fce7f3;color:#be185d}
 .plat-other{background:#f1f5f9;color:#475569}
-.td-posted .age-chip{display:inline-flex;align-items:center;gap:4px;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:5px}
-.age-fresh{background:var(--green-bg);color:var(--green)}
-.age-recent{background:#fef9c3;color:#854d0e}
-.age-old{background:#f1f5f9;color:var(--text2)}
-.td-actions{display:flex;align-items:center;gap:6px}
-.btn-apply{padding:5px 14px;background:var(--accent);color:#fff;border-radius:7px;font-size:.75rem;font-weight:700;text-decoration:none;transition:all .18s;border:none;cursor:pointer;white-space:nowrap}
-.btn-apply:hover{background:#6d28d9}
-.btn-save{width:28px;height:28px;border-radius:7px;border:1.5px solid var(--border);background:transparent;color:var(--muted);font-size:.85rem;cursor:pointer;display:grid;place-items:center;transition:all .18s}
-.btn-save:hover{border-color:var(--accent);color:var(--accent)}
-.btn-save.saved{background:var(--accent-light);border-color:var(--accent);color:var(--accent)}
+.jc-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0;min-width:130px}
+.jc-actions{display:flex;align-items:center;gap:6px}
+.btn-apply{padding:7px 18px;background:var(--green);color:#fff;border-radius:8px;font-size:.78rem;font-weight:700;text-decoration:none;transition:all .18s;border:none;cursor:pointer;white-space:nowrap}
+.btn-apply:hover{background:var(--green-dk)}
+.btn-save{width:30px;height:30px;border-radius:8px;border:1.5px solid var(--border);background:transparent;color:var(--muted);font-size:.9rem;cursor:pointer;display:grid;place-items:center;transition:all .18s}
+.btn-save:hover{border-color:var(--green);color:var(--green)}
+.btn-save.saved{background:var(--green-lt);border-color:var(--green);color:var(--green)}
+.jc-age{font-size:.72rem;font-weight:600;white-space:nowrap}
+.age-fresh{color:var(--green)}
+.age-recent{color:#d97706}
+.age-old{color:var(--muted)}
+.jc-seniority{font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:20px}
+.sen-senior{background:#dcfce7;color:#15803d}
+.sen-mid{background:#ede9fe;color:#7c3aed}
+.sen-junior{background:#fef9c3;color:#854d0e}
 
-/* ── FOOTER / PAGINATION ── */
-.table-footer{padding:14px 20px;border-top:1.5px solid var(--border2);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
-.per-page{display:flex;align-items:center;gap:6px;font-size:.75rem;color:var(--text2)}
-.per-page select{border:1.5px solid var(--border);border-radius:6px;padding:3px 8px;font-size:.75rem;outline:none;color:var(--text);background:var(--white);cursor:pointer}
-.pagination{display:flex;align-items:center;gap:3px}
-.page-btn{width:28px;height:28px;border-radius:6px;border:1.5px solid transparent;background:transparent;font-size:.75rem;font-weight:600;color:var(--text2);cursor:pointer;display:grid;place-items:center;transition:all .15s}
-.page-btn:hover{border-color:var(--border);background:#f8fafc}
-.page-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-.page-btn.nav{color:var(--muted)}
-.page-btn.nav:hover{color:var(--text)}
-.page-ellipsis{width:28px;text-align:center;font-size:.75rem;color:var(--muted)}
-.results-info{font-size:.75rem;color:var(--text2)}
-
-/* ── EMPTY / LOADING ── */
-.table-empty{text-align:center;padding:64px 20px}
-.table-empty .icon{font-size:2.5rem;margin-bottom:12px}
-.table-empty h3{font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:5px}
-.table-empty p{font-size:.8rem;color:var(--text2)}
-.skeleton-row td{padding:14px 16px}
-.sk{display:inline-block;background:linear-gradient(90deg,#f1f5f9 25%,#e2e8f0 50%,#f1f5f9 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;border-radius:5px;height:13px}
+/* ── SKELETON ── */
+.sk{display:inline-block;background:linear-gradient(90deg,#f1f5f9 25%,#e2e8f0 50%,#f1f5f9 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;border-radius:5px}
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 
-/* ── ACTIVE FILTER CHIPS ── */
-.filter-chips{padding:0 28px 8px;display:flex;flex-wrap:wrap;gap:5px;flex-shrink:0}
-.f-chip{display:flex;align-items:center;gap:5px;padding:3px 10px;background:var(--accent-light);border:1px solid #c4b5fd;border-radius:20px;font-size:.72rem;color:var(--accent);font-weight:600;cursor:pointer}
-.f-chip:hover{background:#ddd6fe}
+/* ── PAGINATION ── */
+.pagination{display:flex;align-items:center;justify-content:center;gap:4px;margin-top:24px;flex-wrap:wrap}
+.page-btn{width:34px;height:34px;border-radius:8px;border:1.5px solid var(--border);background:#fff;font-size:.8rem;font-weight:600;color:var(--text2);cursor:pointer;display:grid;place-items:center;transition:all .15s}
+.page-btn:hover{border-color:var(--green);color:var(--green)}
+.page-btn.active{background:var(--green);color:#fff;border-color:var(--green)}
+.page-btn:disabled{opacity:.4;pointer-events:none}
+.page-ellipsis{width:34px;text-align:center;color:var(--muted);font-size:.8rem}
 
-#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(10px);background:var(--nav);color:#fff;border-radius:9px;padding:9px 20px;font-size:.8rem;opacity:0;pointer-events:none;transition:all .3s;z-index:999;white-space:nowrap;font-weight:600;box-shadow:0 4px 20px rgba(0,0,0,.25)}
+/* ── EMPTY ── */
+.empty-state{text-align:center;padding:64px 20px;background:#fff;border-radius:var(--radius);border:1px solid var(--border)}
+.empty-state .icon{font-size:2.5rem;margin-bottom:14px}
+.empty-state h3{font-size:1rem;font-weight:700;margin-bottom:6px}
+.empty-state p{font-size:.82rem;color:var(--text2)}
+
+/* ── FOOTER ── */
+footer{background:#1a1a2e;color:rgba(255,255,255,.6);padding:40px 40px 24px;margin-top:60px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px;max-width:1200px;margin:0 auto 32px}
+.footer-brand p{font-size:.8rem;line-height:1.6;color:rgba(255,255,255,.4);margin-top:10px}
+.footer-brand .contact{margin-top:14px;font-size:.78rem;color:rgba(255,255,255,.5)}
+.footer-col h4{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.4);margin-bottom:12px}
+.footer-col a{display:block;font-size:.78rem;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:7px;transition:color .15s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;display:flex;align-items:center;justify-content:space-between;font-size:.72rem;max-width:1200px;margin:0 auto}
+
+/* ── TOAST ── */
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(10px);background:var(--navy);color:#fff;border-radius:10px;padding:10px 22px;font-size:.8rem;opacity:0;pointer-events:none;transition:all .3s;z-index:999;font-weight:600;box-shadow:0 4px 20px rgba(0,0,0,.25)}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
-/* ── SCROLLABLE TABLE ── */
-.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+/* ── NEWSLETTER ── */
+.newsletter{background:linear-gradient(135deg,#0f2027,#1a3a2f);padding:48px 40px;text-align:center;margin-top:48px}
+.newsletter-inner{max-width:560px;margin:0 auto}
+.newsletter-icon{width:52px;height:52px;background:var(--green-lt);border-radius:14px;display:grid;place-items:center;margin:0 auto 16px;font-size:1.3rem}
+.newsletter h3{font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:6px}
+.newsletter p{color:rgba(255,255,255,.6);font-size:.85rem;margin-bottom:22px}
+.newsletter-form{display:flex;gap:0;background:#fff;border-radius:9px;overflow:hidden;max-width:440px;margin:0 auto}
+.newsletter-form input{flex:1;border:none;outline:none;padding:13px 18px;font-size:.85rem;font-family:inherit;color:var(--text)}
+.newsletter-form button{padding:0 24px;background:var(--green);color:#fff;border:none;font-weight:700;font-size:.82rem;cursor:pointer;transition:background .15s}
+.newsletter-form button:hover{background:var(--green-dk)}
 
 @media(max-width:900px){
-  .page-header,.toolbar,.table-outer,.filter-chips{padding-left:16px;padding-right:16px}
-  #timer-banner{padding:9px 16px}
-  nav{padding:0 16px}
-  .last-updated{display:none}
-}
-@media(max-width:600px){
-  .nav-link{display:none}.logo-text span{display:none}
-  .page-title{font-size:1.2rem}
+  .topbar,.footer-grid{display:none}
+  .page{padding:16px 12px;flex-direction:column}
+  .sidebar{width:100%;position:static;margin-right:0;margin-bottom:16px}
+  .sidebar-card{display:none}
+  nav{padding:0 16px}.hero{padding:32px 16px 28px}
+  .hero h1{font-size:1.4rem}.hero-search{flex-direction:column;border-radius:10px}
+  .hs-field{border-right:none;border-bottom:1px solid var(--border);width:100%}
+  .hs-search-btn{width:100%;height:48px}
+  footer{padding:32px 16px}
 }
 </style>
 </head>
 <body>
 
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span>🇮🇳 Salesforce Jobs India — Updated daily</span>
+  </div>
+  <div class="topbar-right">
+    <span id="last-updated"></span>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav>
   <a class="logo" href="#">
-    <!-- Salesforce cloud logo SVG -->
     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10.017 4.498a4.265 4.265 0 0 1 3.044-1.265 4.29 4.29 0 0 1 3.796 2.29 3.236 3.236 0 0 1 1.356-.296 3.27 3.27 0 0 1 3.27 3.27 3.265 3.265 0 0 1-.394 1.567A2.85 2.85 0 0 1 22 12.571a2.858 2.858 0 0 1-2.857 2.857h-9.715a3.927 3.927 0 0 1-3.928-3.928 3.93 3.93 0 0 1 2.107-3.498 4.26 4.26 0 0 1 2.41-3.504z" fill="#00A1E0"/>
-      <path d="M4.73 14.93a2.34 2.34 0 0 0-.73.057A2.572 2.572 0 0 0 2 17.5a2.572 2.572 0 0 0 2.571 2.571h8.715a2.143 2.143 0 0 0 2.143-2.143 2.143 2.143 0 0 0-1.286-1.964 2.862 2.862 0 0 0 .072-.643 2.858 2.858 0 0 0-2.858-2.857 2.855 2.855 0 0 0-2.43 1.357A2.34 2.34 0 0 0 7.5 13.5a2.357 2.357 0 0 0-2.77 1.43z" fill="#0176D3"/>
+      <path d="M10.017 4.498a4.265 4.265 0 0 1 3.044-1.265 4.29 4.29 0 0 1 3.796 2.29 3.236 3.236 0 0 1 1.356-.296 3.27 3.27 0 0 1 3.27 3.27 3.265 3.265 0 0 1-.394 1.567A2.85 2.85 0 0 1 22 12.571a2.858 2.858 0 0 1-2.857 2.857h-9.715a3.927 3.927 0 0 1-3.928-3.928 3.93 3.93 0 0 1 2.107-3.498 4.26 4.26 0 0 1 2.41-3.504z" fill="#00b074"/>
+      <path d="M4.73 14.93a2.34 2.34 0 0 0-.73.057A2.572 2.572 0 0 0 2 17.5a2.572 2.572 0 0 0 2.571 2.571h8.715a2.143 2.143 0 0 0 2.143-2.143 2.143 2.143 0 0 0-1.286-1.964 2.862 2.862 0 0 0 .072-.643 2.858 2.858 0 0 0-2.858-2.857 2.855 2.855 0 0 0-2.43 1.357A2.34 2.34 0 0 0 7.5 13.5a2.357 2.357 0 0 0-2.77 1.43z" fill="#009962"/>
     </svg>
     <span class="logo-text">SF<span>Jobs</span></span>
   </a>
-  <div class="nav-sep"></div>
   <div class="nav-links">
-    <span class="nav-link active">
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-      Jobs
-    </span>
+    <a class="nav-link active" href="#">Find Jobs</a>
   </div>
   <div class="nav-right">
-    <span class="last-updated" id="last-updated"></span>
     <button id="refresh-btn" onclick="triggerRefresh()">
       <span class="spin" id="spin-icon">↻</span>
       <span id="refresh-label">Refresh Jobs</span>
@@ -189,105 +238,198 @@ td{padding:13px 16px;font-size:.82rem;color:var(--text);vertical-align:middle}
 <!-- TIMER BANNER -->
 <div id="timer-banner">
   <div class="timer-dot"></div>
-  <span class="timer-text">Scraper running — new results will appear in <strong>~2 minutes</strong></span>
+  <span class="timer-text">Scraper running — new results in <strong>~2 min</strong></span>
   <span id="timer-countdown">2:00</span>
   <button class="timer-cancel" onclick="cancelRefresh()">Cancel ×</button>
 </div>
 
-<!-- PAGE HEADER -->
-<div class="page-header">
-  <div>
-    <div class="page-title">Salesforce Jobs</div>
-    <div class="page-subtitle" id="page-subtitle">Loading jobs…</div>
-  </div>
-</div>
-
-<!-- TOOLBAR -->
-<div class="toolbar">
-  <div class="tb-search">
-    <svg width="13" height="13" fill="none" stroke="var(--muted)" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" id="tb-search" placeholder="Search title, company…" oninput="applyFilters()"/>
-  </div>
-  <div class="tb-sep"></div>
-  <!-- Platform filter -->
-  <div id="plat-filters" style="display:flex;gap:6px;flex-wrap:wrap"></div>
-  <div class="tb-sep"></div>
-  <!-- Location -->
-  <select id="loc-sel" class="tb-btn" style="border-radius:7px;outline:none;font-family:inherit;cursor:pointer" onchange="setLoc(this.value)">
-    <option value="">📍 All Cities</option>
-  </select>
-  <!-- Time -->
-  <select id="time-sel" class="tb-btn" style="border-radius:7px;outline:none;font-family:inherit;cursor:pointer" onchange="setTime(this.value)">
-    <option value="168">⏰ Last 7d</option>
-    <option value="72">Last 72h</option>
-    <option value="48">Last 48h</option>
-    <option value="24">Last 24h</option>
-    <option value="12">Last 12h</option>
-    <option value="6">Last 6h</option>
-    <option value="1">Last 1h</option>
-  </select>
-  <!-- Seniority -->
-  <select id="seniority-sel" class="tb-btn" style="border-radius:7px;outline:none;font-family:inherit;cursor:pointer" onchange="setSeniority(this.value)">
-    <option value="">👤 All Levels</option>
-    <option value="senior">Senior / Lead (4-5+ yrs)</option>
-    <option value="mid">Mid Level</option>
-    <option value="junior">Junior / Fresher</option>
-  </select>
-  <div class="tb-right">
-    <select class="tb-btn" id="sort-sel" style="border-radius:7px;outline:none;font-family:inherit;cursor:pointer" onchange="applyFilters()">
-      <option value="default">↕ Latest first</option>
-      <option value="title">↕ Title A–Z</option>
-      <option value="company">↕ Company A–Z</option>
-    </select>
-    <select class="tb-btn per-page-sel" id="per-page" style="border-radius:7px;outline:none;font-family:inherit;cursor:pointer" onchange="setPerPage(this.value)">
-      <option value="20">20 / page</option>
-      <option value="50">50 / page</option>
-      <option value="100">100 / page</option>
-    </select>
-  </div>
-</div>
-
-<!-- ACTIVE CHIPS -->
-<div class="filter-chips" id="filter-chips"></div>
-
-<!-- TABLE -->
-<div class="table-outer">
-  <div class="table-card">
-    <div class="table-scroll">
-      <table id="jobs-table">
-        <thead>
-          <tr>
-            <th style="width:36px"><input type="checkbox" id="check-all" onchange="toggleAll(this)" style="cursor:pointer"/></th>
-            <th onclick="cycleSort('title')">Job Title <span class="sort-icon">↕</span></th>
-            <th onclick="cycleSort('company')">Company <span class="sort-icon">↕</span></th>
-            <th>Platform</th>
-            <th>Location</th>
-            <th onclick="cycleSort('age')">Posted <span class="sort-icon">↕</span></th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody id="jobs-tbody">
-          <!-- skeleton -->
-          <tr class="skeleton-row"><td></td><td><div class="sk" style="width:55%"></div></td><td><div class="sk" style="width:60%"></div></td><td><div class="sk" style="width:70px"></div></td><td><div class="sk" style="width:70px"></div></td><td><div class="sk" style="width:60px"></div></td><td><div class="sk" style="width:80px"></div></td></tr>
-          <tr class="skeleton-row"><td></td><td><div class="sk" style="width:70%"></div></td><td><div class="sk" style="width:50%"></div></td><td><div class="sk" style="width:70px"></div></td><td><div class="sk" style="width:80px"></div></td><td><div class="sk" style="width:60px"></div></td><td><div class="sk" style="width:80px"></div></td></tr>
-          <tr class="skeleton-row"><td></td><td><div class="sk" style="width:65%"></div></td><td><div class="sk" style="width:65%"></div></td><td><div class="sk" style="width:70px"></div></td><td><div class="sk" style="width:60px"></div></td><td><div class="sk" style="width:60px"></div></td><td><div class="sk" style="width:80px"></div></td></tr>
-          <tr class="skeleton-row"><td></td><td><div class="sk" style="width:50%"></div></td><td><div class="sk" style="width:70%"></div></td><td><div class="sk" style="width:70px"></div></td><td><div class="sk" style="width:70px"></div></td><td><div class="sk" style="width:60px"></div></td><td><div class="sk" style="width:80px"></div></td></tr>
-          <tr class="skeleton-row"><td></td><td><div class="sk" style="width:60%"></div></td><td><div class="sk" style="width:55%"></div></td><td><div class="sk" style="width:70px"></div></td><td><div class="sk" style="width:80px"></div></td><td><div class="sk" style="width:60px"></div></td><td><div class="sk" style="width:80px"></div></td></tr>
-        </tbody>
-      </table>
+<!-- HERO -->
+<div class="hero">
+  <h1>Find Your Salesforce Jobs</h1>
+  <p>Fresh Salesforce roles across India, updated every day</p>
+  <div class="hero-search">
+    <div class="hs-field" style="flex:1.6">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="search-input" placeholder="Job title or keywords…" oninput="applyFilters()"/>
     </div>
-    <!-- Pagination -->
-    <div class="table-footer">
-      <div class="per-page" id="per-page-label"></div>
-      <div class="pagination" id="pagination"></div>
-      <div class="results-info" id="results-info"></div>
+    <div class="hs-field" style="flex:1">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <select id="hero-loc" onchange="heroLoc(this.value)" style="flex:1">
+        <option value="">All Locations</option>
+      </select>
+    </div>
+    <div class="hs-field" style="flex:1">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      <select id="hero-sen" onchange="setSeniority(this.value)" style="flex:1">
+        <option value="">All Levels</option>
+        <option value="senior">Senior / Lead</option>
+        <option value="mid">Mid Level</option>
+        <option value="junior">Junior</option>
+      </select>
+    </div>
+    <button class="hs-clear" onclick="clearAll()">Clear</button>
+    <button class="hs-search-btn" onclick="applyFilters()">Search</button>
+  </div>
+</div>
+
+<!-- PAGE BODY -->
+<div class="page">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-title">Filter</div>
+
+      <!-- Platform -->
+      <div class="filter-group">
+        <div class="filter-label">Platform</div>
+        <div class="plat-pills" id="plat-pills"></div>
+      </div>
+
+      <!-- Experience -->
+      <div class="filter-group">
+        <div class="filter-label">Experience Level</div>
+        <label class="filter-option"><input type="radio" name="sen" value="" onchange="setSeniority('')" checked> All Levels</label>
+        <label class="filter-option"><input type="radio" name="sen" value="senior" onchange="setSeniority('senior')"> Senior / Lead (4-5+ yrs)</label>
+        <label class="filter-option"><input type="radio" name="sen" value="mid" onchange="setSeniority('mid')"> Mid Level (2-4 yrs)</label>
+        <label class="filter-option"><input type="radio" name="sen" value="junior" onchange="setSeniority('junior')"> Junior / Fresher</label>
+      </div>
+
+      <!-- Time -->
+      <div class="filter-group">
+        <div class="filter-label">Date Posted</div>
+        <select class="time-select" id="time-sel" onchange="setTime(this.value)">
+          <option value="720">Last 30 days</option>
+          <option value="168" selected>Last 7 days</option>
+          <option value="72">Last 3 days</option>
+          <option value="24">Last 24 hours</option>
+          <option value="12">Last 12 hours</option>
+          <option value="6">Last 6 hours</option>
+          <option value="1">Last 1 hour</option>
+        </select>
+      </div>
+
+      <!-- Location -->
+      <div class="filter-group">
+        <div class="filter-label">Location</div>
+        <select class="time-select" id="loc-sel" onchange="setLoc(this.value)">
+          <option value="">All Cities</option>
+        </select>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="results-bar">
+      <div class="results-count" id="results-count">Loading…</div>
+      <div class="results-right">
+        <span class="sort-label">Sort by</span>
+        <select class="sort-select" id="sort-sel" onchange="applyFilters()">
+          <option value="default">Newest</option>
+          <option value="title">Title A–Z</option>
+          <option value="company">Company A–Z</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="jobs-list">
+      <!-- skeleton -->
+      ${[1,2,3,4,5].map(()=>`
+      <div class="job-card">
+        <div class="jc-top">
+          <div class="jc-avatar"><div class="sk" style="width:46px;height:46px;border-radius:10px"></div></div>
+          <div class="jc-info">
+            <div class="sk" style="width:55%;height:14px;margin-bottom:8px"></div>
+            <div class="sk" style="width:35%;height:11px;margin-bottom:12px"></div>
+            <div style="display:flex;gap:6px"><div class="sk" style="width:70px;height:22px;border-radius:20px"></div><div class="sk" style="width:90px;height:22px;border-radius:20px"></div></div>
+          </div>
+        </div>
+      </div>`).join('')}
+    </div>
+
+    <div class="pagination" id="pagination"></div>
+  </main>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+  <div class="newsletter-inner">
+    <div class="newsletter-icon">📬</div>
+    <h3>Get Salesforce jobs in your inbox</h3>
+    <p>We scrape daily. Be the first to apply.</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Enter your email" id="nl-email"/>
+      <button onclick="nlSubscribe()">Subscribe</button>
     </div>
   </div>
 </div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M10.017 4.498a4.265 4.265 0 0 1 3.044-1.265 4.29 4.29 0 0 1 3.796 2.29 3.236 3.236 0 0 1 1.356-.296 3.27 3.27 0 0 1 3.27 3.27 3.265 3.265 0 0 1-.394 1.567A2.85 2.85 0 0 1 22 12.571a2.858 2.858 0 0 1-2.857 2.857h-9.715a3.927 3.927 0 0 1-3.928-3.928 3.93 3.93 0 0 1 2.107-3.498 4.26 4.26 0 0 1 2.41-3.504z" fill="#00b074"/></svg>
+        <span style="font-size:1rem;font-weight:800;color:#fff">SFJobs</span>
+      </div>
+      <p>Curated Salesforce job listings from across India. Updated daily from LinkedIn, Greenhouse, Lever, Workday, and more.</p>
+      <div class="contact">
+        <div>🌐 sfjobs.my.salesforce-sites.com/jobs</div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Jobs</h4>
+      <a href="#">Salesforce Developer</a>
+      <a href="#">Salesforce Consultant</a>
+      <a href="#">Salesforce Admin</a>
+      <a href="#">Salesforce Architect</a>
+      <a href="#">LWC Developer</a>
+    </div>
+    <div class="footer-col">
+      <h4>Platforms</h4>
+      <a href="#">LinkedIn</a>
+      <a href="#">Indeed</a>
+      <a href="#">Glassdoor</a>
+      <a href="#">Greenhouse</a>
+      <a href="#">Workday</a>
+    </div>
+    <div class="footer-col">
+      <h4>Cities</h4>
+      <a href="#">Bengaluru</a>
+      <a href="#">Hyderabad</a>
+      <a href="#">Pune</a>
+      <a href="#">Mumbai</a>
+      <a href="#">Delhi NCR</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="#">LinkedIn</a>
+      <a href="#">GitHub</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 SFJobs. All Rights Reserved.</span>
+    <span id="footer-updated"></span>
+  </div>
+</footer>
 
 <div id="toast"></div>
 
 <script>
+// ── inline template fix ──
+document.getElementById('jobs-list').innerHTML = [1,2,3,4,5].map(()=>`
+  <div class="job-card">
+    <div class="jc-top">
+      <div class="jc-avatar"><div class="sk" style="width:46px;height:46px;border-radius:10px;display:block"></div></div>
+      <div class="jc-info" style="flex:1">
+        <div class="sk" style="width:55%;height:14px;display:block;margin-bottom:8px"></div>
+        <div class="sk" style="width:35%;height:11px;display:block;margin-bottom:12px"></div>
+        <div style="display:flex;gap:6px"><div class="sk" style="width:70px;height:22px;border-radius:20px;display:block"></div><div class="sk" style="width:90px;height:22px;border-radius:20px;display:block"></div></div>
+      </div>
+    </div>
+  </div>`).join('');
+
 const JOBS_URL   = 'https://manishsharma1999.github.io/salesforce-job-finder/jobs.json';
 const WORKER_URL = 'https://job-finder-refresh.manishsharma1k9909.workers.dev';
 const CITIES = ['Mumbai','Delhi','Bengaluru','Bangalore','Hyderabad','Chennai','Pune','Kolkata',
@@ -296,7 +438,7 @@ const CITIES = ['Mumbai','Delhi','Bengaluru','Bangalore','Hyderabad','Chennai','
 
 let ALL=[], saved=new Set(JSON.parse(localStorage.getItem('sf-saved-v3')||'[]'));
 let activePlatform='All', activeLoc='', activeHours=168, activeSeniority='', sortField='default', sortDir=1;
-let currentPage=1, perPage=20;
+let currentPage=1, perPage=10;
 let filtered=[];
 
 function city(j){
@@ -305,8 +447,8 @@ function city(j){
   return 'India';
 }
 
-function fmtAge(h, rawPosted){
-  if(h===null) return {txt: rawPosted||'—', cls:'age-old'};
+function fmtAge(h,raw){
+  if(h===null) return {txt:raw||'—',cls:'age-old'};
   if(h===0)    return {txt:'Just now',cls:'age-fresh'};
   if(h<1)      return {txt:Math.round(h*60)+'m ago',cls:'age-fresh'};
   if(h<24)     return {txt:Math.round(h)+'h ago',cls:'age-fresh'};
@@ -320,84 +462,99 @@ function initials(s){
 }
 
 function platClass(p){
-  if(!p) return 'plat-other';
-  if(p.includes('LinkedIn')) return 'plat-LinkedIn';
-  if(p.includes('Indeed'))   return 'plat-Indeed';
-  if(p.includes('Greenhouse')) return 'plat-Greenhouse';
-  if(p.includes('Lever'))    return 'plat-Lever';
-  if(p.includes('Workday'))  return 'plat-Workday';
+  const m={'LinkedIn':'plat-LinkedIn','Indeed':'plat-Indeed','Greenhouse':'plat-Greenhouse',
+    'Lever':'plat-Lever','Workday':'plat-Workday','Glassdoor':'plat-Glassdoor',
+    'SmartRecruiters':'plat-SmartRecruiters'};
+  for(const k in m) if((p||'').includes(k)) return m[k];
   return 'plat-other';
 }
+
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
 async function load(){
   try{
     const r=await fetch(JOBS_URL+'?t='+Date.now());
     const d=await r.json();
-    ALL=(d.jobs||[]).map(j=>({...j,_city:city(j),_h:j.age_hours!=null?+j.age_hours:(j.age_days!=null?+j.age_days*24:null)}));
+    ALL=(d.jobs||[]).map(j=>({...j,
+      _city:city(j),
+      _h:j.age_hours!=null?+j.age_hours:(j.age_days!=null?+j.age_days*24:null)
+    }));
     window._lastTs=d.scraped_at;
     if(d.scraped_at){
       const dt=new Date(d.scraped_at);
-      document.getElementById('last-updated').textContent='Updated '+dt.toLocaleString('en-IN',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+      const s='Updated '+dt.toLocaleString('en-IN',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+      document.getElementById('last-updated').textContent=s;
+      document.getElementById('footer-updated').textContent=s;
     }
-    buildPlatFilters();
+    buildPlatPills();
     buildLocOptions();
     applyFilters();
   }catch(e){
-    document.getElementById('jobs-tbody').innerHTML=`<tr><td colspan="7"><div class="table-empty"><div class="icon">⚠️</div><h3>Could not load jobs</h3><p>Check your connection and try again.</p></div></td></tr>`;
+    document.getElementById('jobs-list').innerHTML=`<div class="empty-state"><div class="icon">⚠️</div><h3>Could not load jobs</h3><p>Check your connection and try again.</p></div>`;
   }
 }
 
-function buildPlatFilters(){
-  const plats=['All',...new Set(ALL.map(j=>j.platform))];
-  document.getElementById('plat-filters').innerHTML=plats.map(p=>
-    `<button class="tb-btn${p===activePlatform?' active':''}" onclick="setPlatform('${p}',this)">${p}</button>`
-  ).join('');
+function buildPlatPills(){
+  const counts={};
+  ALL.forEach(j=>{counts[j.platform]=(counts[j.platform]||0)+1;});
+  const plats=Object.entries(counts).sort((a,b)=>b[1]-a[1]);
+  const total=ALL.length;
+  document.getElementById('plat-pills').innerHTML=
+    `<div class="plat-pill${activePlatform==='All'?' active':''}" onclick="setPlatform('All')"><span>All Platforms</span><span class="count">${total}</span></div>`+
+    plats.map(([p,n])=>
+      `<div class="plat-pill${activePlatform===p?' active':''}" onclick="setPlatform('${esc(p)}')"><span>${esc(p)}</span><span class="count">${n}</span></div>`
+    ).join('');
 }
 
 function buildLocOptions(){
   const cities=[...new Set(ALL.map(j=>j._city))].sort();
-  const sel=document.getElementById('loc-sel');
-  sel.innerHTML='<option value="">📍 All Cities</option>'+
-    cities.map(c=>`<option value="${c}"${c===activeLoc?' selected':''}>${c}</option>`).join('');
+  const locSel=document.getElementById('loc-sel');
+  const heroLoc=document.getElementById('hero-loc');
+  const opts='<option value="">All Cities</option>'+cities.map(c=>`<option value="${c}"${c===activeLoc?' selected':''}>${c}</option>`).join('');
+  locSel.innerHTML=opts;
+  heroLoc.innerHTML=opts;
 }
 
-function setPlatform(p, el){
+function setPlatform(p){
   activePlatform=p;
-  document.querySelectorAll('#plat-filters .tb-btn').forEach(b=>b.classList.toggle('active',b.textContent.trim()===p));
+  buildPlatPills();
   currentPage=1; applyFilters();
 }
 
-function setLoc(v){activeLoc=v; currentPage=1; applyFilters();}
-function setTime(v){activeHours=+v; currentPage=1; applyFilters();}
-function setSeniority(v){activeSeniority=v; currentPage=1; applyFilters();}
-function setPerPage(v){perPage=+v; currentPage=1; renderTable();}
+function heroLoc(v){activeLoc=v;document.getElementById('loc-sel').value=v;currentPage=1;applyFilters();}
+function setLoc(v){activeLoc=v;document.getElementById('hero-loc').value=v;currentPage=1;applyFilters();}
+function setTime(v){activeHours=+v;currentPage=1;applyFilters();}
+function setSeniority(v){
+  activeSeniority=v;
+  // sync both selects
+  document.getElementById('hero-sen').value=v;
+  document.querySelectorAll('input[name="sen"]').forEach(r=>r.checked=(r.value===v));
+  currentPage=1;applyFilters();
+}
 
-function cycleSort(field){
-  if(sortField===field) sortDir*=-1;
-  else{sortField=field; sortDir=1;}
-  // reset all icons
-  document.querySelectorAll('th').forEach(t=>{
-    t.classList.remove('sorted');
-    const ic=t.querySelector('.sort-icon');
-    if(ic) ic.textContent='↕';
-  });
-  // highlight the active column — col index: title=2, company=3, age=6 (1-based)
-  const colMap={'title':2,'company':3,'age':6};
-  const th=document.querySelector(`table thead tr th:nth-child(${colMap[field]||2})`);
-  if(th){th.classList.add('sorted');const ic=th.querySelector('.sort-icon');if(ic)ic.textContent=sortDir===1?'↑':'↓';}
-  applyFilters();
+function clearAll(){
+  document.getElementById('search-input').value='';
+  document.getElementById('hero-loc').value='';
+  document.getElementById('hero-sen').value='';
+  document.getElementById('time-sel').value='168';
+  document.getElementById('loc-sel').value='';
+  document.getElementById('sort-sel').value='default';
+  document.querySelectorAll('input[name="sen"]').forEach(r=>r.checked=(r.value===''));
+  activePlatform='All'; activeLoc=''; activeHours=168; activeSeniority=''; sortField='default'; sortDir=1;
+  buildPlatPills();
+  currentPage=1; applyFilters();
 }
 
 function applyFilters(){
-  const q=(document.getElementById('tb-search').value||'').toLowerCase().trim();
+  const q=(document.getElementById('search-input').value||'').toLowerCase().trim();
+  sortField=document.getElementById('sort-sel').value;
   filtered=ALL.filter(j=>{
-    // null _h = unknown age; exclude from any filter ≤48h, include for ≥72h (show all)
-    const h = j._h;
-    if(activeHours < 72){
-      if(h === null) return false;   // unknown age: hide when filtering tightly
-      if(h > activeHours) return false;
+    const h=j._h;
+    if(activeHours<168){
+      if(h===null) return false;
+      if(h>activeHours) return false;
     } else {
-      if(h !== null && h > activeHours) return false;
+      if(h!==null&&h>activeHours) return false;
     }
     if(activePlatform!=='All'&&j.platform!==activePlatform) return false;
     if(activeLoc&&j._city!==activeLoc) return false;
@@ -405,123 +562,92 @@ function applyFilters(){
     if(q&&!j.title.toLowerCase().includes(q)&&!(j.company||'').toLowerCase().includes(q)) return false;
     return true;
   });
-  // sort — null _h sorts last (oldest/unknown)
-  const sf=sortField==='default'?'age':sortField;
+  const sf=sortField==='title'?'title':sortField==='company'?'company':'age';
   filtered.sort((a,b)=>{
     let va,vb;
     if(sf==='title'){va=a.title;vb=b.title;}
     else if(sf==='company'){va=a.company||'';vb=b.company||'';}
-    else{
-      // age sort: null treated as Infinity (unknown = oldest)
-      va = a._h !== null ? a._h : Infinity;
-      vb = b._h !== null ? b._h : Infinity;
-    }
-    if(typeof va==='string') return va.localeCompare(vb)*sortDir;
-    return (va-vb)*sortDir;
+    else{va=a._h!==null?a._h:Infinity;vb=b._h!==null?b._h:Infinity;}
+    if(typeof va==='string') return va.localeCompare(vb)*(sortField==='title'?1:-1);
+    return (va-vb)*(sortField==='company'?1:-1);
   });
-  document.getElementById('page-subtitle').textContent=filtered.length+' job'+(filtered.length!==1?'s':'')+' · India';
-  buildChips(q);
+  // ascending age = newest first
+  if(sf==='age') filtered.sort((a,b)=>(a._h!==null?a._h:Infinity)-(b._h!==null?b._h:Infinity));
+  document.getElementById('results-count').innerHTML=`<b>${filtered.length}</b> <span>jobs found in India</span>`;
   currentPage=1;
-  renderTable();
+  renderCards();
 }
 
-function buildChips(q){
-  const chips=[];
-  if(activeHours<168) chips.push({l:'≤'+activeHours+'h',f:'resetTime()'});
-  if(activePlatform!=='All') chips.push({l:activePlatform,f:'resetPlatform()'});
-  if(activeSeniority) chips.push({l:activeSeniority==='senior'?'Senior/Lead':activeSeniority==='mid'?'Mid Level':'Junior',f:'resetSeniority()'});
-  if(activeLoc) chips.push({l:'📍 '+activeLoc,f:'resetLoc()'});
-  if(q) chips.push({l:'"'+q+'"',f:'clearSearch()'});
-  document.getElementById('filter-chips').innerHTML=chips.map(c=>
-    `<div class="f-chip" onclick="${c.f}">${c.l} ×</div>`).join('');
-}
-
-function resetTime(){document.getElementById('time-sel').value='168';setTime(168);}
-function resetPlatform(){setPlatform('All',null);}
-function resetLoc(){document.getElementById('loc-sel').value='';setLoc('');}
-function resetSeniority(){document.getElementById('seniority-sel').value='';setSeniority('');}
-function clearSearch(){document.getElementById('tb-search').value='';applyFilters();}
-
-function renderTable(){
+function renderCards(){
   const total=filtered.length;
   const pages=Math.max(1,Math.ceil(total/perPage));
   currentPage=Math.min(currentPage,pages);
   const start=(currentPage-1)*perPage;
   const slice=filtered.slice(start,start+perPage);
-  const tbody=document.getElementById('jobs-tbody');
 
   if(!total){
-    tbody.innerHTML=`<tr><td colspan="7"><div class="table-empty"><div class="icon">🔍</div><h3>No jobs found</h3><p>Try different filters or extend the time window.</p></div></td></tr>`;
+    document.getElementById('jobs-list').innerHTML=`<div class="empty-state"><div class="icon">🔍</div><h3>No jobs found</h3><p>Try changing the filters or extending the time window.</p></div>`;
     document.getElementById('pagination').innerHTML='';
-    document.getElementById('results-info').textContent='';
-    document.getElementById('per-page-label').innerHTML='';
     return;
   }
 
-  tbody.innerHTML=slice.map((j,i)=>{
-    const {txt,cls}=fmtAge(j._h, j.posted);
+  document.getElementById('jobs-list').innerHTML=slice.map(j=>{
+    const {txt,cls}=fmtAge(j._h,j.posted);
     const isSaved=saved.has(j.url||'');
     const av=initials(j.company||j.title);
     const safeUrl=(j.url||'').replace(/'/g,"\\'");
-    return `<tr>
-      <td><input type="checkbox" class="row-check" style="cursor:pointer"/></td>
-      <td class="td-title">
-        ${esc(j.title)}${j._h!==null&&j._h<=6?'<span class="new-dot"></span>':''}
-        ${j.seniority?(()=>{const sl={'senior':'Senior','mid':'Mid','junior':'Junior'};return `<span class="seniority-${j.seniority}">${sl[j.seniority]||j.seniority}</span>`;})():''}
-      </td>
-      <td>
-        <div class="td-company">
-          <div class="company-av">${av}</div>
-          <div class="td-company-name">${esc(j.company||'—')}</div>
-        </div>
-      </td>
-      <td class="td-platform"><span class="${platClass(j.platform)}">${esc(j.platform)}</span></td>
-      <td class="td-loc"><span style="font-size:.75rem;color:var(--text2)">📍 ${esc(j._city||'India')}</span></td>
-      <td class="td-posted"><span class="age-chip ${cls}">${txt}</span></td>
-      <td class="td-actions">
-        ${j.url?`<a href="${esc(j.url)}" target="_blank" rel="noopener" class="btn-apply">Apply</a>`:'<span></span>'}
+    const senBadge=j.seniority?`<span class="jc-seniority sen-${j.seniority}">${j.seniority==='senior'?'Senior':j.seniority==='mid'?'Mid':'Junior'}</span>`:'';
+    const isNew=j._h!==null&&j._h<=6;
+    return `<div class="job-card">
+  <div class="jc-top">
+    <div class="jc-avatar">${av}</div>
+    <div class="jc-info">
+      <div class="jc-title-row">
+        <span class="jc-title">${esc(j.title)}</span>
+        ${isNew?'<span class="jc-verified">●</span>':''}
+        ${senBadge}
+      </div>
+      <div class="jc-company">by <strong>${esc(j.company||'—')}</strong> in <a class="in-link" href="#" onclick="return false">${esc(j.platform)}</a></div>
+      <div class="jc-tags">
+        <span class="jc-tag type-remote">📍 ${esc(j._city||'India')}</span>
+        <span class="jc-tag-plat ${platClass(j.platform)}">${esc(j.platform)}</span>
+      </div>
+    </div>
+    <div class="jc-right">
+      <div class="jc-actions">
+        ${j.url?`<a href="${esc(j.url)}" target="_blank" rel="noopener" class="btn-apply">Apply →</a>`:''}
         <button class="btn-save${isSaved?' saved':''}" onclick="toggleSave('${safeUrl}',this)">${isSaved?'★':'☆'}</button>
-      </td>
-    </tr>`;
+      </div>
+      <span class="jc-age ${cls}">${txt}</span>
+    </div>
+  </div>
+</div>`;
   }).join('');
 
-  // footer
-  document.getElementById('per-page-label').innerHTML=`
-    <span style="color:var(--text2)">Results per page:</span>
-    <select onchange="setPerPage(this.value)" style="border:1.5px solid var(--border);border-radius:6px;padding:3px 8px;font-size:.75rem;outline:none;color:var(--text);background:var(--white);cursor:pointer">
-      ${[20,50,100].map(n=>`<option value="${n}"${n===perPage?' selected':''}>${n}</option>`).join('')}
-    </select>`;
-  document.getElementById('results-info').textContent=`${start+1}–${Math.min(start+perPage,total)} of ${total} results`;
-  renderPagination(pages);
+  renderPagination(pages,total,start);
 }
 
-function renderPagination(pages){
+function renderPagination(pages,total,start){
   const el=document.getElementById('pagination');
   if(pages<=1){el.innerHTML='';return;}
-  let html=`<button class="page-btn nav" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>‹</button>`;
-  const show=new Set();
-  show.add(1);show.add(pages);
-  for(let i=Math.max(1,currentPage-1);i<=Math.min(pages,currentPage+1);i++) show.add(i);
+  let html=`<button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>‹</button>`;
+  const show=new Set([1,pages,...[currentPage-1,currentPage,currentPage+1].filter(p=>p>=1&&p<=pages)]);
   let prev=0;
   [...show].sort((a,b)=>a-b).forEach(p=>{
     if(prev&&p-prev>1) html+=`<span class="page-ellipsis">…</span>`;
     html+=`<button class="page-btn${p===currentPage?' active':''}" onclick="goPage(${p})">${p}</button>`;
     prev=p;
   });
-  html+=`<button class="page-btn nav" onclick="goPage(${currentPage+1})" ${currentPage===pages?'disabled':''}>›</button>`;
+  html+=`<button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===pages?'disabled':''}>›</button>`;
   el.innerHTML=html;
 }
 
 function goPage(p){
   const pages=Math.max(1,Math.ceil(filtered.length/perPage));
-  if(p<1||p>pages) return;
+  if(p<1||p>pages)return;
   currentPage=p;
-  renderTable();
-  document.querySelector('.table-card').scrollIntoView({behavior:'smooth',block:'start'});
-}
-
-function toggleAll(cb){
-  document.querySelectorAll('.row-check').forEach(c=>c.checked=cb.checked);
+  renderCards();
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
 function toggleSave(url,btn){
@@ -530,44 +656,32 @@ function toggleSave(url,btn){
   localStorage.setItem('sf-saved-v3',JSON.stringify([...saved]));
 }
 
-// ── Refresh + timer ─────────────────────────────────────────────────────────
-let _poll, _timer, _timerSecs=120;
-
+// ── Refresh + timer ──
+let _poll,_timer,_timerSecs=120;
 function cancelRefresh(){
-  clearInterval(_poll); clearInterval(_timer);
+  clearInterval(_poll);clearInterval(_timer);
   document.getElementById('timer-banner').classList.remove('show');
   const btn=document.getElementById('refresh-btn');
   btn.classList.remove('running');
   document.getElementById('spin-icon').className='spin';
   document.getElementById('refresh-label').textContent='Refresh Jobs';
 }
-
 async function triggerRefresh(){
-  if(!WORKER_URL||WORKER_URL==='REPLACE_WITH_WORKER_URL'){showToast('Refresh not configured.');return;}
   const btn=document.getElementById('refresh-btn');
   btn.classList.add('running');
   document.getElementById('spin-icon').className='spin active';
   document.getElementById('refresh-label').textContent='Scraping…';
-
-  // Start countdown timer
   _timerSecs=120;
   const banner=document.getElementById('timer-banner');
   const countdown=document.getElementById('timer-countdown');
   banner.classList.add('show');
   countdown.textContent=fmtTimer(_timerSecs);
-
   clearInterval(_timer);
   _timer=setInterval(()=>{
     _timerSecs--;
-    if(_timerSecs<0){
-      countdown.textContent='any moment…';
-      return;
-    }
-    countdown.textContent=fmtTimer(_timerSecs);
+    countdown.textContent=_timerSecs<0?'any moment…':fmtTimer(_timerSecs);
   },1000);
-
   try{await fetch(WORKER_URL,{method:'POST'});}catch(e){}
-
   let n=0;
   clearInterval(_poll);
   _poll=setInterval(async()=>{
@@ -580,24 +694,26 @@ async function triggerRefresh(){
         ALL=(d.jobs||[]).map(j=>({...j,_city:city(j),_h:j.age_hours!=null?+j.age_hours:(j.age_days!=null?+j.age_days*24:null)}));
         window._lastTs=d.scraped_at;
         const dt=new Date(d.scraped_at);
-        document.getElementById('last-updated').textContent='Updated '+dt.toLocaleString('en-IN',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
-        buildPlatFilters(); buildLocOptions(); applyFilters();
+        const s='Updated '+dt.toLocaleString('en-IN',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+        document.getElementById('last-updated').textContent=s;
+        document.getElementById('footer-updated').textContent=s;
+        buildPlatPills();buildLocOptions();applyFilters();
         showToast('✓ Jobs updated — '+ALL.length+' results');
       }
     }catch(e){}
-    if(n>40){cancelRefresh();showToast('Scraper is taking longer — check back soon');}
+    if(n>40){cancelRefresh();showToast('Scraper taking longer — check back soon');}
   },15000);
 }
+function fmtTimer(s){const m=Math.floor(s/60),ss=s%60;return m+':'+(ss<10?'0':'')+ss;}
 
-function fmtTimer(s){
-  const m=Math.floor(s/60);
-  const ss=s%60;
-  return m+':'+(ss<10?'0':'')+ss;
+function nlSubscribe(){
+  const v=document.getElementById('nl-email').value;
+  if(v&&v.includes('@')){showToast('Thanks! We will keep you updated 📬');}
+  else showToast('Please enter a valid email');
 }
 
 let _tt;
 function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(_tt);_tt=setTimeout(()=>t.classList.remove('show'),3200);}
-function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 load();
 </script>
 </body>
