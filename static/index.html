@@ -498,24 +498,7 @@
       const res = await fetch('./jobs.json');
       const data = await res.json();
       ALL_JOBS = data.jobs || [];
-
-      // Stats
-      document.getElementById('stat-total').textContent = data.total;
-      document.getElementById('stat-linkedin').textContent = ALL_JOBS.filter(j => j.platform === 'LinkedIn').length;
-      document.getElementById('stat-indeed').textContent   = ALL_JOBS.filter(j => j.platform === 'Indeed').length;
-      const other = ALL_JOBS.filter(j => j.platform !== 'LinkedIn' && j.platform !== 'Indeed').length;
-      document.getElementById('stat-other').textContent = other;
-
-      // Last scraped
-      if (data.scraped_at) {
-        const d = new Date(data.scraped_at);
-        document.getElementById('last-refreshed').textContent =
-          'Last scraped: ' + d.toLocaleString('en-IN', { dateStyle:'medium', timeStyle:'short' });
-      }
-
-      // Hide Refresh button when accessed from a non-local origin (Render)
-      const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
-      if (!isLocal) document.getElementById('refresh-btn').style.display = 'none';
+      updateStats(data);
 
       // Platform pills
       buildFilters(['All', ...data.platforms]);
@@ -598,32 +581,67 @@
     `).join('');
   }
 
-  /* ── Trigger scraper refresh ── */
+  /* ── Trigger scraper via Cloudflare Worker proxy ── */
+  // WORKER_URL is replaced at deploy time; fallback keeps button visible but shows a message
+  const WORKER_URL = 'REPLACE_WITH_WORKER_URL';
+
   let refreshPoll;
   async function triggerRefresh() {
+    if (WORKER_URL === 'REPLACE_WITH_WORKER_URL') {
+      showToast('Refresh not configured yet.');
+      return;
+    }
     const btn  = document.getElementById('refresh-btn');
-    const spin = document.getElementById('spin-icon');
     btn.classList.add('running');
-    spin.classList.add('active');
-    btn.innerHTML = '<span class="spin active" id="spin-icon">↻</span> Scraping…';
-    showToast('Job scraper started — takes ~60s…');
+    btn.innerHTML = '<span class="spin active" id="spin-icon">↻</span> Scraping… (~3 min)';
+    showToast('Scraper triggered — jobs refresh in ~3 minutes');
 
-    await fetch('/api/refresh', { method: 'POST' });
+    try {
+      await fetch(WORKER_URL, { method: 'POST' });
+    } catch(e) { /* worker responded, that's fine */ }
 
-    // Poll every 5s for up to 120s
+    // Poll jobs.json every 15s — scraped_at will change when the Action finishes
     let attempts = 0;
-    const prevMtime = document.getElementById('last-refreshed').textContent;
+    const prevTs = document.getElementById('last-refreshed').textContent;
     refreshPoll = setInterval(async () => {
       attempts++;
-      await loadJobs();
-      const newMtime = document.getElementById('last-refreshed').textContent;
-      if (newMtime !== prevMtime || attempts > 24) {
+      // Bust cache so we get the latest jobs.json from GitHub Pages
+      try {
+        const res  = await fetch('./jobs.json?t=' + Date.now());
+        const data = await res.json();
+        const newTs = data.scraped_at || '';
+        if (newTs && newTs !== window._lastScrapedAt) {
+          window._lastScrapedAt = newTs;
+          ALL_JOBS = data.jobs || [];
+          buildFilters(['All', ...data.platforms]);
+          render();
+          updateStats(data);
+          clearInterval(refreshPoll);
+          btn.classList.remove('running');
+          btn.innerHTML = '<span class="spin" id="spin-icon">↻</span> Refresh Jobs';
+          showToast('Jobs updated!');
+        }
+      } catch(e) {}
+      if (attempts > 24) { // 6 min timeout
         clearInterval(refreshPoll);
         btn.classList.remove('running');
         btn.innerHTML = '<span class="spin" id="spin-icon">↻</span> Refresh Jobs';
-        showToast('Jobs updated!');
+        showToast('Scraper is taking longer — check back soon.');
       }
-    }, 5000);
+    }, 15000);
+  }
+
+  function updateStats(data) {
+    document.getElementById('stat-total').textContent    = data.total;
+    document.getElementById('stat-linkedin').textContent = (data.jobs||[]).filter(j => j.platform==='LinkedIn').length;
+    document.getElementById('stat-indeed').textContent   = (data.jobs||[]).filter(j => j.platform==='Indeed').length;
+    document.getElementById('stat-other').textContent    = (data.jobs||[]).filter(j => j.platform!=='LinkedIn'&&j.platform!=='Indeed').length;
+    if (data.scraped_at) {
+      window._lastScrapedAt = data.scraped_at;
+      const d = new Date(data.scraped_at);
+      document.getElementById('last-refreshed').textContent =
+        'Last scraped: ' + d.toLocaleString('en-IN', { dateStyle:'medium', timeStyle:'short' });
+    }
   }
 
   /* ── Toast ── */
