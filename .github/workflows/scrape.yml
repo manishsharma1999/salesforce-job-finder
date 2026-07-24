@@ -27,7 +27,7 @@ jobs:
           key: playwright-chromium-${{ runner.os }}-v1
 
       - name: Install dependencies
-        run: pip install playwright openpyxl httpx
+        run: pip install playwright openpyxl httpx aiohttp
 
       - name: Install Chromium (only if not cached)
         if: steps.playwright-cache.outputs.cache-hit != 'true'

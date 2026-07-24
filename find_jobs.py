@@ -559,7 +559,6 @@ async def scrape_ashby_api() -> list[dict]:
     import httpx
     jobs = []
     sf_kw = ["salesforce", "lwc", "apex", "crm", "cpq", "vlocity"]
-    # Companies on Ashby that may post Salesforce roles
     companies = [
         "veeva-systems", "medallia", "ringcentral",
         "zuora", "docusign", "zendesk",
@@ -570,7 +569,7 @@ async def scrape_ashby_api() -> list[dict]:
             for co in companies:
                 try:
                     r = await client.get(
-                        f"https://jobs.ashbyhq.com/api/non-user-facing/listing/job-board/all-jobs",
+                        "https://jobs.ashbyhq.com/api/non-user-facing/listing/job-board/all-jobs",
                         params={"organizationHostedJobsPageName": co},
                     )
                     if r.status_code != 200:
@@ -579,25 +578,303 @@ async def scrape_ashby_api() -> list[dict]:
                         t = j.get("title", "")
                         if not any(k in t.lower() for k in sf_kw):
                             continue
-                        loc = j.get("secondaryLocations", [{}])[0].get("name", "India") if j.get("secondaryLocations") else "India"
+                        locs = j.get("secondaryLocations") or []
+                        loc = locs[0].get("name", "India") if locs else "India"
                         published = j.get("publishedDate", "")
                         h = parse_age_hours(published)
                         if not is_recent(h):
                             continue
                         jobs.append(make_job(
-                            t,
-                            j.get("organizationName", co.title()),
-                            "Ashby",
+                            t, j.get("organizationName", co.title()), "Ashby",
                             f"https://jobs.ashbyhq.com/{co}/{j.get('id', '')}",
-                            published,
-                            loc,
-                            h,
+                            published, loc, h,
                         ))
                 except Exception:
                     continue
     except Exception as e:
         print(f"  Ashby API error: {e}")
     print(f"  Ashby API: {len(jobs)}")
+    return jobs
+
+
+async def scrape_workday_api() -> list[dict]:
+    """
+    Workday public careers API — used by Accenture, Cognizant, Wipro, HCL,
+    Infosys, Deloitte, Capgemini, Persistent, Mphasis, Tech Mahindra, IBM India.
+    Each tenant exposes: POST /wday/cxs/{tenant}/{site}/jobs  → JSON, no auth.
+    """
+    import httpx
+    jobs = []
+    sf_kw = ["salesforce", "lwc", "apex", "crm", "vlocity", "cpq", "einstein", "mulesoft"]
+
+    # (tenant, wd-subdomain-number, career-site-path, display-name)
+    TENANTS = [
+        ("accenture",      3, "AccentureCareers",           "Accenture"),
+        ("cognizant",      1, "Careers",                    "Cognizant"),
+        ("wipro",          3, "Wipro_Careers",              "Wipro"),
+        ("hcltech",        3, "HCLTechCareers",             "HCL Tech"),
+        ("infosys",        3, "Infosys",                    "Infosys"),
+        ("deloitte",       1, "DeloitteCareer",             "Deloitte"),
+        ("capgemini",      3, "Capgemini",                  "Capgemini"),
+        ("persistent",     5, "Persistent_Careers",         "Persistent Systems"),
+        ("mphasis",        5, "MphasisCareers",             "Mphasis"),
+        ("techmahindra",   3, "TechMahindra",               "Tech Mahindra"),
+        ("ibmindia",       3, "IBM_India",                  "IBM India"),
+        ("ltimindtree",    3, "LTIMindtree",                "LTIMindtree"),
+        ("hexaware",       3, "HexawareCareers",            "Hexaware"),
+        ("niit",           3, "NIIT_Careers",               "NIIT Technologies"),
+        ("coforge",        3, "Coforge",                    "Coforge"),
+        ("mastek",         3, "Mastek",                     "Mastek"),
+        ("zensar",         3, "Zensar",                     "Zensar"),
+        ("birlasoft",      3, "Birlasoft",                  "Birlasoft"),
+        ("sonata-software",3, "SonataSoftware",             "Sonata Software"),
+        ("sasken",         3, "Sasken",                     "Sasken"),
+        ("evosyssolutions", 3, "Evosys",                    "Evosys"),
+        ("simplus",        3, "Simplus",                    "Simplus"),
+        ("cloudmasonry",   3, "CloudMasonry",               "Cloud Masonry"),
+        ("apexon",         3, "Apexon",                     "Apexon"),
+        ("globant",        3, "Globant",                    "Globant"),
+        ("slalom",         3, "SlalomCareers",              "Slalom"),
+        ("publicissapient",3, "PublicisSapient",            "Publicis Sapient"),
+        ("virtusa",        3, "VirtusaCareers",             "Virtusa"),
+        ("concentrix",     3, "ConcentrixCareers",          "Concentrix"),
+    ]
+
+    headers = {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "User-Agent": UA,
+    }
+
+    async def fetch_tenant(client, tenant, wdver, site, display):
+        url = f"https://{tenant}.wd{wdver}.myworkdayjobs.com/wday/cxs/{tenant}/{site}/jobs"
+        body = {"searchText": "salesforce", "limit": 20, "offset": 0, "appliedFacets": {}}
+        try:
+            r = await client.post(url, json=body, headers=headers)
+            if r.status_code != 200:
+                return
+            data = r.json()
+            for j in data.get("jobPostings", []):
+                t = j.get("title", "")
+                if not any(k in t.lower() for k in sf_kw):
+                    continue
+                loc_text = j.get("locationsText", "") or ""
+                # Skip if explicitly not India/remote
+                if loc_text and "india" not in loc_text.lower() and "remote" not in loc_text.lower() and loc_text.strip():
+                    continue
+                posted_txt = j.get("postedOn", "")
+                h = parse_age_hours(posted_txt) if posted_txt else 0.0
+                if not is_recent(h):
+                    continue
+                ext_path = j.get("externalPath", "")
+                job_url = f"https://{tenant}.wd{wdver}.myworkdayjobs.com{ext_path}" if ext_path else ""
+                jobs.append(make_job(t, display, "Workday", job_url, posted_txt, loc_text or "India", h))
+        except Exception:
+            pass
+
+    try:
+        async with httpx.AsyncClient(timeout=14, follow_redirects=True) as client:
+            await asyncio.gather(*[
+                fetch_tenant(client, t, v, s, d) for t, v, s, d in TENANTS
+            ])
+    except Exception as e:
+        print(f"  Workday API error: {e}")
+    print(f"  Workday API: {len(jobs)}")
+    return jobs
+
+
+async def scrape_smartrecruiters_api() -> list[dict]:
+    """
+    SmartRecruiters public API — no auth required.
+    Used by IBM, SAP Labs, Oracle, ServiceNow, many SIs.
+    GET /v1/companies/{slug}/postings?keyword=salesforce&countryCode=IN
+    """
+    import httpx
+    jobs = []
+    sf_kw = ["salesforce", "lwc", "apex", "crm", "cpq", "vlocity", "mulesoft"]
+
+    COMPANIES = [
+        ("ibm",                  "IBM"),
+        ("sap",                  "SAP"),
+        ("oracle",               "Oracle"),
+        ("servicenow",           "ServiceNow"),
+        ("salesforce",           "Salesforce"),
+        ("mindtree",             "Mindtree"),
+        ("tcs",                  "TCS"),
+        ("infosys",              "Infosys"),
+        ("wipro",                "Wipro"),
+        ("hcl-technologies",     "HCL Technologies"),
+        ("cognizant",            "Cognizant"),
+        ("capgemini",            "Capgemini"),
+        ("accenture",            "Accenture"),
+        ("deloitte",             "Deloitte"),
+        ("kforce",               "Kforce"),
+        ("slalom-consulting",    "Slalom"),
+        ("virtusa",              "Virtusa"),
+        ("mphasis",              "Mphasis"),
+        ("persistent-systems",   "Persistent Systems"),
+        ("cloudbyz",             "Cloudbyz"),
+        ("cloudkaptan",          "CloudKaptan"),
+        ("cyient",               "Cyient"),
+        ("zensar-technologies",  "Zensar"),
+        ("hexaware-technologies","Hexaware"),
+        ("ltimindtree",          "LTIMindtree"),
+        ("coforge",              "Coforge"),
+        ("mastech-digital",      "Mastech Digital"),
+        ("birlasoft",            "Birlasoft"),
+        ("tech-mahindra",        "Tech Mahindra"),
+        ("niit-technologies",    "NIIT Technologies"),
+    ]
+
+    async def fetch(client, slug, display):
+        try:
+            r = await client.get(
+                f"https://api.smartrecruiters.com/v1/companies/{slug}/postings",
+                params={"keyword": "salesforce", "countryCode": "IN", "limit": 50},
+            )
+            if r.status_code != 200:
+                return
+            for j in r.json().get("content", []):
+                t = j.get("name", "")
+                if not any(k in t.lower() for k in sf_kw):
+                    continue
+                loc = ((j.get("location") or {}).get("city") or
+                       (j.get("location") or {}).get("country") or "India")
+                rel_date = j.get("releasedDate", "")
+                h = parse_age_hours(rel_date)
+                if not is_recent(h):
+                    continue
+                ref = j.get("ref", "")
+                url = f"https://jobs.smartrecruiters.com/{slug}/{ref}" if ref else ""
+                jobs.append(make_job(t, display, "SmartRecruiters", url, rel_date, loc, h))
+        except Exception:
+            pass
+
+    try:
+        async with httpx.AsyncClient(timeout=12, follow_redirects=True) as client:
+            await asyncio.gather(*[fetch(client, s, d) for s, d in COMPANIES])
+    except Exception as e:
+        print(f"  SmartRecruiters API error: {e}")
+    print(f"  SmartRecruiters API: {len(jobs)}")
+    return jobs
+
+
+async def scrape_icims_api() -> list[dict]:
+    """
+    iCIMS public career portal API — used by many large enterprises.
+    GET https://careers-{tenant}.icims.com/jobs/search?ss=1&searchKeyword=salesforce&in_iframe=1&format=json
+    """
+    import httpx
+    jobs = []
+    sf_kw = ["salesforce", "lwc", "apex", "crm", "cpq", "vlocity"]
+
+    TENANTS = [
+        ("accenture",   "Accenture"),
+        ("cognizant",   "Cognizant"),
+        ("infosys",     "Infosys"),
+        ("wipro",       "Wipro"),
+        ("hcl",         "HCL"),
+        ("capgemini",   "Capgemini"),
+        ("deloitte",    "Deloitte"),
+        ("ibm",         "IBM"),
+        ("pwc",         "PwC"),
+        ("kpmg",        "KPMG"),
+        ("ey",          "EY"),
+        ("genpact",     "Genpact"),
+        ("wns",         "WNS"),
+        ("mphasis",     "Mphasis"),
+        ("hexaware",    "Hexaware"),
+        ("mastech",     "Mastech"),
+    ]
+
+    async def fetch(client, tenant, display):
+        try:
+            r = await client.get(
+                f"https://careers-{tenant}.icims.com/jobs/search",
+                params={"ss": 1, "searchKeyword": "salesforce", "in_iframe": 1, "format": "json"},
+            )
+            if r.status_code != 200:
+                return
+            data = r.json()
+            for j in (data.get("jobs") or data.get("searchResults") or []):
+                t = j.get("jobtitle") or j.get("title") or ""
+                if not any(k in t.lower() for k in sf_kw):
+                    continue
+                loc = j.get("joblocation") or j.get("location") or "India"
+                if "india" not in loc.lower() and "remote" not in loc.lower():
+                    continue
+                posted = j.get("postdate") or j.get("datePosted") or ""
+                h = parse_age_hours(posted)
+                if not is_recent(h):
+                    continue
+                jid = j.get("id") or j.get("jobId") or ""
+                url = f"https://careers-{tenant}.icims.com/jobs/{jid}/job" if jid else ""
+                jobs.append(make_job(t, display, "iCIMS", url, posted, loc, h))
+        except Exception:
+            pass
+
+    try:
+        async with httpx.AsyncClient(timeout=12, follow_redirects=True) as client:
+            await asyncio.gather(*[fetch(client, t, d) for t, d in TENANTS])
+    except Exception as e:
+        print(f"  iCIMS API error: {e}")
+    print(f"  iCIMS API: {len(jobs)}")
+    return jobs
+
+
+async def scrape_tcs_careers(page: Page, keyword: str) -> list[dict]:
+    """TCS — own portal, not a standard ATS"""
+    jobs = []
+    kw = keyword.replace(" ", "%20")
+    await safe_goto(
+        page,
+        f"https://www.tcs.com/careers/tcs-careers-search-jobs#keyword={kw}&country=India",
+        timeout=30000,
+    )
+    await page.wait_for_timeout(4000)
+    for card in await page.query_selector_all(".job-card, .job-listing, [class*='job'], tr.jobrow"):
+        try:
+            t_el = await card.query_selector("a, .job-title, h3, td.jobtitle")
+            if not t_el:
+                continue
+            title = (await t_el.inner_text()).strip()
+            if not any(k in title.lower() for k in ["salesforce", "lwc", "apex", "crm", "cpq"]):
+                continue
+            href = await t_el.get_attribute("href") or ""
+            if not href.startswith("http"):
+                href = "https://www.tcs.com" + href
+            d_el = await card.query_selector(".date, .posted, time, td.date")
+            age_txt = (await d_el.inner_text()).strip() if d_el else ""
+            h = parse_age_hours(age_txt)
+            if is_recent(h):
+                jobs.append(make_job(title, "TCS", "TCS Careers", href, age_txt, "India", h))
+        except Exception:
+            continue
+    print(f"  TCS Careers '{keyword}': {len(jobs)}")
+    return jobs
+
+
+async def scrape_salesforce_careers(page: Page, keyword: str) -> list[dict]:
+    """Salesforce official careers site"""
+    jobs = []
+    kw = keyword.replace(" ", "+")
+    await safe_goto(
+        page,
+        f"https://salesforce.wd12.myworkdayjobs.com/External_Career_Site?q={kw}&locationCountry=IND",
+        timeout=30000,
+    )
+    await page.wait_for_timeout(4000)
+    for card in await page.query_selector_all("[data-automation-id='jobPostingTitleLink'], .WDWJ a, li[class*='job']"):
+        try:
+            title = (await card.inner_text()).strip()
+            href  = await card.get_attribute("href") or ""
+            if not href.startswith("http"):
+                href = "https://salesforce.wd12.myworkdayjobs.com" + href
+            if title:
+                jobs.append(make_job(title, "Salesforce", "Salesforce Careers", href, "Recent", "India", 0.0))
+        except Exception:
+            continue
+    print(f"  Salesforce Careers '{keyword}': {len(jobs)}")
     return jobs
 
 
@@ -676,20 +953,43 @@ async def main():
 
     all_jobs: list[dict] = []
 
-    # API scrapers run without a browser — faster, parallel
+    # ── Phase 1: API scrapers (no browser, run in parallel) ──────────────────
     print("[API scrapers — no browser]")
     api_results = await asyncio.gather(
         scrape_greenhouse_api(),
         scrape_lever_api(),
         scrape_workable_api(),
         scrape_ashby_api(),
+        scrape_workday_api(),
+        scrape_smartrecruiters_api(),
+        scrape_icims_api(),
     )
     for r in api_results:
         all_jobs.extend(r)
 
-    # Browser scrapers — one context per scraper per keyword
+    # ── Phase 2: Browser scrapers (one context per scraper per keyword) ───────
     async with async_playwright() as pw:
         browser = await pw.chromium.launch(headless=True)
+
+        # Company career pages — keyword-independent, run once
+        print("\n[Company career pages]")
+        async def run_once(fn):
+            ctx = await browser.new_context(user_agent=UA)
+            pg  = await ctx.new_page()
+            try:
+                return await fn(pg, "salesforce")
+            except Exception as e:
+                print(f"  {fn.__name__} error: {e}")
+                return []
+            finally:
+                await ctx.close()
+
+        career_results = await asyncio.gather(
+            run_once(scrape_tcs_careers),
+            run_once(scrape_salesforce_careers),
+        )
+        for r in career_results:
+            all_jobs.extend(r)
 
         for keyword in KEYWORDS:
             print(f"\n[{keyword}]")
