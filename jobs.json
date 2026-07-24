@@ -1,345 +1,13 @@
 {
   "jobs": [
     {
-      "title": "Salesforce Consultant",
-      "company": "Atain",
-      "platform": "LinkedIn",
-      "location": "Gurugram, Haryana, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-consultant-at-atain-4443120118?position=1&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=KPdRMdhZjI3AAU3epaGnNQ%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Sr. Software Engineer, Sales",
-      "company": "Docusign",
-      "platform": "LinkedIn",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/sr-software-engineer-sales-at-docusign-4444306188?position=2&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=lmxoOgRwaJtOAQwAzJ%2FaHw%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Manager Applications Development, Salesforce",
-      "company": "Paylocity",
-      "platform": "LinkedIn",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/manager-applications-development-salesforce-at-paylocity-4443752537?position=3&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=521%2FmroWqQWc%2FKTlMf7nLA%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "AI Architect - Business Applications, LinkedIn Marketing Solutions",
-      "company": "Bullpen Capital",
-      "platform": "LinkedIn",
-      "location": "Rajkot, Gujarat, India",
-      "url": "https://in.linkedin.com/jobs/view/ai-architect-business-applications-linkedin-marketing-solutions-at-bullpen-capital-4444914519?position=4&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=hM6VH1Y4JSDqNfcDWTZOIA%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Senior Consultant - Tech Consulting - National - CNS - TC - DIGITAL ENGINEERING - Bangalore",
-      "company": "EY",
-      "platform": "LinkedIn",
-      "location": "Mumbai, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-consultant-tech-consulting-national-cns-tc-digital-engineering-bangalore-at-ey-4431930945?position=5&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=f0SjDY1qZZ52WwgakKdvtA%3D%3D",
-      "posted": "2026-07-21",
-      "age_days": 3
-    },
-    {
-      "title": "Sr. Salesforce Developer",
-      "company": "Infinite Computer Solutions",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/sr-salesforce-developer-at-infinite-computer-solutions-4444717471?position=6&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=jHVONMY4vvLuGRlcVY3ZVA%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Senior Salesforce Developer-Sales Cloud/Service Cloud",
-      "company": "Caterpillar Inc.",
-      "platform": "LinkedIn",
-      "location": "Bengaluru East, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-sales-cloud-service-cloud-at-caterpillar-inc-4442997940?position=7&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=IptqEf1eoIMT6pkBKeWD4g%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Sr Salesforce Developer",
-      "company": "The Economist",
-      "platform": "LinkedIn",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/sr-salesforce-developer-at-the-economist-4441513138?position=8&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=djccaO%2BycDCrlQlJ2y3JIA%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Senior Salesforce Developer_India",
-      "company": "Globant",
-      "platform": "LinkedIn",
-      "location": "Pune Division, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-india-at-globant-4435530704?position=9&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=%2BuO4e3I8xm9MhABy7VSt9g%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Senior Salesforce Developer \u2013 AI & Agentforce",
-      "company": "mindZvue",
-      "platform": "LinkedIn",
-      "location": "Indore, Madhya Pradesh, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-%E2%80%93-ai-agentforce-at-mindzvue-4443489967?position=10&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=g23lEFu%2FV4of%2FO7rV8kg3g%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Senior Salesforce Developer",
-      "company": "Emeritus",
-      "platform": "LinkedIn",
-      "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-emeritus-4435551428?position=12&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=OnPeBOTUaRyIMv1njVaveQ%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Senior Salesforce Developer",
-      "company": "ServiceTitan",
-      "platform": "LinkedIn",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-servicetitan-4436453020?position=13&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=UrVOa%2Fr8s67u%2BCrhVaoVvA%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Sr. Salesforce Developer",
-      "company": "Grazitti Interactive",
-      "platform": "LinkedIn",
-      "location": "Panchkula, Haryana, India",
-      "url": "https://in.linkedin.com/jobs/view/sr-salesforce-developer-at-grazitti-interactive-4444234603?position=15&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=U3BJZMtP2Rn4%2BmzCJ%2FP%2FEg%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Senior Platform Developer, Commercial Systems - Salesforce",
-      "company": "Grab",
-      "platform": "LinkedIn",
-      "location": "Bengaluru East, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-platform-developer-commercial-systems-salesforce-at-grab-4443132272?position=16&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=pLe54xpX77iS7gnr7TSYWA%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Senior Salesforce developer",
-      "company": "FCM Travel India",
-      "platform": "LinkedIn",
-      "location": "Noida, Uttar Pradesh, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-fcm-travel-india-4443796181?position=17&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=DJsOjB8%2FlGh9Jt9l9zuQCA%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Senior Salesforce Developer",
-      "company": "algoleap",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-algoleap-4422282443?position=18&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=ebCIYGZWI2QV3uQa1q7jXw%3D%3D",
-      "posted": "2026-07-21",
-      "age_days": 3
-    },
-    {
-      "title": "Senior Salesforce / SFDC Developers / Consultant",
-      "company": "Dhruvsoft",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-sfdc-developers-consultant-at-dhruvsoft-4442669720?position=19&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=CHa5SN%2ByJgPDQAlXVE21TA%3D%3D",
-      "posted": "2026-07-21",
-      "age_days": 3
-    },
-    {
-      "title": "Senior Salesforce Developer",
-      "company": "Myridius",
-      "platform": "LinkedIn",
-      "location": "Pune City, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-myridius-4444404948?position=20&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=EOpi%2Fq%2FBOVf2n1bOvAHbHg%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Senior Salesforce Developer(7+ years)",
-      "company": "MindBrain",
-      "platform": "LinkedIn",
-      "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-7%2B-years-at-mindbrain-4444073880?position=21&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=tRWikSdsrjaB9KbItxRTag%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Senior Salesforce Developer",
-      "company": "Obrimo Technologies",
-      "platform": "LinkedIn",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-obrimo-technologies-4444322450?position=22&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=pFHYVoOJMehibnhWxpJLoQ%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Senior Salesforce Developer, AI & Agentforce",
-      "company": "Plative",
-      "platform": "LinkedIn",
-      "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-ai-agentforce-at-plative-4441805397?position=23&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=9cqoRlOBU8XgGS%2FKkQTl4g%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Senior Salesforce Developer \u2013 Freelance | Remote",
-      "company": "ThreatXIntel",
-      "platform": "LinkedIn",
-      "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-%E2%80%93-freelance-remote-at-threatxintel-4444328187?position=24&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=uqd8p1wR4%2BTXvMssNm6VDQ%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Senior Salesforce Developer - Service & Experience Cloud",
-      "company": "NTT DATA North America",
-      "platform": "LinkedIn",
-      "location": "Greater Delhi Area",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-service-experience-cloud-at-ntt-data-north-america-4444956879?position=25&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=xBEnpH3be3EBJpAiXdfkQw%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Senior Salesforce Developer",
-      "company": "Crowe Capability Center \u2013 India",
-      "platform": "LinkedIn",
-      "location": "Greater Hyderabad Area",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-crowe-capability-center-%E2%80%93-india-4443528095?position=26&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=1y7xggmtpBFAhQmA9i0ysw%3D%3D",
-      "posted": "2026-07-21",
-      "age_days": 3
-    },
-    {
-      "title": "Senior Salesforce Developer",
-      "company": "Lorven Technologies Inc.",
-      "platform": "LinkedIn",
-      "location": "Chennai, Tamil Nadu, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-lorven-technologies-inc-4444096751?position=27&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=4kYWeFezX0tL0g%2FLJMriow%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Salesforce - Senior Engineer",
-      "company": "Milestone Technologies, Inc.",
-      "platform": "LinkedIn",
-      "location": "Greater Bengaluru Area",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-senior-engineer-at-milestone-technologies-inc-4442980985?position=28&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=gBiiQUVhP%2FqzteeO3PdKyA%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Sr. Salesforce Developer- Contract",
-      "company": "Gravity Infosolutions, Inc.",
-      "platform": "LinkedIn",
-      "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/sr-salesforce-developer-contract-at-gravity-infosolutions-inc-4444313540?position=29&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=%2Fe8xcsCAnx4h3FEmAVzvJQ%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Senior Salesforce Developer - Experience Portal(Experience Cloud)",
-      "company": "PAR Technology",
-      "platform": "LinkedIn",
-      "location": "Jaipur, Rajasthan, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-experience-portal-experience-cloud-at-par-technology-4426240081?position=30&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=g4tucmQBBGN%2FbvuW8YwoCw%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Lead Salesforce Developer",
-      "company": "PamTen Inc",
-      "platform": "LinkedIn",
-      "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/lead-salesforce-developer-at-pamten-inc-4443816537?position=31&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=L7%2FE9J5Z8UemaGUWaw%2FMTw%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Senior Salesforce Developer/Architect (Bangalore)",
-      "company": "Lambda",
-      "platform": "LinkedIn",
-      "location": "Bangalore Urban, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-architect-bangalore-at-lambda-4441076718?position=32&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=KfQWwus%2BOHy1QQamdfGmYw%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Senior Salesforce Engineer - Pune",
-      "company": "iSchoolConnect",
-      "platform": "LinkedIn",
-      "location": "Pune Division, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-engineer-pune-at-ischoolconnect-4443882010?position=33&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=sRYYzv7KWNc5KKRo%2FPprRg%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Sr Lead - SFDC Agentforce",
-      "company": "Birlasoft",
-      "platform": "LinkedIn",
-      "location": "Noida, Uttar Pradesh, India",
-      "url": "https://in.linkedin.com/jobs/view/sr-lead-sfdc-agentforce-at-birlasoft-4425270942?position=34&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=6JwBD91npbMaBzyeQ5A1cg%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Salesforce Developer",
-      "company": "ACS International India Pvt. Ltd. (ACSII)",
-      "platform": "LinkedIn",
-      "location": "Pune Division, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-acs-international-india-pvt-ltd-acsii-4444043442?position=35&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=H8NX7fTmDpPRQpgrz9%2FpIg%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Sr. Salesforce Developer (CPQ)",
-      "company": "Grazitti Interactive",
-      "platform": "LinkedIn",
-      "location": "Panchkula, Haryana, India",
-      "url": "https://in.linkedin.com/jobs/view/sr-salesforce-developer-cpq-at-grazitti-interactive-4444236608?position=36&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=aKV0akeDMfeCWWeOfUW3jQ%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Sr Salesforce Developer - VOIS",
-      "company": "VOIS",
-      "platform": "LinkedIn",
-      "location": "Pune Division, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/sr-salesforce-developer-vois-at-vois-4436602038?position=39&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=uuVwwOijSfvuw%2FKLIGgjmg%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Service Specialist, Salesforce Development",
-      "company": "Valmet",
-      "platform": "LinkedIn",
-      "location": "Pune Division, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/service-specialist-salesforce-development-at-valmet-4444461721?position=42&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=WhvpF%2Fc5LnaPhMfo0lNhpA%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Salesforce Administrator III",
-      "company": "Thermo Fisher Scientific",
-      "platform": "LinkedIn",
-      "location": "Bengaluru East, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-administrator-iii-at-thermo-fisher-scientific-4442956738?position=43&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=JbYwfyWKXP51E89h3yqqew%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Salesforce Conga CLM Developer",
-      "company": "Ekloud, Inc.",
-      "platform": "LinkedIn",
-      "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-conga-clm-developer-at-ekloud-inc-4444912206?position=44&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=zQiBzpRuGBTPCLYzvqupWg%3D%3D",
-      "posted": "2026-07-24",
+      "title": "Enterprise Solution Architect - Billing, CPQ",
+      "company": "Zuora",
+      "platform": "Greenhouse",
+      "location": "Remote - United States",
+      "url": "https://boards.greenhouse.io/zuora/jobs/8000380?gh_jid=8000380",
+      "posted": "2026-07-20T13:51:30-04:00",
+      "age_hours": 0.0,
       "age_days": 0
     },
     {
@@ -347,80 +15,119 @@
       "company": "Accenture in India",
       "platform": "LinkedIn",
       "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/custom-software-engineer-at-accenture-in-india-4416439655?position=45&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=UbjDt%2Bf0ZwQNiUz2uRBnkQ%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/custom-software-engineer-at-accenture-in-india-4416439655?position=2&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=s7DHcRNSbuCQNZHQ1UnhNg%3D%3D",
       "posted": "2026-07-24",
+      "age_hours": 0.0,
       "age_days": 0
-    },
-    {
-      "title": "Salesforce Senior Advisory Architect",
-      "company": "Salesforce",
-      "platform": "LinkedIn",
-      "location": "Pune City, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-senior-advisory-architect-at-salesforce-4397791454?position=46&pageNum=0&refId=MzIFeQB6pJNLqOPbYSM52g%3D%3D&trackingId=rMXZ4GQJZ%2Bd6DmtV7p%2Fm9A%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Nitin Pawar",
-      "company": "| Talent Acquisition | Hiring Next-Gen Leaders at IGT Solutions | Certified Naukri & LinkedIn Recruiter | Psychometric Behavior Assessor |\u2026",
-      "platform": "LinkedIn",
-      "location": "India",
-      "url": "https://in.linkedin.com/in/nitinpawar1986",
-      "posted": "Recent",
-      "age_days": 0
-    },
-    {
-      "title": "Consultant - Tech Consulting - National - CNS - TC - Digital Engineering - New Delhi",
-      "company": "EY",
-      "platform": "LinkedIn",
-      "location": "Delhi, India",
-      "url": "https://in.linkedin.com/jobs/view/consultant-tech-consulting-national-cns-tc-digital-engineering-new-delhi-at-ey-4441050358?position=1&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=eGhmqOXnFjUPXoLDA1Alzw%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
     },
     {
       "title": "Salesforce Developer",
       "company": "Riskonnect, Inc.",
       "platform": "LinkedIn",
       "location": "Mangaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-riskonnect-inc-4427508170?position=3&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=KdukeowXRUSej7PfUIKJRA%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-riskonnect-inc-4427508170?position=3&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=pUFN4cql5E%2BWBp1bpgV9PQ%3D%3D",
       "posted": "2026-07-24",
+      "age_hours": 0.0,
       "age_days": 0
     },
     {
       "title": "Salesforce Developer",
-      "company": "Bajaj Broking",
+      "company": "ACS International India Pvt. Ltd. (ACSII)",
       "platform": "LinkedIn",
-      "location": "Pune District, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-bajaj-broking-4441025751?position=6&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=jakXRMeUTE3amZVzh2z7tA%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-acs-international-india-pvt-ltd-acsii-4444064154?position=9&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=zL6pZf89ZLeylyX%2FoinNXg%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Salesforce Developer",
+      "company": "Tata Consultancy Services",
+      "platform": "LinkedIn",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-tata-consultancy-services-4444306122?position=10&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=IPKHUsrMTvsC4G86wbPfKw%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Senior Salesforce Developer",
+      "company": "Emeritus",
+      "platform": "LinkedIn",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-emeritus-4435551428?position=27&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=71OYkkfxF%2FiPN7WbUViy3w%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Software Engineer-Salesforce",
+      "company": "PTC",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/software-engineer-salesforce-at-ptc-4444902923?position=28&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=grF6jKH7bnjUiyaV9I6gcA%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Application Developer - Salesforce",
+      "company": "Cargill",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/application-developer-salesforce-at-cargill-4441580256?position=29&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=jx6%2F%2BzxdNRcAdlUF8REvHw%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Salesforce Developer",
+      "company": "Live Connections",
+      "platform": "LinkedIn",
+      "location": "Chennai, Tamil Nadu, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-live-connections-4444332192?position=30&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=sz13otUxsHRojf6%2Fxxu5fA%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Senior Software Engineer I",
+      "company": "RELX",
+      "platform": "LinkedIn",
+      "location": "Mumbai Metropolitan Region",
+      "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-i-at-relx-4444340716?position=48&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=vEv8nadMMzqfIeE2hF4k2Q%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Developer III - Enterprise Solutions",
+      "company": "UST",
+      "platform": "LinkedIn",
+      "location": "Kochi, Kerala, India",
+      "url": "https://in.linkedin.com/jobs/view/developer-iii-enterprise-solutions-at-ust-4441577873?position=60&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=6wm0n5K3wClXhOB50ndkDw%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
     },
     {
       "title": "Senior Technical Consultant",
       "company": "Salesforce",
       "platform": "LinkedIn",
       "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-technical-consultant-at-salesforce-4444949986?position=7&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=K08pmWB%2BKdLBggLaMz2lxQ%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/senior-technical-consultant-at-salesforce-4444949986?position=7&pageNum=0&refId=dmlOHC1tMICc9t9u%2B8s90Q%3D%3D&trackingId=qGP8p%2BEGqqUrbUyX1utwgw%3D%3D",
       "posted": "2026-07-24",
+      "age_hours": 0.0,
       "age_days": 0
-    },
-    {
-      "title": "Salesforce Developer",
-      "company": "AllianceBernstein",
-      "platform": "LinkedIn",
-      "location": "Pune Division, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-alliancebernstein-4416605230?position=8&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=5WuISZHGSE5t4aVWR46x%2Bg%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
     },
     {
       "title": "Senior Salesforce Expert",
       "company": "Siemens Energy",
       "platform": "LinkedIn",
       "location": "Pune Division, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-expert-at-siemens-energy-4435057539?position=11&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=%2Ba1%2BXU8uI%2BblZ6AEYrkSlw%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-expert-at-siemens-energy-4435057539?position=11&pageNum=0&refId=dmlOHC1tMICc9t9u%2B8s90Q%3D%3D&trackingId=d9duFvpf8oNfTZdPW%2BAT0w%3D%3D",
       "posted": "2026-07-24",
+      "age_hours": 0.0,
       "age_days": 0
     },
     {
@@ -428,8 +135,319 @@
       "company": "WSA \u2013 Wonderful Sound for All",
       "platform": "LinkedIn",
       "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/specialist-%E2%80%93-salesforce-crm-at-wsa-%E2%80%93-wonderful-sound-for-all-4444333213?position=12&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=Few8oHEyEKrZp1vpkHBMqQ%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/specialist-%E2%80%93-salesforce-crm-at-wsa-%E2%80%93-wonderful-sound-for-all-4444333213?position=12&pageNum=0&refId=dmlOHC1tMICc9t9u%2B8s90Q%3D%3D&trackingId=%2ByCxmZ4Z0Ou1znjGjSWzug%3D%3D",
       "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Tech Process Specialist - TOMO - Tech Admin & Development",
+      "company": "Google Operations Center",
+      "platform": "LinkedIn",
+      "location": "Greater Hyderabad Area",
+      "url": "https://in.linkedin.com/jobs/view/tech-process-specialist-tomo-tech-admin-development-at-google-operations-center-4444325796?position=32&pageNum=0&refId=dmlOHC1tMICc9t9u%2B8s90Q%3D%3D&trackingId=IeRScjfiG4NigMlqEZVclg%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Senior Salesforce Developer - Experience Portal(Experience Cloud)",
+      "company": "PAR Technology",
+      "platform": "LinkedIn",
+      "location": "Jaipur, Rajasthan, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-experience-portal-experience-cloud-at-par-technology-4426240081?position=52&pageNum=0&refId=dmlOHC1tMICc9t9u%2B8s90Q%3D%3D&trackingId=zTkJiVO9oQ7usVGVHkcvEQ%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Manager, Salesforce Development",
+      "company": "Teach For India",
+      "platform": "LinkedIn",
+      "location": "Mumbai Metropolitan Region",
+      "url": "https://in.linkedin.com/jobs/view/manager-salesforce-development-at-teach-for-india-4444946768?position=54&pageNum=0&refId=dmlOHC1tMICc9t9u%2B8s90Q%3D%3D&trackingId=PfaUcsOK7BIFNATxYM31AA%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Application Lead",
+      "company": "Accenture in India",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/application-lead-at-accenture-in-india-4420753838?position=30&pageNum=0&refId=X7z%2B9t4JM1WVpCJNeAhgpQ%3D%3D&trackingId=IMBtajovR%2F97xx9s547urg%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Senior Salesforce Engineer",
+      "company": "Altera",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-engineer-at-altera-4415501741?position=4&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=aMl52FMQp5iI7i%2FooY5Ccg%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Salesforce Developer \u2013 Revenue Cloud (CPQ & Billing)",
+      "company": "Digile",
+      "platform": "LinkedIn",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-%E2%80%93-revenue-cloud-cpq-billing-at-digile-4398617313?position=6&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=c9CRCd%2FoLrGGuqlrXpaLeQ%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Salesforce CPQ Business Analyst",
+      "company": "Simpliigence",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-cpq-business-analyst-at-simpliigence-4444315704?position=7&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=D4%2FRFGuu%2BcdjFl2O8%2FMjjw%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Salesforce Conga CLM Developer",
+      "company": "Ekloud, Inc.",
+      "platform": "LinkedIn",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-conga-clm-developer-at-ekloud-inc-4444912206?position=14&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=QvN6eGfPeM1xx3kKcO2cdg%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Business Systems Analyst III",
+      "company": "Aditi Consulting",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/business-systems-analyst-iii-at-aditi-consulting-4444965513?position=15&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=v4UAtkWTWU5jnkJDjEtsdw%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Senior Salesforce Developer",
+      "company": "ServiceTitan",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-servicetitan-4436453020?position=22&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=MgSlKcqdQzOYGfFPVIaINg%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Salesforce Manager",
+      "company": "Zelis",
+      "platform": "LinkedIn",
+      "location": "Greater Hyderabad Area",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-manager-at-zelis-4405539500?position=23&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=WBC%2BtED%2Fu5qCk7nUGZbF7g%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Sales Operations Analyst",
+      "company": "HCLTech",
+      "platform": "LinkedIn",
+      "location": "Noida, Uttar Pradesh, India",
+      "url": "https://in.linkedin.com/jobs/view/sales-operations-analyst-at-hcltech-4441816151?position=25&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=7Hw%2FUWe2GGPnmY0iDIlj3A%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Technical Engineering Manager - Salesforce",
+      "company": "Trimble Inc.",
+      "platform": "LinkedIn",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/technical-engineering-manager-salesforce-at-trimble-inc-4386544035?position=27&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=zUDGT%2FA%2B0Y3rIELQTzzzLg%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Sales Operations - Process & Technology Specialist",
+      "company": "UL Solutions",
+      "platform": "LinkedIn",
+      "location": "Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/sales-operations-process-technology-specialist-at-ul-solutions-4441580464?position=29&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=ZVRiOX8lz461JmFZ6BAYiw%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Business Analyst",
+      "company": "Virtusa",
+      "platform": "LinkedIn",
+      "location": "Andhra Pradesh, India",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-virtusa-4441584586?position=38&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=ob7JUB%2FvuOPPITrg4xUZ%2BQ%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Salesforce QA",
+      "company": "Virtusa",
+      "platform": "LinkedIn",
+      "location": "Andhra Pradesh, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-qa-at-virtusa-4441822178?position=45&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=rmUrQhhAXdl%2F1%2B6HSgJBNw%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Resource Manager",
+      "company": "ACA Group",
+      "platform": "LinkedIn",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/resource-manager-at-aca-group-4441800673?position=47&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=Occ9w505FfVRflTCvG4%2Bow%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Lead Application Developer, Salesforce",
+      "company": "Qualys",
+      "platform": "LinkedIn",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/lead-application-developer-salesforce-at-qualys-4394497251?position=58&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=DcmwY6e2lUYXdOQ0trmimw%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Salesforce Developer",
+      "company": "INTO University Partnerships",
+      "platform": "LinkedIn",
+      "location": "Greater Bengaluru Area",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-into-university-partnerships-4432551490?position=27&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=OmrFBXIz%2Bydkg44T9F3RTA%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Tech Lead Salesforce Developer",
+      "company": "Empiric",
+      "platform": "LinkedIn",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/tech-lead-salesforce-developer-at-empiric-4444914302?position=42&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=EWH52Ky9b0Wrs12tbvLGNg%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Salesforce Developer (Architect)",
+      "company": "Talentgigs",
+      "platform": "LinkedIn",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-architect-at-talentgigs-4444324736?position=43&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=kJ8HCi6ughjY4vkmAUUj6A%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Salesforce Agentforce Developer",
+      "company": "OptiLnX",
+      "platform": "LinkedIn",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-agentforce-developer-at-optilnx-4444324288?position=45&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=2QzLZ6Y%2BTru75q%2FFd4s0SQ%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Salesforce Technical Architect - Health Cloud / Life science",
+      "company": "Talentgigs",
+      "platform": "LinkedIn",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-technical-architect-health-cloud-life-science-at-talentgigs-4444088974?position=49&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=rWfzJyEhDJJB8EbQTt2roQ%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Senior Salesforce Adminstrator",
+      "company": "ACS International India Pvt. Ltd. (ACSII)",
+      "platform": "LinkedIn",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-adminstrator-at-acs-international-india-pvt-ltd-acsii-4444046381?position=56&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=IWZCh8oz0XP12ha0DxVFiQ%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Salesforce Architect",
+      "company": "Natus Sensory",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-architect-at-natus-sensory-4442983454?position=57&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=tqjE3ufaWs%2B5b9VUVTLi7g%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "AMRIT RAY",
+      "company": "Talent Acquisition Executive @ Deloitte",
+      "platform": "LinkedIn",
+      "location": "India",
+      "url": "https://in.linkedin.com/in/amritray99",
+      "posted": "Recent",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "SALESFORCE ADMINISTRATOR & PLATFORM SUPPORT SPECIALIST - VOIS",
+      "company": "VOIS",
+      "platform": "LinkedIn",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-administrator-platform-support-specialist-vois-at-vois-4441805651?position=4&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=QtuZD9a%2Bxw17AfY8Q7vJ7A%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Salesforce Administrator with Omni Channel-10+ years",
+      "company": "Maneva Consulting Pvt. Ltd.",
+      "platform": "LinkedIn",
+      "location": "Bangalore Urban, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-administrator-with-omni-channel-10%2B-years-at-maneva-consulting-pvt-ltd-4441931414?position=25&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=ePFenQ0AhgvE56tE6OSJLg%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Salesforce Agentforce Specialist - Contract",
+      "company": "Gravity Infosolutions, Inc.",
+      "platform": "LinkedIn",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-agentforce-specialist-contract-at-gravity-infosolutions-inc-4435416286?position=39&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=3FImn9lpdIo8Xu%2FnP4iIbg%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Sprinklr",
+      "company": "Tata Consultancy Services",
+      "platform": "LinkedIn",
+      "location": "Pune City, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/sprinklr-at-tata-consultancy-services-4444332491?position=52&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=oGCoZ0umLWm1yrHqHyEDFw%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
+      "age_days": 0
+    },
+    {
+      "title": "Salesforce Solution Analyst",
+      "company": "bp",
+      "platform": "LinkedIn",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-solution-analyst-at-bp-4444072874?position=60&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=xqFVa9ReWHdyLAaIUm97AQ%3D%3D",
+      "posted": "2026-07-24",
+      "age_hours": 0.0,
       "age_days": 0
     },
     {
@@ -437,44 +455,39 @@
       "company": "Celebal Technologies",
       "platform": "LinkedIn",
       "location": "Jaipur, Rajasthan, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-celebal-technologies-4443460779?position=13&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=9xQUuw88d4e1KkQ71%2FYi2Q%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-celebal-technologies-4443460779?position=5&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=X4nma4xm8DAqkhTfDOh9SQ%3D%3D",
       "posted": "2026-07-23",
+      "age_hours": 24.0,
       "age_days": 1
     },
     {
-      "title": "Salesforce Developer",
-      "company": "Penta Consulting",
+      "title": "Salesforce Developer - VOIS",
+      "company": "VOIS",
       "platform": "LinkedIn",
-      "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-penta-consulting-4443945618?position=14&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=sOwv5%2Ba8nSB7NeCeaaB7hA%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-vois-at-vois-4435993193?position=15&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=TZbFXY%2BcqMnzxFdpBV8D9g%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
     },
     {
-      "title": "Salesforce Developer",
-      "company": "Carrier",
+      "title": "Salesforce Developer (Universal Robots, Bangalore - India)",
+      "company": "Universal Robots",
       "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-carrier-4441322468?position=15&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=MRTq6OzezarvZpmwKarFVg%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-universal-robots-bangalore-india-at-universal-robots-4432380574?position=21&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=z%2BjLc3TQScahY2A%2FhkypWQ%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
     },
     {
-      "title": "Salesforce Developer",
-      "company": "Tata Consultancy Services",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-tata-consultancy-services-4444306122?position=16&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=vJhPHmTbI9RzV62BJbvszQ%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Salesforce Developer",
-      "company": "Deloitte",
+      "title": "SDE II - Salesforce AI.",
+      "company": "InMobi Advertising",
       "platform": "LinkedIn",
       "location": "Lucknow, Uttar Pradesh, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-deloitte-4441096478?position=17&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=q%2BhCC%2FsN9hHQmCkXStTjow%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/sde-ii-salesforce-ai-at-inmobi-advertising-4444474263?position=23&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=Y%2F5Sb0PPt3GaIB1hMSoy%2Fw%3D%3D",
       "posted": "2026-07-23",
+      "age_hours": 24.0,
       "age_days": 1
     },
     {
@@ -482,89 +495,19 @@
       "company": "Automotive Robotics Ind Private Limited",
       "platform": "LinkedIn",
       "location": "Chennai, Tamil Nadu, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-automotive-robotics-ind-private-limited-4441511648?position=21&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=hfBRHhRJvG8Tap2iofRolQ%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-automotive-robotics-ind-private-limited-4441511648?position=26&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=eQuVhJQtLWzyl0Zi3MIf9Q%3D%3D",
       "posted": "2026-07-23",
+      "age_hours": 24.0,
       "age_days": 1
     },
     {
-      "title": "Senior Developer (Salesforce, Oracle DB)",
-      "company": "Emerson",
+      "title": "Salesforce - Senior Engineer",
+      "company": "Milestone Technologies, Inc.",
       "platform": "LinkedIn",
-      "location": "Chandigarh, Chandigarh, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-developer-salesforce-oracle-db-at-emerson-4443779895?position=22&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=Amn5wCqFFa%2B%2Fu%2BKuH5hKpw%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Salesforce Developer (Universal Robots, Bangalore - India)",
-      "company": "Universal Robots",
-      "platform": "LinkedIn",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-universal-robots-bangalore-india-at-universal-robots-4432380574?position=23&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=B9sdD6Hz4nxCDlALBDW6QA%3D%3D",
+      "location": "Kochi, Kerala, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-senior-engineer-at-milestone-technologies-inc-4441545830?position=31&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=LRTnRC%2Ftzp1aLARXh1aA%2BQ%3D%3D",
       "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Salesforce Developer",
-      "company": "Intuitive",
-      "platform": "LinkedIn",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-intuitive-4443530759?position=25&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=kLdngKYo3eKzF3xgE1zhbQ%3D%3D",
-      "posted": "2026-07-21",
-      "age_days": 3
-    },
-    {
-      "title": "Salesforce Developer",
-      "company": "Live Connections",
-      "platform": "LinkedIn",
-      "location": "Chennai, Tamil Nadu, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-live-connections-4444332192?position=26&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=8dmItsYGGE4VD1f%2BAlNwwA%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Salesforce Senior Developer/Consultant",
-      "company": "Infosys",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-senior-developer-consultant-at-infosys-4435018359?position=31&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=cut9Ood6DMKHlXCpp9C9GQ%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Tech Process Specialist - TOMO - Tech Admin & Development",
-      "company": "Google Operations Center",
-      "platform": "LinkedIn",
-      "location": "Greater Hyderabad Area",
-      "url": "https://in.linkedin.com/jobs/view/tech-process-specialist-tomo-tech-admin-development-at-google-operations-center-4444325796?position=32&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=K8uVEWPK7TCbrhKScKP4Ag%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Salesforce Service Cloud Solution Expert",
-      "company": "HTC Global Services",
-      "platform": "LinkedIn",
-      "location": "Chennai, Tamil Nadu, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-service-cloud-solution-expert-at-htc-global-services-4443946729?position=33&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=l1fNTzolYQaUkP5ikh%2FhuQ%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Salesforce Developer",
-      "company": "Zone IT Solutions",
-      "platform": "LinkedIn",
-      "location": "Jaipur, Rajasthan, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-zone-it-solutions-4443733794?position=38&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=3asafBiWrBrhFkHfl9T%2FiA%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Salesforce Developer - VOIS",
-      "company": "VOIS",
-      "platform": "LinkedIn",
-      "location": "Pune Division, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-vois-at-vois-4435993193?position=39&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=zCe2X4WFCDVDr4mfRioFgg%3D%3D",
-      "posted": "2026-07-23",
+      "age_hours": 24.0,
       "age_days": 1
     },
     {
@@ -572,35 +515,39 @@
       "company": "InfoVision Inc.",
       "platform": "LinkedIn",
       "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-infovision-inc-4444429011?position=42&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=DRyJUoNSW0WUt1pkQFfFwQ%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-infovision-inc-4444429011?position=38&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=4fAOPy%2FM7t0YqSIl9l1ROQ%3D%3D",
       "posted": "2026-07-23",
+      "age_hours": 24.0,
       "age_days": 1
     },
     {
-      "title": "Software Engineering Lead-Salesforce",
-      "company": "Optum India",
+      "title": "Senior Software Engineer",
+      "company": "Principal Financial Group",
       "platform": "LinkedIn",
       "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/software-engineering-lead-salesforce-at-optum-india-4443997989?position=44&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=gAzB9FS4itMFI%2FLyFiVgUQ%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Salesforce Engineer III",
-      "company": "ZoomInfo",
-      "platform": "LinkedIn",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-engineer-iii-at-zoominfo-4397792819?position=46&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=6iz34%2B4i9rUzVjkKxVdutg%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-at-principal-financial-group-4443866984?position=41&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=PYMCIkV1ETnbbW%2BW2BBvYQ%3D%3D",
       "posted": "2026-07-23",
+      "age_hours": 24.0,
       "age_days": 1
     },
     {
-      "title": "Technical Analyst - Salesforce",
-      "company": "Bunge",
+      "title": "Service Specialist, Salesforce Development",
+      "company": "Valmet",
       "platform": "LinkedIn",
-      "location": "Sahibzada Ajit Singh Nagar, Punjab, India",
-      "url": "https://in.linkedin.com/jobs/view/technical-analyst-salesforce-at-bunge-4444449402?position=47&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=0EQ0tLWp%2F%2FoFUP9tiU8uuQ%3D%3D",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/service-specialist-salesforce-development-at-valmet-4444461721?position=46&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=GOrg27PTU2ba8dm6jiMgVA%3D%3D",
       "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Sr. Salesforce Developer",
+      "company": "Grazitti Interactive",
+      "platform": "LinkedIn",
+      "location": "Panchkula, Haryana, India",
+      "url": "https://in.linkedin.com/jobs/view/sr-salesforce-developer-at-grazitti-interactive-4444234603?position=47&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=a26yKHUnQParglzx1F%2BjrQ%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
       "age_days": 1
     },
     {
@@ -608,53 +555,59 @@
       "company": "SES Satellites",
       "platform": "LinkedIn",
       "location": "Chennai, Tamil Nadu, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-development-at-ses-satellites-4434660662?position=49&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=1KBZL4mqZxo5lZ35I9SPeA%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-development-at-ses-satellites-4434660662?position=53&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=N41GI91xfK5%2FlQl08V6ryA%3D%3D",
       "posted": "2026-07-23",
+      "age_hours": 24.0,
       "age_days": 1
     },
     {
-      "title": "Salesforce Developer (8\u201310 Years)",
-      "company": "Ri8 Solution",
-      "platform": "LinkedIn",
-      "location": "Chennai, Tamil Nadu, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-8%E2%80%9310-years-at-ri8-solution-4443406261?position=50&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=CSi%2Be39SSuMOES020aDDTQ%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Senior Consultant - Tech Consulting - National - CNS - TC - Digital Engineering - Hyderabad",
-      "company": "EY",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-consultant-tech-consulting-national-cns-tc-digital-engineering-hyderabad-at-ey-4441044604?position=51&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=IwlSevIv96m%2BuBhLic1BYA%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "SDE II - Salesforce AI.",
-      "company": "InMobi Advertising",
+      "title": "Salesforce Developer",
+      "company": "Deloitte",
       "platform": "LinkedIn",
       "location": "Lucknow, Uttar Pradesh, India",
-      "url": "https://in.linkedin.com/jobs/view/sde-ii-salesforce-ai-at-inmobi-advertising-4444474263?position=52&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=Oc%2F0TReNIIxbZ7nmVmA9%2Bw%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-deloitte-4441096478?position=17&pageNum=0&refId=dmlOHC1tMICc9t9u%2B8s90Q%3D%3D&trackingId=QGNDuXASiW%2Bq8UvTIJvcAQ%3D%3D",
       "posted": "2026-07-23",
+      "age_hours": 24.0,
       "age_days": 1
     },
     {
-      "title": "Manager, Salesforce Development",
-      "company": "Teach For India",
+      "title": "Salesforce Senior Developer/Consultant",
+      "company": "Infosys",
       "platform": "LinkedIn",
-      "location": "Mumbai Metropolitan Region",
-      "url": "https://in.linkedin.com/jobs/view/manager-salesforce-development-at-teach-for-india-4444946768?position=55&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=WPoqC%2BBMKkLcapX4rTEFBw%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-senior-developer-consultant-at-infosys-4435018359?position=31&pageNum=0&refId=dmlOHC1tMICc9t9u%2B8s90Q%3D%3D&trackingId=iLjCKLa%2Fe9n2uzMTr%2BbxVg%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Salesforce Engineer III",
+      "company": "ZoomInfo",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-engineer-iii-at-zoominfo-4397792819?position=45&pageNum=0&refId=dmlOHC1tMICc9t9u%2B8s90Q%3D%3D&trackingId=chj7J22mFgROU8yom%2BFBAg%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Technical Analyst - Salesforce",
+      "company": "Bunge",
+      "platform": "LinkedIn",
+      "location": "Sahibzada Ajit Singh Nagar, Punjab, India",
+      "url": "https://in.linkedin.com/jobs/view/technical-analyst-salesforce-at-bunge-4444449402?position=46&pageNum=0&refId=dmlOHC1tMICc9t9u%2B8s90Q%3D%3D&trackingId=kQmfxK9RwlBSpJ4ibEpUiQ%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
     },
     {
       "title": "Salesforce Sales & Service Cloud",
       "company": "Tata Consultancy Services",
       "platform": "LinkedIn",
       "location": "Greater Bengaluru Area",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-sales-service-cloud-at-tata-consultancy-services-4443890353?position=56&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=3dblO6eDfdqBM1OESI2gDA%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-sales-service-cloud-at-tata-consultancy-services-4443890353?position=55&pageNum=0&refId=dmlOHC1tMICc9t9u%2B8s90Q%3D%3D&trackingId=2N09NzdS2NFgmKb6gb%2FtQA%3D%3D",
       "posted": "2026-07-23",
+      "age_hours": 24.0,
       "age_days": 1
     },
     {
@@ -662,431 +615,9 @@
       "company": "SRS Consulting Inc",
       "platform": "LinkedIn",
       "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-cpq-at-srs-consulting-inc-4444405381?position=57&pageNum=0&refId=tG20FZJGNVIRXNv4e5llUg%3D%3D&trackingId=dT%2FzqmYdP64URm8%2Bsfgnqw%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-cpq-at-srs-consulting-inc-4444405381?position=56&pageNum=0&refId=dmlOHC1tMICc9t9u%2B8s90Q%3D%3D&trackingId=8NzI3bcHlgEoMGsho57Hew%3D%3D",
       "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Boomi Technical Consultant - Remote",
-      "company": "M\u00fcller's Solutions",
-      "platform": "LinkedIn",
-      "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/boomi-technical-consultant-remote-at-m%C3%BCller-s-solutions-4443761229?position=2&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=SyvOTH3Ei65W0jX3I%2FHgjQ%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Technical IT Consultant",
-      "company": "EisnerAmper",
-      "platform": "LinkedIn",
-      "location": "Mumbai, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/technical-it-consultant-at-eisneramper-4444446216?position=3&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=W%2FDgFCJeZQio17WqlfdGCQ%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Senior Software Engineer",
-      "company": "New Balance",
-      "platform": "LinkedIn",
-      "location": "Pune/Pimpri-Chinchwad Area",
-      "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-at-new-balance-4436465547?position=4&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=UX6He%2B3AYv2DjBneYWfIIQ%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Technical Consultant",
-      "company": "Flexiple",
-      "platform": "LinkedIn",
-      "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/technical-consultant-at-flexiple-4444485631?position=5&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=Lx5YFk4Zem3EOzxOqlK3qg%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Inriver PIM & Coveo Technical Consultant / Developer",
-      "company": "Zensar Technologies",
-      "platform": "LinkedIn",
-      "location": "Pune Division, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/inriver-pim-coveo-technical-consultant-developer-at-zensar-technologies-4425053810?position=6&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=j92LmY8AE4kAXeUZYkYlYg%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Technical Consultant \u2014 E-Invoicing Implementation",
-      "company": "Bizoforce - The Innovation Platform Accelerating Digital Solutions for Enterprises",
-      "platform": "LinkedIn",
-      "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/technical-consultant-%E2%80%94-e-invoicing-implementation-at-bizoforce-the-innovation-platform-accelerating-digital-solutions-for-enterprises-4444497977?position=7&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=CgI6bWyiGTiyy3%2BuPutqmQ%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "CRM Technical Consultant",
-      "company": "Compusoft Advisors India Pvt. Ltd.",
-      "platform": "LinkedIn",
-      "location": "Thane, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/crm-technical-consultant-at-compusoft-advisors-india-pvt-ltd-4441585603?position=8&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=60PvYfKD%2FBSOjbdbF%2BFB7w%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Salesforce Solution Architect",
-      "company": "Milestone Technologies, Inc.",
-      "platform": "LinkedIn",
-      "location": "Kochi, Kerala, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-solution-architect-at-milestone-technologies-inc-4443100181?position=9&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=1PAO%2Fu4plFet4OuAQt5OwA%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Business Analyst, Microsoft 365",
-      "company": "Ralph Lauren",
-      "platform": "LinkedIn",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-microsoft-365-at-ralph-lauren-4441577942?position=10&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=VcGwPDXgJiAycdvtp9hEXQ%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Technical Consultant",
-      "company": "SHI Solutions India Pvt. Ltd.",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/technical-consultant-at-shi-solutions-india-pvt-ltd-4443907931?position=11&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=QCg0om2rTPXV4KH8%2BCxwpQ%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Technical Consultant - Oracle Apex -7854",
-      "company": "Fujitsu",
-      "platform": "LinkedIn",
-      "location": "Pune/Pimpri-Chinchwad Area",
-      "url": "https://in.linkedin.com/jobs/view/technical-consultant-oracle-apex-7854-at-fujitsu-4437768821?position=12&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=3V3JqRQaP2OjSv7G6u9RKw%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "SERVICENOW DEVELOPMENT_Technical Consultant",
-      "company": "Fujitsu",
-      "platform": "LinkedIn",
-      "location": "Pune/Pimpri-Chinchwad Area",
-      "url": "https://in.linkedin.com/jobs/view/servicenow-development-technical-consultant-at-fujitsu-4444421882?position=13&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=OHg28FwZNbOKJBq%2BAk5K0Q%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Technical Consultant",
-      "company": "Runmap Infotech Private Ltd.",
-      "platform": "LinkedIn",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/technical-consultant-at-runmap-infotech-private-ltd-4444907914?position=14&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=g95%2BXyCFvLzUZfkjC8Xohg%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Consultant / Sr. Consultant - ServiceNow Developer",
-      "company": "Blue Altair",
-      "platform": "LinkedIn",
-      "location": "Pune Division, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/consultant-sr-consultant-servicenow-developer-at-blue-altair-4444268746?position=15&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=RSb%2FCPO0iRzmfbG1DUJouA%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Moody\u2019s Technical Consultant - RAY",
-      "company": "Unison Group",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/moody%E2%80%99s-technical-consultant-ray-at-unison-group-4443791611?position=16&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=rgYYUueUysXOfJvSt3jcCQ%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "ERP Consultant-Technical",
-      "company": "Mphasis",
-      "platform": "LinkedIn",
-      "location": "Pune Division, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/erp-consultant-technical-at-mphasis-4416412803?position=17&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=WlcvcEr89hSs7B%2F02wgNUA%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "D365 Technical Consultant F/O",
-      "company": "Impetus Career Consultants",
-      "platform": "LinkedIn",
-      "location": "Gurugram, Haryana, India",
-      "url": "https://in.linkedin.com/jobs/view/d365-technical-consultant-f-o-at-impetus-career-consultants-4443813160?position=18&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=bcP4LgPouyuSYzPyWh9FAA%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Dynamics CRM Technical Consultant",
-      "company": "Infosys",
-      "platform": "LinkedIn",
-      "location": "Bengaluru East, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/dynamics-crm-technical-consultant-at-infosys-4442684487?position=19&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=c17cExN3%2FqRq6PSrbulE6A%3D%3D",
-      "posted": "2026-07-21",
-      "age_days": 3
-    },
-    {
-      "title": "Technical Consultant",
-      "company": "ModMed India",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/technical-consultant-at-modmed-india-4426624856?position=20&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=LJpe4ymFSKFf4%2FcRjEOugw%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "SerivceNow Technical Consultant",
-      "company": "Adroit India",
-      "platform": "LinkedIn",
-      "location": "Mumbai, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/serivcenow-technical-consultant-at-adroit-india-4441096747?position=22&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=YTRmstNwHA%2FbM7BXWOBYPA%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Senior Technical Consultant- Managed Services",
-      "company": "89 Solutions",
-      "platform": "LinkedIn",
-      "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/senior-technical-consultant-managed-services-at-89-solutions-4443790013?position=24&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=tYooBbkusIiMyP%2BMH7579g%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Technical Consultant",
-      "company": "ADP",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/technical-consultant-at-adp-4441806393?position=28&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=XHO0%2Bpgd5rxS0OMgVtXqXg%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Sr Software Engineer -Salesforce",
-      "company": "Mattel, Inc.",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/sr-software-engineer-salesforce-at-mattel-inc-4416697914?position=29&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=hrp4lCUMMWGOjjmiLcT%2FEg%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Guidewire Billing Centre- Consultant, Technical Transformation",
-      "company": "Deloitte",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/guidewire-billing-centre-consultant-technical-transformation-at-deloitte-4426623721?position=30&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=Bdk6V%2F52zUAkr%2BsuX2SdaA%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "ServiceNow Tester-BCM -Technical Consultant",
-      "company": "Fujitsu",
-      "platform": "LinkedIn",
-      "location": "Pune/Pimpri-Chinchwad Area",
-      "url": "https://in.linkedin.com/jobs/view/servicenow-tester-bcm-technical-consultant-at-fujitsu-4437785151?position=31&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=0BukMowtRQWgLxr0TRiQDA%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Sr Technical Consultant",
-      "company": "Egnyte",
-      "platform": "LinkedIn",
-      "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/sr-technical-consultant-at-egnyte-4417371122?position=32&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=X%2FDvRr%2BC6Sm5HkXcyi%2FGuw%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Senior Mulesoft Technical Consultant",
-      "company": "Dhruvsoft",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-mulesoft-technical-consultant-at-dhruvsoft-4442684219?position=33&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=uSGgzIwgLeAcb5r6TF%2BiQw%3D%3D",
-      "posted": "2026-07-21",
-      "age_days": 3
-    },
-    {
-      "title": "Technical Consultant",
-      "company": "NTT DATA North America",
-      "platform": "LinkedIn",
-      "location": "Bangalore Urban, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/technical-consultant-at-ntt-data-north-america-4425618360?position=34&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=MrN9wGJQPb6INqEy2oZC1g%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Senior Staff Engineer, ERP Workday (HCM / Financial Technical Consultant)",
-      "company": "Jobgether",
-      "platform": "LinkedIn",
-      "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/senior-staff-engineer-erp-workday-hcm-financial-technical-consultant-at-jobgether-4444902846?position=35&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=R%2FWkq7kdJ63H4RQlpCNSOg%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Dynamics 365 F&O Technical Consultant",
-      "company": "JMD Technologies Inc.",
-      "platform": "LinkedIn",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/dynamics-365-f-o-technical-consultant-at-jmd-technologies-inc-4443747900?position=36&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=rleoUy9Uua8FtGgppikYCg%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Senior Software Engineer, ITC",
-      "company": "Nike",
-      "platform": "LinkedIn",
-      "location": "Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-itc-at-nike-4444448855?position=37&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=VjiwMIjuMKRN6Q242UrFYg%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Senior ServiceNow Technical Consultant",
-      "company": "Milestone Technologies, Inc.",
-      "platform": "LinkedIn",
-      "location": "Mumbai, Maharashtra, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-servicenow-technical-consultant-at-milestone-technologies-inc-4440449994?position=38&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=FmNcFbn52gzLIOh92dj3Ng%3D%3D",
-      "posted": "2026-07-21",
-      "age_days": 3
-    },
-    {
-      "title": "Consultant - Tech Consulting - National - CNS - TC - SAP - Chennai",
-      "company": "EY",
-      "platform": "LinkedIn",
-      "location": "Chennai, Tamil Nadu, India",
-      "url": "https://in.linkedin.com/jobs/view/consultant-tech-consulting-national-cns-tc-sap-chennai-at-ey-4441592047?position=39&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=THIldoe%2Bbs8XXdHtLayl8A%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Consultant - Tech Consulting - National - CNS - TC - SAP - Hyderabad",
-      "company": "EY",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/consultant-tech-consulting-national-cns-tc-sap-hyderabad-at-ey-4443111318?position=40&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=ePANqKUAR6Iu2WYmll7fyg%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Workday Technical Consultant",
-      "company": "Infosys",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/workday-technical-consultant-at-infosys-4434616101?position=43&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=3BY1bgN0SeHXi2iZi0ykgg%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Senior Technical Consultant - Servicenow ITSM - 9551",
-      "company": "Fujitsu",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-technical-consultant-servicenow-itsm-9551-at-fujitsu-4444955353?position=44&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=U7j9Duxii9iCx0A7f1OKbQ%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "ServiceNow Platform Senior Developer",
-      "company": "Schneider Electric",
-      "platform": "LinkedIn",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/servicenow-platform-senior-developer-at-schneider-electric-4444280823?position=45&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=Ad4ANNuAfN8SgynTWq13ZA%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Business Data Analyst - Transact system(GL)",
-      "company": "NTT DATA North America",
-      "platform": "LinkedIn",
-      "location": "Noida, Uttar Pradesh, India",
-      "url": "https://in.linkedin.com/jobs/view/business-data-analyst-transact-system-gl-at-ntt-data-north-america-4436332924?position=47&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=0rT8mGe6ZNzKbxR5wY8t%2FA%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Business Analyst (Azure Data Engineering & ETL)",
-      "company": "Tesslogs IT Solutions",
-      "platform": "LinkedIn",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-azure-data-engineering-etl-at-tesslogs-it-solutions-4442990168?position=49&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=ObPvHbwkJfpxc9NfYU76xQ%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Salesforce Cloud Technical Consultant(Service Module)",
-      "company": "HTC Global Services",
-      "platform": "LinkedIn",
-      "location": "Chennai, Tamil Nadu, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-cloud-technical-consultant-service-module-at-htc-global-services-4443953283?position=50&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=2C3tYbL3kmjeW%2Fzsgl1YkQ%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Senior Software Engineer",
-      "company": "Appian",
-      "platform": "LinkedIn",
-      "location": "Chennai, Tamil Nadu, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-at-appian-4436713010?position=52&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=bsao6LgSYd%2FH5aR4WTb5XA%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Consultant - Tech Consulting - FS - CNS - TC - TECHNOLOGY STRATEGY & TRANSFORMATION - Bangalore",
-      "company": "EY",
-      "platform": "LinkedIn",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/consultant-tech-consulting-fs-cns-tc-technology-strategy-transformation-bangalore-at-ey-4441823091?position=55&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=c5xaNxB%2FDVddGYGcORLpwQ%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Senior Software Engineer",
-      "company": "SysCloud",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-at-syscloud-4443802524?position=56&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=L406Ds7yLH3qNsG4W7KdpQ%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Senior Software Engineer\u2013 ServiceNow (ITOM)",
-      "company": "ZEISS India",
-      "platform": "LinkedIn",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-software-engineer%E2%80%93-servicenow-itom-at-zeiss-india-4443833600?position=57&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=vTJVV1SyVFbjvNBTQeHn8w%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Jitterbit Technical Consultant",
-      "company": "Hypersoft Technologies Limited",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/jitterbit-technical-consultant-at-hypersoft-technologies-limited-4444907324?position=58&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=I%2FoVxNDTpqhomCHcMVsqbA%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Control-M Administrator_Technical Consultant",
-      "company": "Fujitsu",
-      "platform": "LinkedIn",
-      "location": "Pune/Pimpri-Chinchwad Area",
-      "url": "https://in.linkedin.com/jobs/view/control-m-administrator-technical-consultant-at-fujitsu-4444420989?position=59&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=18cGf7s2VyDHvK%2Fj2Y0jZA%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Senior Staff Engineer, ERP Workday (HCM / Financial Technical Consultant)",
-      "company": "Nagarro",
-      "platform": "LinkedIn",
-      "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/senior-staff-engineer-erp-workday-hcm-financial-technical-consultant-at-nagarro-4443879249?position=60&pageNum=0&refId=ZWvIQVxwNnBHZhFXP8wUHA%3D%3D&trackingId=eohjAlOR6LS1pvwU4RZvaA%3D%3D",
-      "posted": "2026-07-23",
+      "age_hours": 24.0,
       "age_days": 1
     },
     {
@@ -1094,131 +625,976 @@
       "company": "Tata Consultancy Services",
       "platform": "LinkedIn",
       "location": "Greater Bengaluru Area",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-lwc-developer-at-tata-consultancy-services-4444006093?position=4&pageNum=0&refId=C0KweUEWmt6fYTHEFC5cdw%3D%3D&trackingId=uM%2F%2F7aKdBXZfqiYAN%2FDt0g%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-lwc-developer-at-tata-consultancy-services-4444006093?position=6&pageNum=0&refId=X7z%2B9t4JM1WVpCJNeAhgpQ%3D%3D&trackingId=Xw201QI3xH7mbxNxAJFyTA%3D%3D",
       "posted": "2026-07-23",
+      "age_hours": 24.0,
       "age_days": 1
     },
     {
-      "title": "Senior Salesforce Engineer",
-      "company": "Altera",
+      "title": "Software Engineer",
+      "company": "Bajaj Finserv",
       "platform": "LinkedIn",
       "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-engineer-at-altera-4415501741?position=10&pageNum=0&refId=C0KweUEWmt6fYTHEFC5cdw%3D%3D&trackingId=bP2idLQhKTPr83QX09bCBw%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
+      "url": "https://in.linkedin.com/jobs/view/software-engineer-at-bajaj-finserv-4444706486?position=37&pageNum=0&refId=X7z%2B9t4JM1WVpCJNeAhgpQ%3D%3D&trackingId=dVjPjEeh29ajhlZo0CnwSQ%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Senior Salesforce Developer",
+      "company": "Myridius",
+      "platform": "LinkedIn",
+      "location": "Pune City, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-myridius-4444404948?position=40&pageNum=0&refId=X7z%2B9t4JM1WVpCJNeAhgpQ%3D%3D&trackingId=b0vP%2B158wiyvkta9qFlNTw%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Custom Software Engineering Lead",
+      "company": "Accenture in India",
+      "platform": "LinkedIn",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/custom-software-engineering-lead-at-accenture-in-india-4444708174?position=48&pageNum=0&refId=X7z%2B9t4JM1WVpCJNeAhgpQ%3D%3D&trackingId=FBZvYp%2FzunY1XX6uA6bEOw%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Salesforce CPQ Consultant",
+      "company": "WillWare Technologies",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-cpq-consultant-at-willware-technologies-4444400985?position=1&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=VtmywCHDONm9ia3lK0hibg%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Sr. Salesforce Developer (CPQ)",
+      "company": "Grazitti Interactive",
+      "platform": "LinkedIn",
+      "location": "Panchkula, Haryana, India",
+      "url": "https://in.linkedin.com/jobs/view/sr-salesforce-developer-cpq-at-grazitti-interactive-4444236608?position=2&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=FR38Qj9u8RfvZNEQ0nIv%2FA%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "ServiceNow CPQ Developer / Consultant",
+      "company": "Sourcebae",
+      "platform": "LinkedIn",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/servicenow-cpq-developer-consultant-at-sourcebae-4444282427?position=12&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=fFd0gw82Bjt1VrFKpV61xQ%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Salesforce B2B Commerce Cloud Developer",
+      "company": "Capgemini",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-b2b-commerce-cloud-developer-at-capgemini-4441098720?position=16&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=0F78BmgHt9A%2Ba0ti%2BOg%2Fag%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Senior Engineer - Boomi integration",
+      "company": "Carrier",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-engineer-boomi-integration-at-carrier-4444006182?position=17&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=oCcbGk7fv8%2BUOkAEBUWANg%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Senior Salesforce CPQ Techno Functional Consultant",
+      "company": "Resource Informatics Group, Inc",
+      "platform": "LinkedIn",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-cpq-techno-functional-consultant-at-resource-informatics-group-inc-4444430248?position=19&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=3hKNhUB%2FCRFX%2FQUhfpHtpw%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Product Owner - Salesforce [T500-27814]",
+      "company": "TMUS Global Solutions",
+      "platform": "LinkedIn",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/product-owner-salesforce-t500-27814-at-tmus-global-solutions-4444442196?position=31&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=6By1YwLTK1ZoaA1we65BVw%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "CPQ - Revenue cloud Consultant",
+      "company": "iO Associates",
+      "platform": "LinkedIn",
+      "location": "Bawana, Delhi, India",
+      "url": "https://in.linkedin.com/jobs/view/cpq-revenue-cloud-consultant-at-io-associates-4444424980?position=33&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=YIOxydxCgcXa4M78oYSmlA%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Revenue Cloud Technical Lead \u2013 RCA & Agentforce",
+      "company": "mindZvue",
+      "platform": "LinkedIn",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/revenue-cloud-technical-lead-%E2%80%93-rca-agentforce-at-mindzvue-4444701817?position=36&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=tvRtYeHUg3jdY2waD%2BcJlg%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "APPS DEVELOPMENT CONSULTANT II-INDIA",
+      "company": "Lumen Technologies India",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/apps-development-consultant-ii-india-at-lumen-technologies-india-4416667801?position=39&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=YZd9EWBvHZGOJgGuPw7%2FSA%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Senior Manager- Business Systems Support",
+      "company": "Mimecast",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-manager-business-systems-support-at-mimecast-4435561882?position=44&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=0WI%2BUfi54IWSi4DOrzNpuQ%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Senior Engineer Application Support",
+      "company": "LSEG",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-engineer-application-support-at-lseg-4426788432?position=46&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=q4GaCZkmbQUG7OCTP71Bfw%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Salesforce Technical Architect (Revenue Cloud Or Salesforce CPQ)/Healthcare/FINS",
+      "company": "Salesforce",
+      "platform": "LinkedIn",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-technical-architect-revenue-cloud-or-salesforce-cpq-healthcare-fins-at-salesforce-4366718852?position=51&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=RNeT6Yv5%2BV9YwGWLqE4pyQ%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Packaged/SaaS Application Engineer",
+      "company": "Accenture in India",
+      "platform": "LinkedIn",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/packaged-saas-application-engineer-at-accenture-in-india-4436191048?position=52&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=uTtqrAWxXA2eyukfKRQN%2FQ%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Business Systems Analyst \u2013 Sales Planning & Incentive Systems",
+      "company": "Commvault",
+      "platform": "LinkedIn",
+      "location": "Mumbai, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/business-systems-analyst-%E2%80%93-sales-planning-incentive-systems-at-commvault-4443831142?position=57&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=rO%2BBR6DqmT%2Fdh4zeKLx3IQ%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Enterprise Solution Architect - Salesforce || Pune || CTC Upto 45 LPA",
+      "company": "Talentiser",
+      "platform": "LinkedIn",
+      "location": "Pune District, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/enterprise-solution-architect-salesforce-pune-ctc-upto-45-lpa-at-talentiser-4443492079?position=6&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=nYRmTtpwr6PuBmvQZYVVpQ%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Salesforce Solution Architect / Presales Consultant",
+      "company": "Sonata Software",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-solution-architect-presales-consultant-at-sonata-software-4443828694?position=12&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=ANT%2FBqyEKoI3yrd4TL36Aw%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Software Developer (Java + Microservices + Kafka)",
+      "company": "Siemens",
+      "platform": "LinkedIn",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/software-developer-java-%2B-microservices-%2B-kafka-at-siemens-4423236005?position=23&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=nhJW0zJDtn56%2BpB7uscOJA%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Salesforce Technical Architect",
+      "company": "Persistent Systems",
+      "platform": "LinkedIn",
+      "location": "Pune City, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-technical-architect-at-persistent-systems-4444287325?position=28&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=tHMqoWELTVCJLmsKP1zJnw%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Senior Salesforce Engineer - Pune",
+      "company": "iSchoolConnect",
+      "platform": "LinkedIn",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-engineer-pune-at-ischoolconnect-4443882010?position=32&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=LYgzpXwyGSYVBbu%2FnH44mg%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Salesforce Commerce Cloud - Technical Architect",
+      "company": "Bav Group M\u00e9xico",
+      "platform": "LinkedIn",
+      "location": "New Delhi, Delhi, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-commerce-cloud-technical-architect-at-bav-group-m%C3%A9xico-4444261480?position=38&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=BTh2bLGdGX%2BrtRql1B%2B9lw%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Sr Salesforce Developer",
+      "company": "The Economist",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/sr-salesforce-developer-at-the-economist-4441513138?position=44&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=7ekVtPmZ0DbRgw4kZtTEVQ%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Lead Salesforce Developer",
+      "company": "PamTen Inc",
+      "platform": "LinkedIn",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/lead-salesforce-developer-at-pamten-inc-4443816537?position=50&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=stDU%2F4Db0one7teX9ZZyUg%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Engineering Manager \u2013 Salesforce & GTM Systems",
+      "company": "Docusign",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/engineering-manager-%E2%80%93-salesforce-gtm-systems-at-docusign-4443811053?position=53&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=IZW3rw7m6yP4KwUNnp8MxA%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Lead Enterprise Architect",
+      "company": "PalTech",
+      "platform": "LinkedIn",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/lead-enterprise-architect-at-paltech-4444410845?position=58&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=%2FvATgrg0FSHJtErQd1CEUg%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
     },
     {
       "title": "Salesforce Sr Developer",
       "company": "Trane Technologies",
       "platform": "LinkedIn",
       "location": "Bengaluru East, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-sr-developer-at-trane-technologies-4443874851?position=12&pageNum=0&refId=C0KweUEWmt6fYTHEFC5cdw%3D%3D&trackingId=vF0y6ZYTZHlV%2F2PW%2FvaEhg%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-sr-developer-at-trane-technologies-4443874851?position=60&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=rVBcI5BjeOtQZl7mEsVIzg%3D%3D",
       "posted": "2026-07-23",
+      "age_hours": 24.0,
       "age_days": 1
     },
     {
-      "title": "CRM Developer",
-      "company": "Takeda",
-      "platform": "LinkedIn",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/crm-developer-at-takeda-4423197810?position=18&pageNum=0&refId=C0KweUEWmt6fYTHEFC5cdw%3D%3D&trackingId=2vTkhCNDydszK6aOjEnB1w%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Salesforce Engineer (Premium Finance Platform)",
-      "company": "Saaki Argus and Averil Consulting",
-      "platform": "LinkedIn",
-      "location": "Chennai, Tamil Nadu, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-engineer-premium-finance-platform-at-saaki-argus-and-averil-consulting-4444948507?position=22&pageNum=0&refId=C0KweUEWmt6fYTHEFC5cdw%3D%3D&trackingId=ycTDHWQb0ABCMck8ksopCQ%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Salesforce Senior Engineer- Sales Cloud",
-      "company": "Altera",
-      "platform": "LinkedIn",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-senior-engineer-sales-cloud-at-altera-4415510409?position=23&pageNum=0&refId=C0KweUEWmt6fYTHEFC5cdw%3D%3D&trackingId=6l4jZPhTsLes%2BmAg3K6h7w%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Salesforce Lead Developer - B2B Commerce",
-      "company": "Trane Technologies",
-      "platform": "LinkedIn",
-      "location": "Bengaluru East, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-lead-developer-b2b-commerce-at-trane-technologies-4443880817?position=24&pageNum=0&refId=C0KweUEWmt6fYTHEFC5cdw%3D%3D&trackingId=yoj0TBF3KG6u1zjaylHUnQ%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Tech Lead - SFDC Developer (CPQ)",
-      "company": "GamblingCareers.com",
-      "platform": "LinkedIn",
-      "location": "Noida, Uttar Pradesh, India",
-      "url": "https://in.linkedin.com/jobs/view/tech-lead-sfdc-developer-cpq-at-gamblingcareers-com-4443464091?position=26&pageNum=0&refId=C0KweUEWmt6fYTHEFC5cdw%3D%3D&trackingId=2euPbaZ7cawLEQ7Fb2LkzA%3D%3D",
-      "posted": "2026-07-23",
-      "age_days": 1
-    },
-    {
-      "title": "Support Specialist \u2013 Salesforce CRM",
-      "company": "WSA \u2013 Wonderful Sound for All",
-      "platform": "LinkedIn",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://in.linkedin.com/jobs/view/support-specialist-%E2%80%93-salesforce-crm-at-wsa-%E2%80%93-wonderful-sound-for-all-4444319418?position=27&pageNum=0&refId=C0KweUEWmt6fYTHEFC5cdw%3D%3D&trackingId=jyi70TD8MnbMedlgCVSN3w%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Salesforce Lead with AI/GitHub Copilot (Immediate to 30 days)",
-      "company": "InfoBeans",
+      "title": "Salesforce Consultant",
+      "company": "Jobgether",
       "platform": "LinkedIn",
       "location": "India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-lead-with-ai-github-copilot-immediate-to-30-days-at-infobeans-4443754433?position=29&pageNum=0&refId=C0KweUEWmt6fYTHEFC5cdw%3D%3D&trackingId=x2eAyWyt7yQnzoQ4bsvbnw%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
+      "url": "https://in.linkedin.com/jobs/view/salesforce-consultant-at-jobgether-4443816295?position=7&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=qz6e6HUdta35ATuzjNRUCQ%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
     },
     {
-      "title": "Engineering Manager - Salesforce [T500-27778]",
-      "company": "Marriott Tech Accelerator",
-      "platform": "LinkedIn",
-      "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/engineering-manager-salesforce-t500-27778-at-marriott-tech-accelerator-4443798848?position=34&pageNum=0&refId=C0KweUEWmt6fYTHEFC5cdw%3D%3D&trackingId=RzuM2s9D4CMOzAN%2FQTRu2Q%3D%3D",
-      "posted": "2026-07-22",
-      "age_days": 2
-    },
-    {
-      "title": "Developer III - Enterprise Solutions",
-      "company": "UST",
-      "platform": "LinkedIn",
-      "location": "Kochi, Kerala, India",
-      "url": "https://in.linkedin.com/jobs/view/developer-iii-enterprise-solutions-at-ust-4441577873?position=35&pageNum=0&refId=C0KweUEWmt6fYTHEFC5cdw%3D%3D&trackingId=bojTPZFW10UIHxYFwLdU%2FA%3D%3D",
-      "posted": "2026-07-24",
-      "age_days": 0
-    },
-    {
-      "title": "Senior Associate, Salesforce, Platform Advisory & Transformation, DTS - Global Capability Center",
+      "title": "Associate, Salesforce Administrator - Global Capability Center",
       "company": "Alvarez & Marsal",
       "platform": "LinkedIn",
       "location": "Gurugram, Haryana, India",
-      "url": "https://in.linkedin.com/jobs/view/senior-associate-salesforce-platform-advisory-transformation-dts-global-capability-center-at-alvarez-marsal-4440987688?position=36&pageNum=0&refId=C0KweUEWmt6fYTHEFC5cdw%3D%3D&trackingId=gA0eT%2FoVSJWEHsaw9gqRQA%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/associate-salesforce-administrator-global-capability-center-at-alvarez-marsal-4444427181?position=10&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=c293OnKVnHJ5QXbfGcgJRw%3D%3D",
       "posted": "2026-07-23",
+      "age_hours": 24.0,
       "age_days": 1
     },
     {
-      "title": "Salesforce Architect(12+ years)(Local to Hyderabad)",
-      "company": "Mejenta Systems, Inc.",
+      "title": "Salesforce Consultant",
+      "company": "ClanX",
+      "platform": "LinkedIn",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-consultant-at-clanx-4444288379?position=13&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=Wrfq2ytBIRceCyGHOCx9Zg%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Sr. Salesforce Developer",
+      "company": "Infinite Computer Solutions",
       "platform": "LinkedIn",
       "location": "Hyderabad, Telangana, India",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-architect-12%2B-years-local-to-hyderabad-at-mejenta-systems-inc-4441523440?position=37&pageNum=0&refId=C0KweUEWmt6fYTHEFC5cdw%3D%3D&trackingId=aM3Z%2FqvVge7858x1IeGEUA%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/sr-salesforce-developer-at-infinite-computer-solutions-4444717471?position=29&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=T1bBvi3kgU6wmDMxzgD3Nw%3D%3D",
       "posted": "2026-07-23",
+      "age_hours": 24.0,
       "age_days": 1
+    },
+    {
+      "title": "Salesforce Revenue Cloud- Sr. Associate",
+      "company": "PwC Acceleration Center India",
+      "platform": "LinkedIn",
+      "location": "Gurugram, Haryana, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-revenue-cloud-sr-associate-at-pwc-acceleration-center-india-4432964690?position=51&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=yivVuXKWJcJTKZQ%2BqWF2Qw%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Salesforce Agentforce Developer",
+      "company": "Runmap Infotech Private Ltd.",
+      "platform": "LinkedIn",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-agentforce-developer-at-runmap-infotech-private-ltd-4444288658?position=59&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=Tnf9jhIaGgTeNbpuc7cg0A%3D%3D",
+      "posted": "2026-07-23",
+      "age_hours": 24.0,
+      "age_days": 1
+    },
+    {
+      "title": "Salesforce Developer",
+      "company": "AllianceBernstein",
+      "platform": "LinkedIn",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-alliancebernstein-4416605230?position=1&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=6D3zuP%2BEBmjXO5t3i3KB2g%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Developer",
+      "company": "Bajaj Broking",
+      "platform": "LinkedIn",
+      "location": "Pune District, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-bajaj-broking-4441025751?position=7&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=68BjxOs9akfLx90CDwWP6g%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Developer",
+      "company": "Penta Consulting",
+      "platform": "LinkedIn",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-penta-consulting-4443945618?position=14&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=%2FnLgQ9ChmQCuOETLpuvvRQ%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Senior Developer (Salesforce, Oracle DB)",
+      "company": "Emerson",
+      "platform": "LinkedIn",
+      "location": "Chandigarh, Chandigarh, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-developer-salesforce-oracle-db-at-emerson-4443779895?position=16&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=N%2F%2B65WvU%2BN9XmxjsehiWug%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Developer",
+      "company": "Zone IT Solutions",
+      "platform": "LinkedIn",
+      "location": "Jaipur, Rajasthan, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-zone-it-solutions-4443733794?position=18&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=qONpk2ALM%2B8MXZTYfeXruQ%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Developer",
+      "company": "Carrier",
+      "platform": "LinkedIn",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-carrier-4441322468?position=24&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=TrOHjzk6SPLJL7yr7Z5K9w%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Consultant - Tech Consulting - National - CNS - TC - Digital Engineering - New Delhi",
+      "company": "EY",
+      "platform": "LinkedIn",
+      "location": "Delhi, India",
+      "url": "https://in.linkedin.com/jobs/view/consultant-tech-consulting-national-cns-tc-digital-engineering-new-delhi-at-ey-4441050358?position=42&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=8nQxiZe5Uu5tTJYPMNCVfQ%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Developer (FSL)",
+      "company": "Whitefield Careers",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-fsl-at-whitefield-careers-4443197706?position=49&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=rcsVn4foHhQRU7vZsSiwSA%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Consultant",
+      "company": "Atain",
+      "platform": "LinkedIn",
+      "location": "Gurugram, Haryana, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-consultant-at-atain-4443120118?position=52&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=d63rdzVH7usvY%2FwMj%2BXopw%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Developer",
+      "company": "Varasi Inc",
+      "platform": "LinkedIn",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-varasi-inc-4440164912?position=56&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=WRyooStFqi5XOvNqTupZUA%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Developer (8\u201310 Years)",
+      "company": "Ri8 Solution",
+      "platform": "LinkedIn",
+      "location": "Chennai, Tamil Nadu, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-8%E2%80%9310-years-at-ri8-solution-4443406261?position=58&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=ika9IWxCFXkG3qjr%2BlxFjw%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Software Engineer II",
+      "company": "LexisNexis",
+      "platform": "LinkedIn",
+      "location": "Chennai, Tamil Nadu, India",
+      "url": "https://in.linkedin.com/jobs/view/software-engineer-ii-at-lexisnexis-4443111098?position=59&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=GcZvOCL1XZERgGmDO24WEw%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Service Cloud Solution Expert",
+      "company": "HTC Global Services",
+      "platform": "LinkedIn",
+      "location": "Chennai, Tamil Nadu, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-service-cloud-solution-expert-at-htc-global-services-4443946729?position=33&pageNum=0&refId=dmlOHC1tMICc9t9u%2B8s90Q%3D%3D&trackingId=OQsEe158YDmJwH04ystHqw%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Software Engineering Lead-Salesforce",
+      "company": "Optum India",
+      "platform": "LinkedIn",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/software-engineering-lead-salesforce-at-optum-india-4443997989?position=44&pageNum=0&refId=dmlOHC1tMICc9t9u%2B8s90Q%3D%3D&trackingId=1sFSALnjamDpJUsX3df0cw%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Senior Consultant - Tech Consulting - National - CNS - TC - Digital Engineering - Hyderabad",
+      "company": "EY",
+      "platform": "LinkedIn",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-consultant-tech-consulting-national-cns-tc-digital-engineering-hyderabad-at-ey-4441044604?position=50&pageNum=0&refId=dmlOHC1tMICc9t9u%2B8s90Q%3D%3D&trackingId=cINP5oxlKFMcPp4m%2BYdpTg%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Software Engineer III, Salesforce, Google Cloud",
+      "company": "Google",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/software-engineer-iii-salesforce-google-cloud-at-google-4443122562?position=38&pageNum=0&refId=X7z%2B9t4JM1WVpCJNeAhgpQ%3D%3D&trackingId=IqQfWZm2scsfzTPzHclE1w%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "SFCC Frontend Developer",
+      "company": "Astound Digital",
+      "platform": "LinkedIn",
+      "location": "Ahmedabad, Gujarat, India",
+      "url": "https://in.linkedin.com/jobs/view/sfcc-frontend-developer-at-astound-digital-4443789167?position=45&pageNum=0&refId=X7z%2B9t4JM1WVpCJNeAhgpQ%3D%3D&trackingId=ANdZb1FJcLBX2Q0eolq1IA%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Senior Salesforce Developer-Sales Cloud/Service Cloud",
+      "company": "Caterpillar Inc.",
+      "platform": "LinkedIn",
+      "location": "Bengaluru East, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-sales-cloud-service-cloud-at-caterpillar-inc-4442997940?position=57&pageNum=0&refId=X7z%2B9t4JM1WVpCJNeAhgpQ%3D%3D&trackingId=HdfHANsCSz%2BXMTXNh6T5vA%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Oracle CPQ Developer / Oracle CPQ Consultant",
+      "company": "NetApp",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/oracle-cpq-developer-oracle-cpq-consultant-at-netapp-4441067864?position=20&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=7nAbTA1vTjXxZMh42h7Fqw%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Enterprise Application Engineer",
+      "company": "Definitive Healthcare",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/enterprise-application-engineer-at-definitive-healthcare-4405528565?position=21&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=pxbUBp%2BIs5fCBpn3er%2F3CQ%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Manager Applications Development, Salesforce",
+      "company": "Paylocity",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/manager-applications-development-salesforce-at-paylocity-4443752537?position=30&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=cmZ9Ad29hc1wGZrGC5ge3A%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Project Manager Lead",
+      "company": "ACA Group",
+      "platform": "LinkedIn",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/project-manager-lead-at-aca-group-4431973869?position=35&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=YruSD8BqkmvTTrrV7q4nNw%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Customer Success Analyst",
+      "company": "insightsoftware",
+      "platform": "LinkedIn",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/customer-success-analyst-at-insightsoftware-4386779796?position=41&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=o3vKzRDBfyhEPZAK4VRzew%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Revenue Cloud QA- Sr. Associate",
+      "company": "PwC Acceleration Center India",
+      "platform": "LinkedIn",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-revenue-cloud-qa-sr-associate-at-pwc-acceleration-center-india-4441030294?position=42&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=E5LSm5abayN8zjxzmEMRvw%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Senior GTM Technology Architect",
+      "company": "Chargebee",
+      "platform": "LinkedIn",
+      "location": "Bangalore Urban, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-gtm-technology-architect-at-chargebee-4443100823?position=48&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=Fl3KlwibJBFkBGXsUe5Ymw%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Lead Engineer Salesforce",
+      "company": "Empower India",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/lead-engineer-salesforce-at-empower-india-4439216826?position=54&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=CYB4LzOSDAPCqfbmlPyn8Q%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Lead Business Analyst",
+      "company": "ECI",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/lead-business-analyst-at-eci-4443942265?position=59&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=Ayk5u%2Bu%2B5z0Xhig2plSIIA%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Developer",
+      "company": "Centre for Advanced Practical Project Management",
+      "platform": "LinkedIn",
+      "location": "Agra, Uttar Pradesh, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-centre-for-advanced-practical-project-management-4443798069?position=19&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=%2B377wc5m9edZGSVumMK05w%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Developer - Vice President",
+      "company": "hackajob",
+      "platform": "LinkedIn",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-vice-president-at-hackajob-4433252280?position=22&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=seBio8LqRrBExhAk5JNZ8w%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Lead Salesforce Engineer",
+      "company": "KKR",
+      "platform": "LinkedIn",
+      "location": "Gurugram, Haryana, India",
+      "url": "https://in.linkedin.com/jobs/view/lead-salesforce-engineer-at-kkr-4431953279?position=29&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=dtynZLzxcdo8wDXryhLa3Q%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Senior Platform Developer, Commercial Systems - Salesforce",
+      "company": "Grab",
+      "platform": "LinkedIn",
+      "location": "Bengaluru East, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-platform-developer-commercial-systems-salesforce-at-grab-4443132272?position=30&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=Pi9YIuBhGHkw62s%2Fa%2BolQA%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Architect Solution (IT PRODUCT/ INTEGRATION)",
+      "company": "Beyond Border Consultants",
+      "platform": "LinkedIn",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-architect-solution-it-product-integration-at-beyond-border-consultants-4443110436?position=33&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=KHKlhgnre1h86fW%2B2Vb%2F%2Fg%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Java Developer",
+      "company": "Infosys",
+      "platform": "LinkedIn",
+      "location": "Bengaluru East, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/java-developer-at-infosys-4434348807?position=37&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=Ej5iWbYzpKxHjia5g06EhA%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "SALESFORCE TECHNICAL ARCHITECT",
+      "company": "Mount Talent Consulting Pvt Ltd.",
+      "platform": "LinkedIn",
+      "location": "Greater Bengaluru Area",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-technical-architect-at-mount-talent-consulting-pvt-ltd-4443102121?position=52&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=h1U650gjOKI%2BvO8XPARCfw%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Senior Salesforce Developer/Architect (Bangalore)",
+      "company": "Lambda",
+      "platform": "LinkedIn",
+      "location": "Bangalore Urban, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-architect-bangalore-at-lambda-4441076718?position=54&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=c2rq2xSedjXjpvJCDDznUQ%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Administrator",
+      "company": "Ethos",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-administrator-at-ethos-4406868870?position=1&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=RVhf8X8nLUe%2FsGCsFT07hg%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Senior Salesforce Admin (India- Remote)",
+      "company": "Snapscale",
+      "platform": "LinkedIn",
+      "location": "Greater Kolkata Area",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-admin-india-remote-at-snapscale-4443960274?position=8&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=IEWQWe%2FgHOEnpq%2B9VchisQ%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Consultant",
+      "company": "Hubspot Solution Provider Agency | Dean Infotech\u2122",
+      "platform": "LinkedIn",
+      "location": "Faridabad, Haryana, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-consultant-at-hubspot-solution-provider-agency-dean-infotech%E2%84%A2-4443780530?position=12&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=bg8u%2B8V6WwUmsBZxDCfrpw%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Administrator III",
+      "company": "Thermo Fisher Scientific",
+      "platform": "LinkedIn",
+      "location": "Bengaluru East, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-administrator-iii-at-thermo-fisher-scientific-4442956738?position=20&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=nBzPQ84BmRwZqUuzcf72Pw%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Senior Salesforce Developer_India",
+      "company": "Globant",
+      "platform": "LinkedIn",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-india-at-globant-4435530704?position=26&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=FlNC6Cv5xfZo7jlO2BFGbw%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Tester",
+      "company": "Capgemini",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-tester-at-capgemini-4436310635?position=33&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=0udtxYbwpHiaCFbNUW3ibw%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Associate - EFB",
+      "company": "Air India Limited",
+      "platform": "LinkedIn",
+      "location": "Gurugram, Haryana, India",
+      "url": "https://in.linkedin.com/jobs/view/associate-efb-at-air-india-limited-4443909141?position=42&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=3Ae0dLFm76XUhN7%2FvTd30Q%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Commerce Cloud",
+      "company": "Avikal Solutions",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-commerce-cloud-at-avikal-solutions-4443134339?position=58&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=A5nry7Vbzbe1yo2GmNuIMQ%3D%3D",
+      "posted": "2026-07-22",
+      "age_hours": 48.0,
+      "age_days": 2
+    },
+    {
+      "title": "Salesforce Developer",
+      "company": "Intuitive",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-intuitive-4443530759?position=37&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=HkPuii35AnjxSz5K6u%2BKOw%3D%3D",
+      "posted": "2026-07-21",
+      "age_hours": 72.0,
+      "age_days": 3
+    },
+    {
+      "title": "Senior Salesforce Developer",
+      "company": "algoleap",
+      "platform": "LinkedIn",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-algoleap-4422282443?position=43&pageNum=0&refId=0Wke1pp%2BNxB%2FYr9p2vLdxg%3D%3D&trackingId=8MKZg7uqlA9QzvyI0tXZpg%3D%3D",
+      "posted": "2026-07-21",
+      "age_hours": 72.0,
+      "age_days": 3
+    },
+    {
+      "title": "Senior Salesforce Developer",
+      "company": "Crowe Capability Center \u2013 India",
+      "platform": "LinkedIn",
+      "location": "Greater Hyderabad Area",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-crowe-capability-center-%E2%80%93-india-4443528095?position=60&pageNum=0&refId=X7z%2B9t4JM1WVpCJNeAhgpQ%3D%3D&trackingId=loplZJFrnIAzKit6WCacIQ%3D%3D",
+      "posted": "2026-07-21",
+      "age_hours": 72.0,
+      "age_days": 3
+    },
+    {
+      "title": "Salesforce Administrator (RCA/CPQ ) 8+yrs IRC293975",
+      "company": "GlobalLogic",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-administrator-rca-cpq-8%2Byrs-irc293975-at-globallogic-4434112805?position=8&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=iALydF9JfqqTFqnVCZ%2Ff1A%3D%3D",
+      "posted": "2026-07-21",
+      "age_hours": 72.0,
+      "age_days": 3
+    },
+    {
+      "title": "Salesforce Developer",
+      "company": "Genea",
+      "platform": "LinkedIn",
+      "location": "India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-genea-4431964042?position=11&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=55k4oD%2BkRZV8Ge5%2Bq%2FaQtQ%3D%3D",
+      "posted": "2026-07-21",
+      "age_hours": 72.0,
+      "age_days": 3
+    },
+    {
+      "title": "Senior Salesforce / SFDC Developers / Consultant",
+      "company": "Dhruvsoft",
+      "platform": "LinkedIn",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-sfdc-developers-consultant-at-dhruvsoft-4442669720?position=28&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=OxTUhnw5y4HpgKvDUqvxgA%3D%3D",
+      "posted": "2026-07-21",
+      "age_hours": 72.0,
+      "age_days": 3
+    },
+    {
+      "title": "Lead Partner Solution Architect",
+      "company": "Docusign",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/lead-partner-solution-architect-at-docusign-4377773797?position=37&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=Gclr45BkQ%2BDSEhTMH%2Bd%2BGg%3D%3D",
+      "posted": "2026-07-21",
+      "age_hours": 72.0,
+      "age_days": 3
+    },
+    {
+      "title": "Business Analyst - Lead | Senior",
+      "company": "ECI",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-lead-senior-at-eci-4413472997?position=56&pageNum=0&refId=s03Fk6lVz5oRkpj2hL9o7g%3D%3D&trackingId=KrdM0Ntuh6aXjFEFugEJ%2Bw%3D%3D",
+      "posted": "2026-07-21",
+      "age_hours": 72.0,
+      "age_days": 3
+    },
+    {
+      "title": "Salesforce Developer_Bangalore",
+      "company": "Globant",
+      "platform": "LinkedIn",
+      "location": "Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-bangalore-at-globant-4442635822?position=3&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=w2YUXeGcP3GG8ZqB2P1pgQ%3D%3D",
+      "posted": "2026-07-21",
+      "age_hours": 72.0,
+      "age_days": 3
+    },
+    {
+      "title": "Software Engineer (Java/Node, AWS)",
+      "company": "Autodesk",
+      "platform": "LinkedIn",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/software-engineer-java-node-aws-at-autodesk-4442663143?position=8&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=lMFkQY0eji8Y2zA%2BlAqbhA%3D%3D",
+      "posted": "2026-07-21",
+      "age_hours": 72.0,
+      "age_days": 3
+    },
+    {
+      "title": "Junior Salesforce DevOps Engineer",
+      "company": "LSEG",
+      "platform": "LinkedIn",
+      "location": "Hyderabad, Telangana, India",
+      "url": "https://in.linkedin.com/jobs/view/junior-salesforce-devops-engineer-at-lseg-4268563590?position=11&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=ALTsSVGE2TAHDjXQk25%2Bjg%3D%3D",
+      "posted": "2026-07-21",
+      "age_hours": 72.0,
+      "age_days": 3
+    },
+    {
+      "title": "Java Developer IRC299169",
+      "company": "GlobalLogic",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/java-developer-irc299169-at-globallogic-4442644574?position=15&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=lXaedJcXno2Lwll3JuFvpw%3D%3D",
+      "posted": "2026-07-21",
+      "age_hours": 72.0,
+      "age_days": 3
+    },
+    {
+      "title": "Java Backend Developer (4-6 years in Java, Spring Framework, SQL, Multithreading) Pune",
+      "company": "Global Payments Inc.",
+      "platform": "LinkedIn",
+      "location": "Pune Division, Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/java-backend-developer-4-6-years-in-java-spring-framework-sql-multithreading-pune-at-global-payments-inc-4443545219?position=25&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=R7Awg9ju5YkbnIjHwl9k6Q%3D%3D",
+      "posted": "2026-07-21",
+      "age_hours": 72.0,
+      "age_days": 3
+    },
+    {
+      "title": "Java Developer - Intermediate",
+      "company": "Equifax",
+      "platform": "LinkedIn",
+      "location": "Trivandrum, Kerala, India",
+      "url": "https://in.linkedin.com/jobs/view/java-developer-intermediate-at-equifax-4442677413?position=55&pageNum=0&refId=m78nu9h9oLIFOkfMSNCllw%3D%3D&trackingId=RGpgB73E7SfcYzzQKSlhXw%3D%3D",
+      "posted": "2026-07-21",
+      "age_hours": 72.0,
+      "age_days": 3
+    },
+    {
+      "title": "Salesforce Consultant",
+      "company": "Globant",
+      "platform": "LinkedIn",
+      "location": "Maharashtra, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-consultant-at-globant-4442632897?position=6&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=yUGiT53sj3chIqoCv%2BvXFA%3D%3D",
+      "posted": "2026-07-21",
+      "age_hours": 72.0,
+      "age_days": 3
+    },
+    {
+      "title": "Salesforce Analyst & Administrator",
+      "company": "Stats Perform",
+      "platform": "LinkedIn",
+      "location": "Chennai, Tamil Nadu, India",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-analyst-administrator-at-stats-perform-4434330197?position=9&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=wzhAePQYLszT9JDb3LU8uA%3D%3D",
+      "posted": "2026-07-21",
+      "age_hours": 72.0,
+      "age_days": 3
+    },
+    {
+      "title": "Junior Backend Developer",
+      "company": "Tap Growth ai",
+      "platform": "LinkedIn",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://in.linkedin.com/jobs/view/junior-backend-developer-at-tap-growth-ai-4442640895?position=53&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=10Lm0drjC92gy4P%2BOPLgzQ%3D%3D",
+      "posted": "2026-07-21",
+      "age_hours": 72.0,
+      "age_days": 3
+    },
+    {
+      "title": "Shopify Developer (Fresher to 5 Years)",
+      "company": "DigitalXNode",
+      "platform": "LinkedIn",
+      "location": "Chennai, Tamil Nadu, India",
+      "url": "https://in.linkedin.com/jobs/view/shopify-developer-fresher-to-5-years-at-digitalxnode-4443585804?position=57&pageNum=0&refId=ItdAm4zhjFOuq1difEf7Iw%3D%3D&trackingId=Q4kSn5PWIiqQJppoa%2Bk7jA%3D%3D",
+      "posted": "2026-07-21",
+      "age_hours": 72.0,
+      "age_days": 3
     }
   ],
-  "total": 135,
-  "scraped_at": "2026-07-24T14:34:20Z",
+  "total": 159,
+  "scraped_at": "2026-07-24T14:57:01Z",
   "platforms": [
+    "Greenhouse",
     "LinkedIn"
   ]
 }
