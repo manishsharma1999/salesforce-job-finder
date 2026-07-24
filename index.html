@@ -583,11 +583,11 @@
 
   /* ── Trigger scraper via Cloudflare Worker proxy ── */
   // WORKER_URL is replaced at deploy time; fallback keeps button visible but shows a message
-  const WORKER_URL = 'REPLACE_WITH_WORKER_URL';
+  const WORKER_URL = 'https://job-finder-refresh.manishsharma1k9909.workers.dev';
 
   let refreshPoll;
   async function triggerRefresh() {
-    if (WORKER_URL === 'REPLACE_WITH_WORKER_URL') {
+    if (WORKER_URL === 'https://job-finder-refresh.manishsharma1k9909.workers.dev') {
       showToast('Refresh not configured yet.');
       return;
     }
