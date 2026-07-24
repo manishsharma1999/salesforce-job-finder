@@ -31,7 +31,7 @@ KEYWORDS = [
     "Salesforce Admin",
 ]
 
-MAX_AGE_HOURS = 72   # 3 days
+MAX_AGE_HOURS = 168  # 7 days — keep more results; UI time filter handles display
 
 
 # ── helpers ────────────────────────────────────────────────────────────────────
@@ -126,6 +126,97 @@ async def safe_goto(page: Page, url: str, timeout=20000):
 
 
 # ── browser scrapers ───────────────────────────────────────────────────────────
+
+async def scrape_linkedin_companies(page: Page) -> list[dict]:
+    """
+    LinkedIn search scoped to major Indian companies, 30-day window.
+    Catches jobs on company career sites (Air India, banks, conglomerates)
+    that the 72h general search misses.
+    """
+    jobs = []
+    # LinkedIn numeric company IDs for major Indian employers that post SF roles
+    COMPANY_IDS = ",".join([
+        "1067",      # Air India
+        "2647137",   # IndiGo
+        "13770",     # TCS
+        "1283",      # Infosys
+        "21033",     # Wipro
+        "27432",     # HCL Technologies
+        "24844",     # Tech Mahindra
+        "1536266",   # LTIMindtree
+        "9060",      # Mphasis
+        "4329",      # Persistent Systems
+        "7725",      # Hexaware
+        "6427",      # Coforge
+        "9282",      # Mastek
+        "4341527",   # Birlasoft
+        "14462",     # Cyient
+        "11180",     # Zensar
+        "1033",      # Accenture
+        "1305",      # Capgemini
+        "1122",      # Cognizant
+        "1038",      # Deloitte
+        "7403",      # Publicis Sapient
+        "3230",      # KPMG
+        "2784",      # EY
+        "8416",      # PwC
+        "1009",      # IBM
+        "10413",     # SAP Labs
+        "1028",      # Oracle
+        "1120",      # Salesforce
+        "281440",    # ServiceNow
+        "406501",    # Veeva Systems
+        "1385",      # Mahindra
+        "1417",      # Reliance Industries
+        "4800",      # HDFC Bank
+        "1419",      # Tata Motors
+        "265276",    # Bajaj Auto
+        "27316",     # Freshworks
+        "166686",    # Razorpay
+        "11256",     # Zomato
+        "15169635",  # Swiggy
+        "3025861",   # Meesho
+        "2142129",   # PhonePe
+        "1577552",   # upGrad
+        "1560",      # Tata Group
+        "1350",      # Infosys BPM
+        "1136048",   # Nagarro
+        "6523",      # Thoughtworks
+        "11258",     # GlobalLogic
+        "1028652",   # Mphasis Digital
+    ])
+    # r2592000 = 30 days; geoId=102713980 = India
+    kw = "salesforce"
+    url = (f"https://www.linkedin.com/jobs/search/?keywords={kw}"
+           f"&f_C={COMPANY_IDS}&geoId=102713980&f_TPR=r2592000&sortBy=DD")
+    await safe_goto(page, url, timeout=25000)
+    MAX_AGE_COMPANY = 30 * 24  # 30 days for company-specific search
+    for card in await page.query_selector_all(".base-card, .job-search-card"):
+        try:
+            t_el = await card.query_selector(".base-search-card__title, h3")
+            c_el = await card.query_selector(".base-search-card__subtitle, h4")
+            a_el = await card.query_selector("a.base-card__full-link, a")
+            d_el = await card.query_selector("time, .job-search-card__listdate")
+            l_el = await card.query_selector(".job-search-card__location")
+            if not (t_el and a_el): continue
+            title   = (await t_el.inner_text()).strip()
+            company = (await c_el.inner_text()).strip() if c_el else ""
+            href    = await a_el.get_attribute("href") or ""
+            loc     = (await l_el.inner_text()).strip() if l_el else "India"
+            age_txt = ""
+            if d_el:
+                inner   = (await d_el.inner_text()).strip()
+                dt_attr = (await d_el.get_attribute("datetime") or "").strip()
+                age_txt = inner if inner else dt_attr
+            h = parse_age_hours(age_txt)
+            # Use 30-day window for company-specific search
+            if h is None or h <= MAX_AGE_COMPANY:
+                jobs.append(make_job(title, company, "LinkedIn", href, age_txt, loc, h))
+        except Exception:
+            continue
+    print(f"  LinkedIn companies (30d): {len(jobs)}")
+    return jobs
+
 
 async def scrape_linkedin(page: Page, keyword: str) -> list[dict]:
     jobs = []
@@ -434,12 +525,20 @@ async def scrape_greenhouse_api() -> list[dict]:
     jobs = []
     # Companies known to post Salesforce roles and likely use Greenhouse
     companies = [
+        # Salesforce ecosystem / product companies
         "veeva", "medallia", "zuora", "docusign", "ringcentral",
-        "zendesk", "mulesoft", "tableau",
-        "capgemini", "slalom", "publicissapient",
-        "mphasis", "hexaware", "mastek", "persistent",
-        "cyient", "coforge", "zs", "syntel",
-        "salesforceben", "cloudcoaching", "cloudsolutions",
+        "zendesk", "mulesoft", "tableau", "salesforce",
+        # Global SIs with India presence
+        "capgemini", "slalom", "publicissapient", "thoughtworks",
+        "globallogic", "nagarro", "epam", "dxc",
+        # Indian IT companies on Greenhouse
+        "mphasis", "hexaware", "mastek", "persistent", "coforge",
+        "cyient", "birlasoft", "zensar",
+        # Indian tech companies
+        "freshworks", "chargebee", "razorpay", "browserstack",
+        "postman", "hasura", "setu", "khatabook",
+        # ISVs / niche Salesforce partners
+        "zs", "syntel", "conga", "nintex", "okta",
     ]
     sf_kw = ["salesforce", "lwc", "apex", "crm", "vlocity", "cpq", "einstein"]
     try:
@@ -490,6 +589,10 @@ async def scrape_lever_api() -> list[dict]:
         "cognizant", "publicissapient", "virtusa", "concentrix",
         "wipro", "infosys", "hcl", "mphasis", "persistent",
         "mastek", "zendesk", "veeva", "zuora", "coforge",
+        "thoughtworks", "globallogic", "nagarro", "dxc", "unisys",
+        "freshworks", "chargebee", "browserstack",
+        "nttdata", "ntt-ltd", "atos", "sopra",
+        "firstsource", "mphasis-bfl",
     ]
     try:
         async with httpx.AsyncClient(timeout=12, follow_redirects=True) as client:
@@ -988,13 +1091,13 @@ async def main():
     async with async_playwright() as pw:
         browser = await pw.chromium.launch(headless=True)
 
-        # Company career pages — keyword-independent, run once
-        print("\n[Company career pages]")
-        async def run_once(fn):
+        # Company-targeted searches — run once (not per keyword)
+        print("\n[Company-specific searches]")
+        async def run_once(fn, arg=None):
             ctx = await browser.new_context(user_agent=UA)
             pg  = await ctx.new_page()
             try:
-                return await fn(pg, "salesforce")
+                return await fn(pg) if arg is None else await fn(pg, arg)
             except Exception as e:
                 print(f"  {fn.__name__} error: {e}")
                 return []
@@ -1002,8 +1105,9 @@ async def main():
                 await ctx.close()
 
         career_results = await asyncio.gather(
-            run_once(scrape_tcs_careers),
-            run_once(scrape_salesforce_careers),
+            run_once(scrape_linkedin_companies),   # 30-day LinkedIn scoped to Indian cos
+            run_once(scrape_tcs_careers,     "salesforce"),
+            run_once(scrape_salesforce_careers, "salesforce"),
         )
         for r in career_results:
             all_jobs.extend(r)
