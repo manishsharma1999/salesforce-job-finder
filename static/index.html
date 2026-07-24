@@ -294,11 +294,12 @@ function city(j){
   return 'India';
 }
 
-function fmtAge(h){
-  if(h==null||h===0) return {txt:'Just now',cls:'age-fresh'};
-  if(h<1) return {txt:Math.round(h*60)+'m ago',cls:'age-fresh'};
-  if(h<24) return {txt:Math.round(h)+'h ago',cls:'age-fresh'};
-  if(h<48) return {txt:'Yesterday',cls:'age-recent'};
+function fmtAge(h, rawPosted){
+  if(h===null) return {txt: rawPosted||'—', cls:'age-old'};
+  if(h===0)    return {txt:'Just now',cls:'age-fresh'};
+  if(h<1)      return {txt:Math.round(h*60)+'m ago',cls:'age-fresh'};
+  if(h<24)     return {txt:Math.round(h)+'h ago',cls:'age-fresh'};
+  if(h<48)     return {txt:'Yesterday',cls:'age-recent'};
   return {txt:Math.floor(h/24)+'d ago',cls:'age-old'};
 }
 
@@ -321,7 +322,7 @@ async function load(){
   try{
     const r=await fetch(JOBS_URL+'?t='+Date.now());
     const d=await r.json();
-    ALL=(d.jobs||[]).map(j=>({...j,_city:city(j),_h:j.age_hours!=null?+j.age_hours:+j.age_days*24}));
+    ALL=(d.jobs||[]).map(j=>({...j,_city:city(j),_h:j.age_hours!=null?+j.age_hours:(j.age_days!=null?+j.age_days*24:null)}));
     window._lastTs=d.scraped_at;
     if(d.scraped_at){
       const dt=new Date(d.scraped_at);
@@ -362,30 +363,46 @@ function setPerPage(v){perPage=+v; currentPage=1; renderTable();}
 function cycleSort(field){
   if(sortField===field) sortDir*=-1;
   else{sortField=field; sortDir=1;}
-  document.querySelectorAll('th .sort-icon').forEach(e=>e.parentElement.classList.remove('sorted'));
-  const map={'title':1,'company':2,'age':5};
-  const th=document.querySelector(`table thead tr th:nth-child(${(map[field]||0)+1})`);
-  if(th){th.classList.add('sorted');th.querySelector('.sort-icon').textContent=sortDir===1?'↑':'↓';}
+  // reset all icons
+  document.querySelectorAll('th').forEach(t=>{
+    t.classList.remove('sorted');
+    const ic=t.querySelector('.sort-icon');
+    if(ic) ic.textContent='↕';
+  });
+  // highlight the active column — col index: title=2, company=3, age=6 (1-based)
+  const colMap={'title':2,'company':3,'age':6};
+  const th=document.querySelector(`table thead tr th:nth-child(${colMap[field]||2})`);
+  if(th){th.classList.add('sorted');const ic=th.querySelector('.sort-icon');if(ic)ic.textContent=sortDir===1?'↑':'↓';}
   applyFilters();
 }
 
 function applyFilters(){
   const q=(document.getElementById('tb-search').value||'').toLowerCase().trim();
-  const sort=document.getElementById('sort-sel').value;
   filtered=ALL.filter(j=>{
-    if(j._h>activeHours) return false;
+    // null _h = unknown age; exclude from any filter ≤48h, include for ≥72h (show all)
+    const h = j._h;
+    if(activeHours < 72){
+      if(h === null) return false;   // unknown age: hide when filtering tightly
+      if(h > activeHours) return false;
+    } else {
+      if(h !== null && h > activeHours) return false;
+    }
     if(activePlatform!=='All'&&j.platform!==activePlatform) return false;
     if(activeLoc&&j._city!==activeLoc) return false;
     if(q&&!j.title.toLowerCase().includes(q)&&!(j.company||'').toLowerCase().includes(q)) return false;
     return true;
   });
-  // sort
+  // sort — null _h sorts last (oldest/unknown)
   const sf=sortField==='default'?'age':sortField;
   filtered.sort((a,b)=>{
     let va,vb;
     if(sf==='title'){va=a.title;vb=b.title;}
     else if(sf==='company'){va=a.company||'';vb=b.company||'';}
-    else{va=a._h;vb=b._h;}
+    else{
+      // age sort: null treated as Infinity (unknown = oldest)
+      va = a._h !== null ? a._h : Infinity;
+      vb = b._h !== null ? b._h : Infinity;
+    }
     if(typeof va==='string') return va.localeCompare(vb)*sortDir;
     return (va-vb)*sortDir;
   });
@@ -427,14 +444,14 @@ function renderTable(){
   }
 
   tbody.innerHTML=slice.map((j,i)=>{
-    const {txt,cls}=fmtAge(j._h);
+    const {txt,cls}=fmtAge(j._h, j.posted);
     const isSaved=saved.has(j.url||'');
     const av=initials(j.company||j.title);
     const safeUrl=(j.url||'').replace(/'/g,"\\'");
     return `<tr>
       <td><input type="checkbox" class="row-check" style="cursor:pointer"/></td>
       <td class="td-title">
-        ${esc(j.title)}${j._h<=6?'<span class="new-dot"></span>':''}
+        ${esc(j.title)}${j._h!==null&&j._h<=6?'<span class="new-dot"></span>':''}
       </td>
       <td>
         <div class="td-company">
@@ -544,7 +561,7 @@ async function triggerRefresh(){
       const d=await r.json();
       if(d.scraped_at&&d.scraped_at!==window._lastTs){
         cancelRefresh();
-        ALL=(d.jobs||[]).map(j=>({...j,_city:city(j),_h:j.age_hours!=null?+j.age_hours:+j.age_days*24}));
+        ALL=(d.jobs||[]).map(j=>({...j,_city:city(j),_h:j.age_hours!=null?+j.age_hours:(j.age_days!=null?+j.age_days*24:null)}));
         window._lastTs=d.scraped_at;
         const dt=new Date(d.scraped_at);
         document.getElementById('last-updated').textContent='Updated '+dt.toLocaleString('en-IN',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});

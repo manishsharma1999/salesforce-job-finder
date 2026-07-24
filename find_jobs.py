@@ -37,11 +37,11 @@ MAX_AGE_HOURS = 72   # 3 days
 
 # ── helpers ────────────────────────────────────────────────────────────────────
 
-def parse_age_hours(text: str) -> float:
-    """Return job age in hours. 0 = just posted / unknown (keep it)."""
+def parse_age_hours(text: str):
+    """Return job age in hours (float), or None if unparseable."""
     text = (text or "").lower().strip()
     if not text:
-        return 0.0
+        return None
 
     # ISO datetime: 2026-07-24T10:30:00Z
     m = re.match(r"(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})", text)
@@ -68,13 +68,14 @@ def parse_age_hours(text: str) -> float:
         return 4.0
     if "yesterday" in text or text == "posted yesterday":
         return 28.0
-    # Workday "Posted X Days Ago" / "Posted X Months Ago"
+
+    # Workday "Posted X Days/Weeks/Months Ago"
     m = re.search(r"posted\s+(\d+)\s*day", text)
     if m: return int(m.group(1)) * 24.0
-    m = re.search(r"posted\s+(\d+)\s*month", text)
-    if m: return int(m.group(1)) * 720.0
     m = re.search(r"posted\s+(\d+)\s*week", text)
     if m: return int(m.group(1)) * 168.0
+    m = re.search(r"posted\s+(\d+)\s*month", text)
+    if m: return int(m.group(1)) * 720.0
 
     m = re.search(r"(\d+)\s*sec", text)
     if m: return round(int(m.group(1)) / 3600, 2)
@@ -89,9 +90,11 @@ def parse_age_hours(text: str) -> float:
     m = re.search(r"(\d+)\s*month", text)
     if m: return int(m.group(1)) * 720.0
 
-    return 0.0   # unknown → treat as fresh
+    return None  # truly unknown — do not treat as "just now"
 
-def is_recent(age_h: float) -> bool:
+def is_recent(age_h) -> bool:
+    if age_h is None:
+        return True   # unknown age → include in main scrape (UI will exclude from tight filters)
     return age_h <= MAX_AGE_HOURS
 
 def make_job(title, company, platform, url, age_txt, location="India", age_h=None):
@@ -102,9 +105,10 @@ def make_job(title, company, platform, url, age_txt, location="India", age_h=Non
         "platform":  platform,
         "location":  (location or "India").strip(),
         "url":       url.strip(),
-        "posted":    (age_txt or "Recent").strip(),
-        "age_hours": round(h, 1),
-        "age_days":  int(h / 24),
+        "posted":    (age_txt or "").strip(),
+        # None = unparseable age; UI treats this as "unknown/old" and excludes from tight filters
+        "age_hours": round(h, 1) if h is not None else None,
+        "age_days":  int(h / 24) if h is not None else None,
     }
 
 async def safe_goto(page: Page, url: str, timeout=25000):
