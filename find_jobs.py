@@ -683,7 +683,9 @@ async def scrape_workday_api() -> list[dict]:
                     if not is_recent(h):
                         continue
                     ext_path = j.get("externalPath", "")
-                    job_url = f"{base}{ext_path}" if ext_path else ""
+                    # externalPath is like /job/India---Hyderabad/Title_JRxxx
+                    # correct public URL requires the site path before /job/
+                    job_url = f"{base}/{site}{ext_path}" if ext_path else ""
                     key = ext_path or (t + loc_text)
                     if key not in fetched:
                         fetched[key] = make_job(t, display, "Workday", job_url, posted_txt, loc_text or "India", h)
