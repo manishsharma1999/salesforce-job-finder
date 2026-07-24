@@ -38,12 +38,12 @@ MAX_AGE_HOURS = 72   # 3 days
 
 def parse_age_hours(text: str):
     """Return job age in hours (float), or None if unparseable."""
-    text = (text or "").lower().strip()
-    if not text:
+    raw = (text or "").strip()
+    if not raw:
         return None
 
-    # ISO datetime: 2026-07-24T10:30:00Z
-    m = re.match(r"(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})", text)
+    # ISO datetime: 2026-07-24T10:30:00Z (match BEFORE lowercasing — T is uppercase)
+    m = re.match(r"(\d{4})-(\d{2})-(\d{2})[Tt](\d{2}):(\d{2})", raw)
     if m:
         try:
             dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)),
@@ -53,13 +53,20 @@ def parse_age_hours(text: str):
             pass
 
     # ISO date only: 2026-07-24
-    m = re.match(r"(\d{4})-(\d{2})-(\d{2})$", text)
+    # LinkedIn's <time datetime="2026-07-24"> with no hour → we only know it's "today".
+    # Treat as 12h ago (middle of the day) — prevents date-only from mapping to 0h.
+    m = re.match(r"(\d{4})-(\d{2})-(\d{2})$", raw)
     if m:
         try:
             d = date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
-            return max(0.0, (date.today() - d).days * 24.0)
+            days_diff = (date.today() - d).days
+            if days_diff == 0:
+                return 12.0   # posted today but exact time unknown → assume midday
+            return max(0.0, days_diff * 24.0)
         except Exception:
             pass
+
+    text = raw.lower()
 
     if any(t in text for t in ("just now", "moments ago", "less than")):
         return 0.5
@@ -139,7 +146,11 @@ async def scrape_linkedin(page: Page, keyword: str) -> list[dict]:
             loc     = (await l_el.inner_text()).strip() if l_el else "India"
             age_txt = ""
             if d_el:
-                age_txt = await d_el.get_attribute("datetime") or await d_el.inner_text()
+                # Prefer inner_text ("5 hours ago") over datetime attr ("2026-07-24")
+                # because date-only datetime loses hour precision.
+                inner = (await d_el.inner_text()).strip()
+                dt_attr = (await d_el.get_attribute("datetime") or "").strip()
+                age_txt = inner if inner else dt_attr
             h = parse_age_hours(age_txt)
             if is_recent(h):
                 jobs.append(make_job(title, company, "LinkedIn", href, age_txt, loc, h))
