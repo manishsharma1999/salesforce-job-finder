@@ -64,10 +64,17 @@ def parse_age_hours(text: str) -> float:
 
     if any(t in text for t in ("just now", "moments ago", "less than")):
         return 0.5
-    if "today" in text or "new today" in text:
+    if "today" in text or "new today" in text or text == "posted today":
         return 4.0
-    if "yesterday" in text:
+    if "yesterday" in text or text == "posted yesterday":
         return 28.0
+    # Workday "Posted X Days Ago" / "Posted X Months Ago"
+    m = re.search(r"posted\s+(\d+)\s*day", text)
+    if m: return int(m.group(1)) * 24.0
+    m = re.search(r"posted\s+(\d+)\s*month", text)
+    if m: return int(m.group(1)) * 720.0
+    m = re.search(r"posted\s+(\d+)\s*week", text)
+    if m: return int(m.group(1)) * 168.0
 
     m = re.search(r"(\d+)\s*sec", text)
     if m: return round(int(m.group(1)) / 3600, 2)
@@ -599,83 +606,82 @@ async def scrape_ashby_api() -> list[dict]:
 
 async def scrape_workday_api() -> list[dict]:
     """
-    Workday public careers API — used by Accenture, Cognizant, Wipro, HCL,
-    Infosys, Deloitte, Capgemini, Persistent, Mphasis, Tech Mahindra, IBM India.
-    Each tenant exposes: POST /wday/cxs/{tenant}/{site}/jobs  → JSON, no auth.
+    Workday API — only tenants that respond without Cloudflare blocking.
+    Most wd1/wd3/wd5 tenants return 422; wd12 (Salesforce) works.
+    Uses the country facet ID to filter India results server-side.
     """
     import httpx
     jobs = []
     sf_kw = ["salesforce", "lwc", "apex", "crm", "vlocity", "cpq", "einstein", "mulesoft"]
 
-    # (tenant, wd-subdomain-number, career-site-path, display-name)
+    # (tenant, wd-number, site-path, display-name, india-country-facet-id)
+    # India facet IDs are tenant-specific Workday WID values; discovered per-tenant.
     TENANTS = [
-        ("accenture",      3, "AccentureCareers",           "Accenture"),
-        ("cognizant",      1, "Careers",                    "Cognizant"),
-        ("wipro",          3, "Wipro_Careers",              "Wipro"),
-        ("hcltech",        3, "HCLTechCareers",             "HCL Tech"),
-        ("infosys",        3, "Infosys",                    "Infosys"),
-        ("deloitte",       1, "DeloitteCareer",             "Deloitte"),
-        ("capgemini",      3, "Capgemini",                  "Capgemini"),
-        ("persistent",     5, "Persistent_Careers",         "Persistent Systems"),
-        ("mphasis",        5, "MphasisCareers",             "Mphasis"),
-        ("techmahindra",   3, "TechMahindra",               "Tech Mahindra"),
-        ("ibmindia",       3, "IBM_India",                  "IBM India"),
-        ("ltimindtree",    3, "LTIMindtree",                "LTIMindtree"),
-        ("hexaware",       3, "HexawareCareers",            "Hexaware"),
-        ("niit",           3, "NIIT_Careers",               "NIIT Technologies"),
-        ("coforge",        3, "Coforge",                    "Coforge"),
-        ("mastek",         3, "Mastek",                     "Mastek"),
-        ("zensar",         3, "Zensar",                     "Zensar"),
-        ("birlasoft",      3, "Birlasoft",                  "Birlasoft"),
-        ("sonata-software",3, "SonataSoftware",             "Sonata Software"),
-        ("sasken",         3, "Sasken",                     "Sasken"),
-        ("evosyssolutions", 3, "Evosys",                    "Evosys"),
-        ("simplus",        3, "Simplus",                    "Simplus"),
-        ("cloudmasonry",   3, "CloudMasonry",               "Cloud Masonry"),
-        ("apexon",         3, "Apexon",                     "Apexon"),
-        ("globant",        3, "Globant",                    "Globant"),
-        ("slalom",         3, "SlalomCareers",              "Slalom"),
-        ("publicissapient",3, "PublicisSapient",            "Publicis Sapient"),
-        ("virtusa",        3, "VirtusaCareers",             "Virtusa"),
-        ("concentrix",     3, "ConcentrixCareers",          "Concentrix"),
+        # Salesforce careers — wd12, India facet verified
+        ("salesforce", 12, "External_Career_Site", "Salesforce",
+         "CF_-_REC_-_LRV_-_Job_Posting_Anchor_-_Country_from_Job_Posting_Location_Extended",
+         "c4f78be1a8f14da0ab49ce1162348a5e"),
     ]
+
+    INDIA_LOCS = {
+        "india", "ind", "bengaluru", "bangalore", "hyderabad", "pune", "mumbai",
+        "delhi", "noida", "gurugram", "gurgaon", "chennai", "kolkata", "ahmedabad",
+        "kochi", "coimbatore", "remote",
+    }
+
+    def is_india(loc_text: str) -> bool:
+        if not loc_text:
+            return True
+        lt = loc_text.lower()
+        return any(c in lt for c in INDIA_LOCS)
 
     headers = {
         "Content-Type": "application/json",
         "Accept": "application/json",
         "User-Agent": UA,
+        "X-Requested-With": "XMLHttpRequest",
     }
 
-    async def fetch_tenant(client, tenant, wdver, site, display):
-        url = f"https://{tenant}.wd{wdver}.myworkdayjobs.com/wday/cxs/{tenant}/{site}/jobs"
-        body = {"searchText": "salesforce", "limit": 20, "offset": 0, "appliedFacets": {}}
-        try:
-            r = await client.post(url, json=body, headers=headers)
-            if r.status_code != 200:
-                return
-            data = r.json()
-            for j in data.get("jobPostings", []):
-                t = j.get("title", "")
-                if not any(k in t.lower() for k in sf_kw):
+    async def fetch_tenant(client, tenant, wdver, site, display, facet_param, india_id):
+        base = f"https://{tenant}.wd{wdver}.myworkdayjobs.com"
+        url  = f"{base}/wday/cxs/{tenant}/{site}/jobs"
+        fetched = {}  # ext_path → job dict (dedup by job ID)
+        for q in ["salesforce developer", "salesforce admin", "salesforce architect", "salesforce consultant"]:
+            body = {
+                "searchText": q,
+                "limit": 20,
+                "offset": 0,
+                "appliedFacets": {facet_param: [india_id]},
+            }
+            try:
+                r = await client.post(url, json=body, headers=headers)
+                if r.status_code != 200:
                     continue
-                loc_text = j.get("locationsText", "") or ""
-                # Skip if explicitly not India/remote
-                if loc_text and "india" not in loc_text.lower() and "remote" not in loc_text.lower() and loc_text.strip():
-                    continue
-                posted_txt = j.get("postedOn", "")
-                h = parse_age_hours(posted_txt) if posted_txt else 0.0
-                if not is_recent(h):
-                    continue
-                ext_path = j.get("externalPath", "")
-                job_url = f"https://{tenant}.wd{wdver}.myworkdayjobs.com{ext_path}" if ext_path else ""
-                jobs.append(make_job(t, display, "Workday", job_url, posted_txt, loc_text or "India", h))
-        except Exception:
-            pass
+                for j in r.json().get("jobPostings", []):
+                    t = j.get("title", "")
+                    if not any(k in t.lower() for k in sf_kw):
+                        continue
+                    loc_text = j.get("locationsText", "") or ""
+                    if not is_india(loc_text):
+                        continue
+                    posted_txt = j.get("postedOn", "") or ""
+                    h = parse_age_hours(posted_txt)
+                    if not is_recent(h):
+                        continue
+                    ext_path = j.get("externalPath", "")
+                    job_url = f"{base}{ext_path}" if ext_path else ""
+                    key = ext_path or (t + loc_text)
+                    if key not in fetched:
+                        fetched[key] = make_job(t, display, "Workday", job_url, posted_txt, loc_text or "India", h)
+            except Exception:
+                pass
+        jobs.extend(fetched.values())
 
     try:
-        async with httpx.AsyncClient(timeout=14, follow_redirects=True) as client:
+        async with httpx.AsyncClient(timeout=15, follow_redirects=True) as client:
             await asyncio.gather(*[
-                fetch_tenant(client, t, v, s, d) for t, v, s, d in TENANTS
+                fetch_tenant(client, t, v, s, d, fp, iid)
+                for t, v, s, d, fp, iid in TENANTS
             ])
     except Exception as e:
         print(f"  Workday API error: {e}")
@@ -693,37 +699,32 @@ async def scrape_smartrecruiters_api() -> list[dict]:
     jobs = []
     sf_kw = ["salesforce", "lwc", "apex", "crm", "cpq", "vlocity", "mulesoft"]
 
+    # Slugs verified from SmartRecruiters job board URLs (company.smartrecruiters.com)
     COMPANIES = [
-        ("ibm",                  "IBM"),
-        ("sap",                  "SAP"),
-        ("oracle",               "Oracle"),
-        ("servicenow",           "ServiceNow"),
-        ("salesforce",           "Salesforce"),
-        ("mindtree",             "Mindtree"),
-        ("tcs",                  "TCS"),
-        ("infosys",              "Infosys"),
-        ("wipro",                "Wipro"),
-        ("hcl-technologies",     "HCL Technologies"),
-        ("cognizant",            "Cognizant"),
-        ("capgemini",            "Capgemini"),
-        ("accenture",            "Accenture"),
-        ("deloitte",             "Deloitte"),
-        ("kforce",               "Kforce"),
-        ("slalom-consulting",    "Slalom"),
-        ("virtusa",              "Virtusa"),
-        ("mphasis",              "Mphasis"),
-        ("persistent-systems",   "Persistent Systems"),
-        ("cloudbyz",             "Cloudbyz"),
-        ("cloudkaptan",          "CloudKaptan"),
-        ("cyient",               "Cyient"),
-        ("zensar-technologies",  "Zensar"),
-        ("hexaware-technologies","Hexaware"),
-        ("ltimindtree",          "LTIMindtree"),
-        ("coforge",              "Coforge"),
-        ("mastech-digital",      "Mastech Digital"),
-        ("birlasoft",            "Birlasoft"),
-        ("tech-mahindra",        "Tech Mahindra"),
-        ("niit-technologies",    "NIIT Technologies"),
+        ("IBM",                  "IBM"),
+        ("SAP",                  "SAP"),
+        ("Oracle",               "Oracle"),
+        ("ServiceNow",           "ServiceNow"),
+        ("Salesforce",           "Salesforce"),
+        ("Cognizant",            "Cognizant"),
+        ("Capgemini",            "Capgemini"),
+        ("Accenture",            "Accenture"),
+        ("Deloitte",             "Deloitte"),
+        ("Virtusa",              "Virtusa"),
+        ("Mphasis",              "Mphasis"),
+        ("PersistentSystems",    "Persistent Systems"),
+        ("Coforge",              "Coforge"),
+        ("Genpact",              "Genpact"),
+        ("WNSGlobalServices",    "WNS"),
+        ("Zensar",               "Zensar"),
+        ("HexawareTechnologies", "Hexaware"),
+        ("LTIMindtree",          "LTIMindtree"),
+        ("TechMahindraLtd",      "Tech Mahindra"),
+        ("Birlasoft",            "Birlasoft"),
+        ("Slalom",               "Slalom"),
+        ("GlobalLogic",          "GlobalLogic"),
+        ("Unison",               "Unison"),
+        ("Cyient",               "Cyient"),
     ]
 
     async def fetch(client, slug, display):
