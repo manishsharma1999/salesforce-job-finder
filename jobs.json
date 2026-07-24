@@ -1,962 +1,744 @@
 {
   "jobs": [
     {
-      "title": "Technical Consultant - Doc Cloud Professional Services",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=b63defc71813998e&bb=y2kxJMDd_4sHz25ImHTFl2p_FxXUg8kiLtJzAFCZt-GIxiLVYfS2UG9lk0KN1LvKAN2_NiXZhklGV4Bc-0JCeZSJ95MM3cfDc_MztOW7LjNkkjJ9_Q9UZRc3IxNi38NjB1ilV98S8w23-VnSbQJhcKYUQ6euGh962ZjgsGnlQrE%3D&xkcb=SoA167M3gKOgnqzC950LbzkdCdPP&fccid=f89deb5a97c7738a&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "LEAD SALESFORCE DEVELOPER",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=81d59e600f398e99&bb=y2kxJMDd_4sHz25ImHTFlwvZKqJEKtxQF9tnIhPHw1W0Sz72_haKceXEr_7UKuAUiS4PxKdQ8v9hsxZCYWmUz4jpEh4__Y3eDvP5L-jZDcDY30JXBkplKLno7At9jHYZzvkVJWH0fyPVAEQVIUV7OFH5cq39I90psznhN9yjDdI%3D&xkcb=SoCB67M3gKOgnqzC950KbzkdCdPP&fccid=dd616958bd9ddc12&cmp=UHV-Software-solutions-pvt-lmt&ti=Salesforce+Developer&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "Salesforce Agentforce Developer",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=64c3d9c860148b09&bb=y2kxJMDd_4sHz25ImHTFl665G0HSyQE7Pj5wulpw4sLGisS08Eoeua69hpl0CS2J4m91OLD5kzyhJyxk3mH0xSdkJ1yVuYIVhCWwh5nxgBBX7vuMu3_eCSyt8xWEtOFFHB9rW0Y37yJi8mSZmrJmsWvJzih4ggqeA-Mps0t2F7Q%3D&xkcb=SoAc67M3gKOgnqzC950JbzkdCdPP&fccid=053fe14ec403ab01&cmp=Talent-Muscle-Pvt-Ltd&ti=Salesforce+Developer&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "Sr. Developer - Enterprise Application Salesforce P 4B",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=29723e452ce9b1f7&bb=y2kxJMDd_4sHz25ImHTFlzR4f4nbD8dFGW2AAdTPXh-Vq3VYQSLKOSI9cTaeixdo-m40sQ2hA1qb0kEHuUSkHEUCqEV1elIWjGDOk79ZctrOshgjSzmwiPg-Q-8Jt3RpS4u4BNpK4aEoBW3PveNurpoYihUtHEV9vZVT5g608A8%3D&xkcb=SoCo67M3gKOgnqzC950IbzkdCdPP&fccid=afe30394bfba1470&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "Senior Salesforce Developer/Consultant",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=376016a11d70221b&bb=y2kxJMDd_4sHz25ImHTFl-GGwNUnoc8WcgJzrnt3jeOw7cackkviM5uxlInyFbe77CAJ46HqiBwGHQ5wsO7w2r1RmQA8xry15NnDHYbe1PAH0XN7aCholLyv61BNB7Uj4rO47osMo4kc594ISNRIsgr7QTFwUN-CU3CLEXnXCZU%3D&xkcb=SoAm67M3gKOgnqzC950PbzkdCdPP&fccid=4bddbad3cdc17dcd&cmp=Recruitment-Hub-365&ti=Senior+Salesforce+Developer&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "SALESFORCE DEVELOPER-AGENTFORCE",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=9a1f0faa0c71a307&bb=y2kxJMDd_4sHz25ImHTFl4SLWBPyTsPWfClft3OCJvzTma-kgVa-RYTQxQtRrogtcgdPf4jHUBcHgHGfYFoxOeFCyFsXdVkU1y7sm-w0xXmEAyBV5rj8LRpVBy6ti0b2WkEOfGmNtW24hwyZ5QVcjmZCnYEJqc0k72z86o1mMRE%3D&xkcb=SoCS67M3gKOgnqzC950ObzkdCdPP&fccid=dd616958bd9ddc12&cmp=UHV-Software-solutions-pvt-lmt&ti=Salesforce+Developer&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "Data Integration Engineer/Architect- Snaplogic",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=e8323a33f5063178&bb=y2kxJMDd_4sHz25ImHTFl_TvzYxWFXsgY1uJDJG3kWZ9MHNwnUsOpuoYER9t3XeFq5aNVQ4MPSEjoVXy4mQPoKCFNzNw1_SHClL6spkC5uKldkv1w2UpHhY44cFScrfqeRJ1v3ywzXyAwO9suSbc63hhADYBJ3CSmd0weKnl0P8%3D&xkcb=SoAP67M3gKOgnqzC950NbzkdCdPP&fccid=dd616958bd9ddc12&cmp=Kunosol&ti=Integration+Architect&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "Salesforce Associate Architect",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=0e327c94c66920db&bb=y2kxJMDd_4sHz25ImHTFl__JmkMTF1iWr_6k6IcVUe09LWpVeVtqqPJxCYK51jXmuTCgxraosZQShOc5PUoJYvZu73dMU0eXzhKlWHo6vGuU8FL29dsskYgnWex4fkF56yJLw52INxH8QivGec-gh0y_nsNSz05HIpCRDIlWrGU%3D&xkcb=SoC767M3gKOgnqzC950MbzkdCdPP&fccid=9de52fa9ca5b17cd&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "Salesforce Apex Technical Lead",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=adc1feae604b6fe4&bb=y2kxJMDd_4sHz25ImHTFl4yhjsgh0k6OnHrzkcpEIliZjWBFbEwid8tJs4YImHTkhbMKvtAXhf93c33APYpj8EV_-zyKeeNwDv4dEPDtcCe34KYDRjhWgB6pTWcX_dEUpIPBWj5sS2meRBiFo123g9pIXWoinACxBZEyoG2T1go%3D&xkcb=SoBS67M3gKOgnqzC950DbzkdCdPP&fccid=92a79710d9899fa9&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "SAP Open text VIM Simplify id",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=ec7757ac6c0fbd6b&bb=y2kxJMDd_4sHz25ImHTFl0SOTTSc8I3ED4pqVvURqVgQLlr0nIDgYXrXO9_bVDVuC-iNJaKwXZk_YbLoUH58-nCyqg04ebVvJaJDRPGq1FnkWerGTHyY4WN3mOZ38FKJZSgZ205AEiv7C2rSr7gAaZYpiVCaYGKBn9M03d9x7ws%3D&xkcb=SoDm67M3gKOgnqzC950CbzkdCdPP&fccid=059470e192337a9a&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "Senior Salesforce Developer \u2013 AI & Agentforce",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=1a8a800007372b6e&bb=y2kxJMDd_4sHz25ImHTFl15S7GozL4WGVIxSgS1FzIH-7WglMxMd9nPInWXu-1kpKg4L_PSbSMlIftThntKYqTj45bq6Uix6r0u_d019q4FJYmQoyQ00_peba4E59ARNg-AFjR3_-_0Azv-QAFV9aLH7cunmYwJSxxtpidPc7Os%3D&xkcb=SoB767M3gKOgnqzC950BbzkdCdPP&fccid=6478badf5dd19efa&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "Salesforce Apex Senior Developer - Lightning framework and administration",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=afdf42ba751e8991&bb=y2kxJMDd_4sHz25ImHTFlwamjJk-24xT4l8dofF_8Zvx3CMSzwh1V5qP_oRlJTtxmNIVNJcr-LPbBVDLy3TOPpuAkiQBu0Frnl6FBu3Iv7mKnZ0dtS5B1Wix2elE6dH7_os-15jpCDpMzLObLYcmrMmbfG2tpb2Ifsm1n8vY2f8%3D&xkcb=SoDP67M3gKOgnqzC950AbzkdCdPP&fccid=92a79710d9899fa9&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "Engineering Manager \u2013 Salesforce & GTM Systems",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=50d50c83a8aa0f83&bb=y2kxJMDd_4sHz25ImHTFl4SLWBPyTsPWdfPIVyrO7xCvRqy3Hp8eFsyFXnMZHnyLKV7YKCaia9aHaG-jrSoEtFrqM3880V4IUeQYOUSeeuVg1nNYI7icb0h-w0YNctSVU5lOo_ABpA1q_oVdLMj12mhGxuc7cN5ZWpMzOm9tdDA%3D&xkcb=SoBB67M3gKOgnqzC950HbzkdCdPP&fccid=9dd30dd046d9ac7a&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "Senior Salesforce Developer (Multi-Cloud)",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=2a7f694e992eadb7&bb=y2kxJMDd_4sHz25ImHTFlzZd9HXiAl9zkivmg7Z3i5jZEjuh0jHH9d2tHcbb7XPDOPQngMuAPKCwW88Zd4vvmUEoGfoX-Y90MKeATm7Vy01B8f7mTIkYYSrGj8rFPU3r1Plhou-jII1VzNTmV_bXLUr7sb48_-yRQYExeyjD7mE%3D&xkcb=SoD167M3gKOgnqzC950GbzkdCdPP&fccid=1adf3fa43ae9f1be&cmp=Cloudy-Coders&ti=Senior+Salesforce+Developer&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "Specialist \u2013 Salesforce CRM",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=299a7e364b9babe9&bb=4dB9ygfA-bHS29yWf_zmGSD_iouu6ncRPQRZ7XTbRemSR07r829RrlZymd9nZB2_B6BCI86dJTjCCw8_1MonGlttiX1nGF9DVYmBgONudZrLrxmJlaJcxTRtK3i6t1yNSXTtoIer3Qcx48IoT0d3RIX33_Z3ZtWt&xkcb=SoCu67M3gKO_7LTC1Z0KbzkdCdPP&fccid=9945668cae8f867e&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "Lead I - Product Implementation",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=56b6e4b89cc9adac&bb=4dB9ygfA-bHS29yWf_zmGblEMh0_j4eKQh4fbCUx2Of8YIu7IoRXrpkcN-3t_fnjpdNIGz7Xy-rgX-MP9ZZkI2IhW3ir3JwesscTX3oRGT-ev4aZVpsLn3fnMV46GpDzp3RGdZGakfA2XqR-WMohXiTsGRnHIhNO&xkcb=SoAJ67M3gKO_7LTC1Z0PbzkdCdPP&fccid=810178099fb1fcbc&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "Salesforce Technical Architect (Core & Revenue Cloud)",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=ecc93e33b88f67ca&bb=4dB9ygfA-bHS29yWf_zmGcMe7STwz7PoEenzObhmjRrJSRF2TfMqcbkuL3OUna9R5-UeWAxTz4fA9ZEyoY06JUiiModR0u1zSmRizzh5Bumw4eqTrMNN3zic6wNRgT-PiKbPAWMjKf-Af86nlHuzLYO2UDdCtoBO&xkcb=SoAg67M3gKO_7LTC1Z0NbzkdCdPP&fccid=4027cfd917e1ee29&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "Services Consultant Sr",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=0945ad6aa7542456&bb=4dB9ygfA-bHS29yWf_zmGTbbIBBConbF704O0P95DAA8jPZQzQbUNcesBJAfxIRYL5p_P9HI5_mT-wR6uC2x9ZERTOzg9eSDrvtI3E2hMZCDsr0Xsg-3oV8npJI2ljbxWh-m0fD0yxGfWa5zpF1N9HG9Jg2x46w9&xkcb=SoCU67M3gKO_7LTC1Z0MbzkdCdPP&fccid=837c958b2711fe23&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "Senior Manager, Salesforce Development",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=5c22046b1c4889fa&bb=1iOG27CaO5Jp02TTZEiRdSC2uzcxK3WojuhSJfs8KqMu6sr5ncRGapRIQkC1UDOIxBIfiDAIlLe5BLoxEBfurOPi71Ws41qTccikorouD0jjjr09_Tvalc0xFp7V4up3&xkcb=SoD867M3gKO-1HzCNR0IbzkdCdPP&fccid=8eb06d1dd4f7d0b8&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "Service Specialist, Salesforce Development",
-      "company": "Unknown",
-      "platform": "Indeed",
-      "url": "https://www.indeed.com/rc/clk?jk=b744415e7875c1db&bb=1iOG27CaO5Jp02TTZEiRdehAlqBN9eSZFuhKJLXUhThOeiMddbZLgaHophtCa6PF0c6ZeJaBeW51g7WLclV6KQedmhd5iufmGvAmE_hNy-tnBKbAUR5UidGas7M8G__y&xkcb=SoAG67M3gKO-1HzCNR0DbzkdCdPP&fccid=80b009cf1bbcc4f6&vjs=3",
-      "posted": "Recent"
-    },
-    {
-      "title": "Custom Software Engineer",
-      "company": "Accenture in India",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/custom-software-engineer-at-accenture-in-india-4416439655?position=1&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=5bWHp8wvoyCTCtTe3oU7Fg%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Senior Salesforce Developer",
-      "company": "Emeritus",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-emeritus-4435551428?position=2&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=4KGOx7ag8TlRM7OciYHrIg%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Senior Software Engineer",
-      "company": "Principal Financial Group",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-at-principal-financial-group-4443866984?position=3&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=SQK91JNi%2FtmCCkTJzMnU8g%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Salesforce Developer",
-      "company": "Riskonnect, Inc.",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-riskonnect-inc-4427193515?position=4&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=2bD1zjxqahl7VfaL%2Bhni1w%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Senior Salesforce Developer",
-      "company": "Obrimo Technologies",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-obrimo-technologies-4444322450?position=5&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=1bu6B0EYa4QzCUUo0PfwhQ%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce Sr Developer",
-      "company": "Trane Technologies",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-sr-developer-at-trane-technologies-4443874851?position=6&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=CE%2BrpHUu5Mfz1EQGYbKEIg%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Senior Salesforce Developer",
-      "company": "ServiceTitan",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-servicetitan-4436441575?position=7&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=KsCLBkdqSlTuepl46UC%2F%2Bw%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce Engineer III",
-      "company": "ZoomInfo",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-engineer-iii-at-zoominfo-4397792819?position=8&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=OzaHJ40FL8hwcdU3UDMoJA%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Salesforce LWC Developer",
-      "company": "Tata Consultancy Services",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-lwc-developer-at-tata-consultancy-services-4444006093?position=9&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=ynYzHPpTp59MG49eXo%2BN4g%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Salesforce Developer",
-      "company": "ACS International India Pvt. Ltd. (ACSII)",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-acs-international-india-pvt-ltd-acsii-4444043442?position=10&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=t4V0k9U2%2BAByfrmSp01fxQ%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce - Senior Engineer",
-      "company": "Milestone Technologies, Inc.",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-senior-engineer-at-milestone-technologies-inc-4441545830?position=11&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=tkmz2VaMAiTvz8vee66nbg%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Senior Salesforce Developer - Experience Portal(Experience Cloud)",
-      "company": "PAR Technology",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-experience-portal-experience-cloud-at-par-technology-4426240081?position=12&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=IW554mkUmd8MyIxdZ1h5xw%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Service Specialist, Salesforce Development",
-      "company": "Valmet",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/service-specialist-salesforce-development-at-valmet-4444461721?position=14&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=aJ9xELXfsaelHjJU%2BSHmLQ%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Senior Salesforce Developer \u2013 AI & Agentforce",
-      "company": "mindZvue",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-%E2%80%93-ai-agentforce-at-mindzvue-4444711615?position=15&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=7Be8QUckRlJEl44F2tWzXA%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Salesforce Developer - VOIS",
-      "company": "VOIS",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-vois-at-vois-4435993193?position=16&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=Di3Eb5YuKsxE%2FOWuoXpfgw%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
       "title": "Sr. Software Engineer, Sales",
       "company": "Docusign",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/sr-software-engineer-sales-at-docusign-4444306188?position=17&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=mATAcrnMv1ViCyDJgpcPiA%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Senior Salesforce Engineer",
-      "company": "Altera",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-engineer-at-altera-4415501741?position=18&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=AyoqegGdjHDwyCxMqI2MRg%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce Developer",
-      "company": "Tata Consultancy Services",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-tata-consultancy-services-4444306122?position=19&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=xnViB%2BralLovDOg6RxvHTA%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Senior Salesforce Developer, AI & Agentforce",
-      "company": "Plative",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-ai-agentforce-at-plative-4441805397?position=20&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=fRRRgbX7nkwGoM1%2BHUdTaQ%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce Senior Developer/Consultant",
-      "company": "Infosys",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-senior-developer-consultant-at-infosys-4435018359?position=22&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=ydwUJCSItgGeIN%2F5e9c1nQ%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Senior Technical Consultant",
-      "company": "Salesforce",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/senior-technical-consultant-at-salesforce-4444949986?position=23&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=TWiqRcQ%2Fz%2BvofNRHvf2z2Q%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Application Developer - Salesforce",
-      "company": "Cargill",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/application-developer-salesforce-at-cargill-4441580256?position=24&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=%2B8bxR60ZbW2BiHXU3mrCtA%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Senior Software Engineer",
-      "company": "Bajaj Finserv",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-at-bajaj-finserv-4444713160?position=25&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=vgaq%2FY7YtuS872byDCwlTQ%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Software Engineer-Salesforce",
-      "company": "PTC",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/software-engineer-salesforce-at-ptc-4444902923?position=26&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=GwbJKp4KiHf1BxvyazTT%2BQ%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Lead Application Developer, Salesforce",
-      "company": "Qualys",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/lead-application-developer-salesforce-at-qualys-4394497251?position=27&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=9ncj12scAxe02GSdhYTyig%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce Developer",
-      "company": "INTO University Partnerships",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-into-university-partnerships-4432551490?position=28&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=Ge8sZVVfmXC0WcO08t34%2Fg%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Developer III - Enterprise Solutions (Salesforce Agentforce Developer)",
-      "company": "UST",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/developer-iii-enterprise-solutions-salesforce-agentforce-developer-at-ust-4441596064?position=29&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=alwfQLwDcZlADFvH9jyUNg%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Specialist \u2013 Salesforce CRM",
-      "company": "WSA \u2013 Wonderful Sound for All",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/specialist-%E2%80%93-salesforce-crm-at-wsa-%E2%80%93-wonderful-sound-for-all-4444333213?position=30&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=O%2Fupkf%2B18PTyX31E6F%2FwBg%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "SDE II - Salesforce AI.",
-      "company": "InMobi Advertising",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/sde-ii-salesforce-ai-at-inmobi-advertising-4444474263?position=31&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=iPPvWpnDxWN6v9tyQ2tItA%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Senior Salesforce Expert",
-      "company": "Siemens Energy",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-expert-at-siemens-energy-4435057539?position=32&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=a%2BCn6XQmZs0E1jwI%2FjdInQ%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Developer III - Enterprise Solutions",
-      "company": "UST",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/developer-iii-enterprise-solutions-at-ust-4441577873?position=33&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=spymsp75mmyYrLI0d9%2BdOQ%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Senior Salesforce Developer",
-      "company": "Lorven Technologies Inc.",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-lorven-technologies-inc-4444096751?position=34&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=B1U4co1%2Bbcype5vkz6ZBPQ%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce Architect(12+ years)(Local to Hyderabad)",
-      "company": "Mejenta Systems, Inc.",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-architect-12%2B-years-local-to-hyderabad-at-mejenta-systems-inc-4441523440?position=35&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=e47UGUApJS0X0067zTOk8Q%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Salesforce Developer",
-      "company": "Live Connections",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-live-connections-4444332192?position=36&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=cevdXGslTZptONiSddK7HQ%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce Lead Developer - B2B Commerce",
-      "company": "Trane Technologies",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-lead-developer-b2b-commerce-at-trane-technologies-4443880817?position=37&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=Hp9Y1ckVDSVRa5RHTtkrnA%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "SDE II - Salesforce AI",
-      "company": "Job-scouts.com",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/sde-ii-salesforce-ai-at-job-scouts-com-4444002429?position=38&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=9i2LMsXNi871YOJMNdA9gA%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Salesforce Conga CLM Developer",
-      "company": "Ekloud, Inc.",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-conga-clm-developer-at-ekloud-inc-4444912206?position=39&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=rWFMazUdlbFfBTshCq%2Frfg%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce Engineer (Premium Finance Platform)",
-      "company": "Saaki Argus and Averil Consulting",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-engineer-premium-finance-platform-at-saaki-argus-and-averil-consulting-4444948507?position=40&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=REkL70e0eRcfGf2Jqd1PTA%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Senior Salesforce Voice & Amazon Connect Engineer",
-      "company": "Persistent Systems",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-voice-amazon-connect-engineer-at-persistent-systems-4441594354?position=41&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=Wzj5dBACCbQNZ%2FTauAsjKQ%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce Developer \u2013 Revenue Cloud (CPQ & Billing)",
-      "company": "Digile",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-%E2%80%93-revenue-cloud-cpq-billing-at-digile-4398617313?position=42&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=6jAo8JTexRH706ksMmeOSg%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Tech Lead Salesforce Developer",
-      "company": "Empiric",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/tech-lead-salesforce-developer-at-empiric-4444914302?position=43&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=gpQLTlIrqs80d1KEfZ2yDw%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce Lead Developer",
-      "company": "Runmap Infotech Private Ltd.",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-lead-developer-at-runmap-infotech-private-ltd-4444910323?position=44&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=XxNR1dxI1J%2FV8Si5jIOU3A%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "CRM Developer",
-      "company": "Takeda",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/crm-developer-at-takeda-4423197810?position=45&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=yDMGjJc7%2FIk4OHyqkDth9g%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Software Engineer",
-      "company": "Bajaj Finserv",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/software-engineer-at-bajaj-finserv-4444706486?position=46&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=KTS4aM2FoM3OFYPAXHrbsQ%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Sr Lead - SFDC Data Cloud",
-      "company": "Birlasoft",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/sr-lead-sfdc-data-cloud-at-birlasoft-4426246505?position=47&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=J7ABlBqxOOfvhln3NbUlcw%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Manager, Salesforce Development",
-      "company": "Teach For India",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/manager-salesforce-development-at-teach-for-india-4444946768?position=48&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=xLe3vIjOXFqv5KbfWIaUPw%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Senior Salesforce Developer(7+ years)",
-      "company": "MindBrain",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-7%2B-years-at-mindbrain-4444073880?position=49&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=yy2VdrzbiBEMiLcGf6tF9g%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Senior Salesforce Developer \u2013 Freelance | Remote",
-      "company": "ThreatXIntel",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-%E2%80%93-freelance-remote-at-threatxintel-4444328187?position=50&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=3KWrJloxnzT5me1HxYvj8A%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Tech Process Specialist - TOMO - Tech Admin & Development",
-      "company": "Google Operations Center",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/tech-process-specialist-tomo-tech-admin-development-at-google-operations-center-4444325796?position=51&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=vIDoT0wm4ND1vGUz2CWy%2FA%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Sr. Salesforce Developer- Contract",
-      "company": "Gravity Infosolutions, Inc.",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/sr-salesforce-developer-contract-at-gravity-infosolutions-inc-4444313540?position=52&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=7%2Btu1f5eLuSt5KBTuortig%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce Financial Cloud Expert",
-      "company": "Acute InfoSoft Pvt. Ltd.",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-financial-cloud-expert-at-acute-infosoft-pvt-ltd-4443871425?position=53&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=HuAr0seskhIPyx1xxh5ijw%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "MTS/SMTS/LMTS - Software Engineer",
-      "company": "Salesforce",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/mts-smts-lmts-software-engineer-at-salesforce-4444306704?position=54&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=V1ZgxX0Tg4tQgXUKLJ3z6A%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Senior Manager, Salesforce Development",
-      "company": "Cornerstone OnDemand",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/senior-manager-salesforce-development-at-cornerstone-ondemand-4444945698?position=55&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=T5LHxADxx1RpPkRkeus37A%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Senior Salesforce Adminstrator",
-      "company": "ACS International India Pvt. Ltd. (ACSII)",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-adminstrator-at-acs-international-india-pvt-ltd-acsii-4444046381?position=56&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=2C7kpaKpBwDGaNx8An1bvw%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce Architect",
-      "company": "Natus Sensory",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-architect-at-natus-sensory-4442983454?position=58&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=5dfFPuO5sKC1lDRW%2F9gnHA%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce Developer (Architect)",
-      "company": "Talentgigs",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-architect-at-talentgigs-4444324736?position=59&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=yiTMpZv51zPP1nN7K1%2FrCw%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce Administrator with Omni Channel-10+ years",
-      "company": "Maneva Consulting Pvt. Ltd.",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-administrator-with-omni-channel-10%2B-years-at-maneva-consulting-pvt-ltd-4441931414?position=60&pageNum=0&refId=h7WUfPeWmZLfLDMvqOELMw%3D%3D&trackingId=ojtuGOvyNvVulPbpXMOowA%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce Marketing Cloud Consultant (B2C)",
-      "company": "DigitalXNode",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-marketing-cloud-consultant-b2c-at-digitalxnode-4444775131?position=1&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=bFKkvvDscgUSRjg2WtB3WA%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "CRM Technical Consultant",
-      "company": "Compusoft Advisors India Pvt. Ltd.",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/crm-technical-consultant-at-compusoft-advisors-india-pvt-ltd-4441585603?position=3&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=L7UPgR8Mxw%2FiHwniKOD50w%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Business Analyst, Microsoft 365",
-      "company": "Ralph Lauren",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-microsoft-365-at-ralph-lauren-4441577942?position=4&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=314l%2BS6%2FvsM2ZaAkwnHenA%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce Business Analyst (Health Cloud) | Remote (Pan India) | Contract | Immediate Joiners Preferred | Experience: 8+ Years",
-      "company": "Unicorn Workforce",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-business-analyst-health-cloud-remote-pan-india-contract-immediate-joiners-preferred-experience-8%2B-years-at-unicorn-workforce-4444463581?position=5&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=MB22R6spmRpDNp3vPhc2RQ%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Sr Software Engineer -Salesforce",
-      "company": "Mattel, Inc.",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/sr-software-engineer-salesforce-at-mattel-inc-4416697914?position=7&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=2hbXzX6lKM%2Fpwy31hVs8LQ%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "CPQ - Revenue cloud Consultant",
-      "company": "iO Associates",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/cpq-revenue-cloud-consultant-at-io-associates-4444424980?position=9&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=lEulUpkIPxzqUZTJYYztxA%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Business Data Analyst - Transact system(GL)",
-      "company": "NTT DATA North America",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-data-analyst-transact-system-gl-at-ntt-data-north-america-4436332924?position=10&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=v0h%2FQlzruEfJvH6RjYO2sw%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Business Analyst, Amazon Fresh",
-      "company": "Amazon",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-amazon-fresh-at-amazon-4444960081?position=11&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=%2FFGKcjOc1jguKywk%2BwyOLQ%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce Engagement Lead (Business Analysis + Project Management)",
-      "company": "mindZvue",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-engagement-lead-business-analysis-%2B-project-management-at-mindzvue-4444704743?position=12&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=jQT4e4ysJxR%2B6i4fBulN4g%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Business Analysis - Payment",
-      "company": "Capco",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analysis-payment-at-capco-4444431511?position=13&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=YEtZ%2FQJBw9FAKx%2B%2F1GgtWA%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Business Analyst - Data and Analytics",
-      "company": "HSBC",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-data-and-analytics-at-hsbc-4444707519?position=14&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=PFtoRAsXG09UnD1xjnoM4w%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "MS Dynamics 365 CRM Technical Consultant - 9322",
-      "company": "Fujitsu",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/ms-dynamics-365-crm-technical-consultant-9322-at-fujitsu-4437780235?position=15&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=Pezz%2Ft5LRoSijzbsacPdbA%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Business Analyst",
-      "company": "Treebo Hospitality Ventures",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-treebo-hospitality-ventures-4444321863?position=16&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=AtFUqYi4Zm8417q9Laulqw%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Business Analytics Analyst",
-      "company": "Citi",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analytics-analyst-at-citi-4444322574?position=19&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=S33dgjs7owEUSkkUmEA8iA%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/sr-software-engineer-sales-at-docusign-4444306188?position=1&pageNum=0&refId=jVDYqcDTsiIAFbgPhdP%2FaA%3D%3D&trackingId=sDXiwqky5pWU9%2B7KWaLStg%3D%3D",
       "posted": "2026-07-24"
     },
     {
       "title": "AI Architect - Business Applications, LinkedIn Marketing Solutions",
       "company": "Bullpen Capital",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/ai-architect-business-applications-linkedin-marketing-solutions-at-bullpen-capital-4444914519?position=21&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=Z%2FeT5l%2FL0NbxoVt1nvjshg%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/ai-architect-business-applications-linkedin-marketing-solutions-at-bullpen-capital-4444914519?position=2&pageNum=0&refId=jVDYqcDTsiIAFbgPhdP%2FaA%3D%3D&trackingId=iy%2BO3u61inho7UM1dPcyEg%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Senior Salesforce Developer \u2013 AI & Agentforce",
+      "company": "mindZvue",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-%E2%80%93-ai-agentforce-at-mindzvue-4444711615?position=3&pageNum=0&refId=jVDYqcDTsiIAFbgPhdP%2FaA%3D%3D&trackingId=opH3q1xbzBt%2Bj4jJ2FGTxw%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Senior Salesforce Developer",
+      "company": "Emeritus",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-emeritus-4435551428?position=4&pageNum=0&refId=jVDYqcDTsiIAFbgPhdP%2FaA%3D%3D&trackingId=MRvZ7esCx%2Buq2KznCGCtxw%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Senior Salesforce Developer",
+      "company": "ServiceTitan",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-servicetitan-4436453020?position=5&pageNum=0&refId=jVDYqcDTsiIAFbgPhdP%2FaA%3D%3D&trackingId=aEhsyggK9k%2BGwT18b3s3Sw%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Senior Salesforce Developer(7+ years)",
+      "company": "MindBrain",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-7%2B-years-at-mindbrain-4444073880?position=7&pageNum=0&refId=jVDYqcDTsiIAFbgPhdP%2FaA%3D%3D&trackingId=U9jeEw8gTn4DQZRRHR7yMw%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Senior Salesforce Developer, AI & Agentforce",
+      "company": "Plative",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-ai-agentforce-at-plative-4441805397?position=8&pageNum=0&refId=jVDYqcDTsiIAFbgPhdP%2FaA%3D%3D&trackingId=VMuLaqoHJyi8%2BqFaX4dC4g%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Senior Salesforce Developer",
+      "company": "Obrimo Technologies",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-obrimo-technologies-4444322450?position=9&pageNum=0&refId=jVDYqcDTsiIAFbgPhdP%2FaA%3D%3D&trackingId=nd0tILdKG0KES5Xbd2HHIw%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Senior Salesforce Developer \u2013 Freelance | Remote",
+      "company": "ThreatXIntel",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-%E2%80%93-freelance-remote-at-threatxintel-4444328187?position=10&pageNum=0&refId=jVDYqcDTsiIAFbgPhdP%2FaA%3D%3D&trackingId=uAqYYnAoz2w5I4xTrPOe1A%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Senior Salesforce Developer - Service & Experience Cloud",
+      "company": "NTT DATA North America",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-service-experience-cloud-at-ntt-data-north-america-4444956879?position=11&pageNum=0&refId=jVDYqcDTsiIAFbgPhdP%2FaA%3D%3D&trackingId=ADAjysrEl%2FPxNOxTCW55yg%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Senior Salesforce Developer",
+      "company": "Lorven Technologies Inc.",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-at-lorven-technologies-inc-4444096751?position=12&pageNum=0&refId=jVDYqcDTsiIAFbgPhdP%2FaA%3D%3D&trackingId=IekkLtG%2Fcsy%2Fg7rgoKz07A%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Sr. Salesforce Developer- Contract",
+      "company": "Gravity Infosolutions, Inc.",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/sr-salesforce-developer-contract-at-gravity-infosolutions-inc-4444313540?position=13&pageNum=0&refId=jVDYqcDTsiIAFbgPhdP%2FaA%3D%3D&trackingId=ZN3AJPNzjh6XtVkEi7Y5UA%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Senior Salesforce Developer - Experience Portal(Experience Cloud)",
+      "company": "PAR Technology",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-developer-experience-portal-experience-cloud-at-par-technology-4426240081?position=14&pageNum=0&refId=jVDYqcDTsiIAFbgPhdP%2FaA%3D%3D&trackingId=DpV1VXMdSfDH9KAGwUEXfw%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Salesforce Developer",
+      "company": "ACS International India Pvt. Ltd. (ACSII)",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-acs-international-india-pvt-ltd-acsii-4444043442?position=15&pageNum=0&refId=jVDYqcDTsiIAFbgPhdP%2FaA%3D%3D&trackingId=sLQm5UXzEryLhuMYtEiO%2FQ%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Salesforce - Senior Engineer",
+      "company": "Milestone Technologies, Inc.",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-senior-engineer-at-milestone-technologies-inc-4441545830?position=16&pageNum=0&refId=jVDYqcDTsiIAFbgPhdP%2FaA%3D%3D&trackingId=he6AxE032CLIZr2RkV4JCg%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Service Specialist, Salesforce Development",
+      "company": "Valmet",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/service-specialist-salesforce-development-at-valmet-4444461721?position=17&pageNum=0&refId=jVDYqcDTsiIAFbgPhdP%2FaA%3D%3D&trackingId=xRLXn2X8%2Fgwh9IIK91uasA%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Salesforce Conga CLM Developer",
+      "company": "Ekloud, Inc.",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-conga-clm-developer-at-ekloud-inc-4444912206?position=18&pageNum=0&refId=jVDYqcDTsiIAFbgPhdP%2FaA%3D%3D&trackingId=AL%2BEEs81%2BSKyS66fMTMFjg%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Custom Software Engineer",
+      "company": "Accenture in India",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/custom-software-engineer-at-accenture-in-india-4416439655?position=19&pageNum=0&refId=jVDYqcDTsiIAFbgPhdP%2FaA%3D%3D&trackingId=ovMe1%2BwZdLiP%2BpcYil3ICQ%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Salesforce Marketing Cloud Consultant (B2C)",
+      "company": "DigitalXNode",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-marketing-cloud-consultant-b2c-at-digitalxnode-4444775131?position=1&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=ePnjmmXepnWvXlWaOu45zQ%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Presales & Solutions Consultant | Customer Service / CX Domain",
+      "company": "Live Connections",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/presales-solutions-consultant-customer-service-cx-domain-at-live-connections-4444337929?position=3&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=M9JhdRC3ATR3gEdvc6rG0Q%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "CRM Technical Consultant",
+      "company": "Compusoft Advisors India Pvt. Ltd.",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/crm-technical-consultant-at-compusoft-advisors-india-pvt-ltd-4441585603?position=4&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=T39PiweamCNC0gU8k5BNIQ%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Business Analyst, Microsoft 365",
+      "company": "Ralph Lauren",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-microsoft-365-at-ralph-lauren-4441577942?position=5&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=BrnwCbzLpDt74vj5%2Fd032w%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Salesforce Business Analyst (Health Cloud) | Remote (Pan India) | Contract | Immediate Joiners Preferred | Experience: 8+ Years",
+      "company": "Unicorn Workforce",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-business-analyst-health-cloud-remote-pan-india-contract-immediate-joiners-preferred-experience-8%2B-years-at-unicorn-workforce-4444463581?position=6&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=aEqkwm5g81IV7b9%2FdIZT2Q%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Senior Salesforce Voice & Amazon Connect Engineer",
+      "company": "Persistent Systems",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-voice-amazon-connect-engineer-at-persistent-systems-4441594354?position=7&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=NTjH2lvR8ia2xAyzhOKM%2Fw%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Sr Software Engineer -Salesforce",
+      "company": "Mattel, Inc.",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/sr-software-engineer-salesforce-at-mattel-inc-4416697914?position=8&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=neaLc3CRXd8Fa6jl0CiDYA%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Lead Application Developer, Salesforce",
+      "company": "Qualys",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/lead-application-developer-salesforce-at-qualys-4394497251?position=9&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=%2BffJGgiDx2IXf3OhFlfAng%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Business Data Analyst - Transact system(GL)",
+      "company": "NTT DATA North America",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-data-analyst-transact-system-gl-at-ntt-data-north-america-4436332924?position=10&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=ZWe1hXkjjQ7RPBzPHTv7Dg%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Senior Technical Consultant",
+      "company": "Salesforce",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/senior-technical-consultant-at-salesforce-4444949986?position=11&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=pzJFc1%2BbP84HjGg85lmaXg%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Business Analyst, Amazon Fresh",
+      "company": "Amazon",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-amazon-fresh-at-amazon-4444960081?position=12&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=19pqq4FhqiE1QljOdHTRyA%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Salesforce Engagement Lead (Business Analysis + Project Management)",
+      "company": "mindZvue",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-engagement-lead-business-analysis-%2B-project-management-at-mindzvue-4444704743?position=13&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=XehR%2F8szvdA5ECAihjSwUQ%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Business Analyst - Data and Analytics",
+      "company": "HSBC",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-data-and-analytics-at-hsbc-4444707519?position=15&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=nJWmXoGYzwpoKuY%2Fkz1gDA%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Business Analyst",
+      "company": "Treebo Hospitality Ventures",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-treebo-hospitality-ventures-4444321863?position=16&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=XEGP39mPwtSV6pNIrkWGmw%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Business Analytics Analyst",
+      "company": "Citi",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analytics-analyst-at-citi-4444322574?position=17&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=85nwtJiPb9M6kDwEioqN2w%3D%3D",
       "posted": "2026-07-24"
     },
     {
       "title": "Fresher 2026 | Business Analyst",
       "company": "Propel Consulting Services, Inc.",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/fresher-2026-business-analyst-at-propel-consulting-services-inc-4444301470?position=22&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=oXB%2FMnVuuu4SeD67b0twAg%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Salesforce CPQ Business Analyst",
-      "company": "Simpliigence",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-cpq-business-analyst-at-simpliigence-4444315704?position=23&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=7OOHjB3gfbRO5pfquO%2BBTQ%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/fresher-2026-business-analyst-at-propel-consulting-services-inc-4444301470?position=19&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=v%2FF07PITOzB5q9TIzL594A%3D%3D",
       "posted": "2026-07-24"
     },
     {
       "title": "SAS AML Business Analyst \\/ SME \\/ Tester",
       "company": "LanceSoft India",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/sas-aml-business-analyst-sme-tester-at-lancesoft-india-4444318351?position=24&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=K71tpPil8qi1%2FzNDwC3EXQ%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/sas-aml-business-analyst-sme-tester-at-lancesoft-india-4444318351?position=20&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=%2FMFWC9VBEcAXJdBUgiJpXw%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Salesforce CPQ Business Analyst",
+      "company": "Simpliigence",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-cpq-business-analyst-at-simpliigence-4444315704?position=21&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=oQ91WKlflliukoNhxhY2Xg%3D%3D",
       "posted": "2026-07-24"
     },
     {
       "title": "Business Analyst",
       "company": "Three Across",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-three-across-4444957550?position=26&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=zu0sNtKjt2nz9d6t3obdEQ%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-three-across-4444957550?position=22&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=7zoCx019H0dUrJEVSHddgg%3D%3D",
       "posted": "2026-07-24"
     },
     {
       "title": "Business Analyst",
       "company": "Livspace",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-livspace-4444303883?position=27&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=xoj8iCjIIesP0vxiOmue9w%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Business Analyst",
-      "company": "EXL",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-exl-4441590120?position=28&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=PD9f6Yl%2FefHYelCwjP19hg%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "SAS SQL Business Analytics Analyst",
-      "company": "Citi",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/sas-sql-business-analytics-analyst-at-citi-4443892142?position=29&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=T6j%2BcVsr9fibgGsndJGNBg%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Business Analyst",
-      "company": "hackajob",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-hackajob-4406224726?position=30&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=WDh46lodxCMbWD2SRaUOgw%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Business Analyst and Scrum Master",
-      "company": "Atlas Copco Group",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-and-scrum-master-at-atlas-copco-group-4443896047?position=31&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=3umNry9ztpMfFMCnzwfcKA%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Business Analyst - Banking Domain-BNPR",
-      "company": "Infosys",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-banking-domain-bnpr-at-infosys-4435204729?position=32&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=RWvS5%2BPlF6FZWTdEWA7%2FEg%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Temenos BA",
-      "company": "Virtusa",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/temenos-ba-at-virtusa-4406079604?position=33&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=rfbvZg3sEElRl556FxTUHw%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Business Analyst",
-      "company": "Virtusa",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-virtusa-4441584586?position=34&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=YVTEsA9Xg1MRj90XPQllJw%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Business Analyst I",
-      "company": "Insight",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-i-at-insight-4444464359?position=35&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=qF7wNas15MLYBlmJCOPesw%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Business Analyst",
-      "company": "Finkraft",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-finkraft-4433462286?position=36&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=vX35YN6%2FttxdeT8lmd6A5g%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Finance Business Analyst",
-      "company": "HP",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/finance-business-analyst-at-hp-4444479229?position=38&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=UOALxIh8%2B6RhPJ0NBi1zjA%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Business Analyst",
-      "company": "Lollypop Design Studio Japan",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-lollypop-design-studio-japan-4444465131?position=39&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=%2FkxtHNFicpM9rHNzNsSehw%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Data or Business Analyst",
-      "company": "HRM Counsel",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/data-or-business-analyst-at-hrm-counsel-4444484077?position=40&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=wLneh3YgZHpLO%2Fihrr1oSQ%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Business Analyst",
-      "company": "CodeVyasa",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-codevyasa-4441598321?position=41&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=6g%2BPUOu0IjbT4UVe6tWh9w%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Business Analyst - Platform Soutions",
-      "company": "WorldQuant",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-platform-soutions-at-worldquant-4407879439?position=42&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=udpmmsPDnJdAMangpiLaQQ%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Business Analyst",
-      "company": "BNP Paribas",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-bnp-paribas-4405167733?position=43&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=sZASB5f%2F%2FevhBSgNdCSOzA%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Business Analyst",
-      "company": "Blumetra Solutions",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-blumetra-solutions-4443883000?position=44&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=lqW46ggRVfqITUSicUWhQA%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Business Analyst",
-      "company": "Accenture in India",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-accenture-in-india-4441540443?position=45&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=fw8QbhlEiKYBNf%2BWXlk1Vg%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Fresher 2024 | Business Analyst",
-      "company": "Propel Consulting Services, Inc.",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/fresher-2024-business-analyst-at-propel-consulting-services-inc-4444094580?position=47&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=y%2BnKOesRIQ4QAEdox5Oo5Q%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Business Analyst",
-      "company": "Scoutit",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-scoutit-4444323477?position=48&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=15yVrBTYCeH4mMR%2BHqadww%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Business Analyst (TCH)",
-      "company": "Golden Gate Restaurant Group Careers",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-tch-at-golden-gate-restaurant-group-careers-4441578709?position=49&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=rMrU%2FE%2Bt%2F7Shiyf8SZsNkA%3D%3D",
-      "posted": "2026-07-24"
-    },
-    {
-      "title": "Business Analyst",
-      "company": "ZingHR",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-zinghr-4444450633?position=50&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=%2F7A0HuAMpdjOOqRGKAlBeg%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Business Analyst",
-      "company": "Propel Consulting Services, Inc.",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-propel-consulting-services-inc-4444090903?position=51&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=Qjh04k84Ndy8Rg%2BSA15zBQ%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-livspace-4444303883?position=23&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=4WBsCUtcjaWEVCVEBoV1lA%3D%3D",
       "posted": "2026-07-24"
     },
     {
       "title": "Business Analyst - Information Technology",
       "company": "PPFAS Mutual Fund",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-information-technology-at-ppfas-mutual-fund-4444942464?position=52&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=R6IXiWbrcZZHGF7E72AWhQ%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-information-technology-at-ppfas-mutual-fund-4444942464?position=24&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=pYJmfyCbWSHeqFUaVQcV9Q%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Business Analyst",
+      "company": "EXL",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-exl-4441590120?position=25&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=TGbd7cgg3Qla9j5IdLXZvg%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "SAS SQL Business Analytics Analyst",
+      "company": "Citi",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/sas-sql-business-analytics-analyst-at-citi-4443892142?position=26&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=7899edHpJ9znOapgMMXcwA%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Business Analyst and Scrum Master",
+      "company": "Atlas Copco Group",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-and-scrum-master-at-atlas-copco-group-4443896047?position=27&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=eKyXKDPV2FB8Mi5bFjy4EQ%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Temenos BA",
+      "company": "Virtusa",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/temenos-ba-at-virtusa-4406079604?position=28&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=u4yyg9kKgx8aXkVspKoM0A%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Business Analyst - Banking Domain-BNPR",
+      "company": "Infosys",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-banking-domain-bnpr-at-infosys-4435204729?position=29&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=GeHSozvWN9fAbc16dBwJLg%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Business Analyst",
+      "company": "Virtusa",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-virtusa-4441584586?position=30&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=bArMZ8%2Bn1avoHXMcjwzvYg%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Business Analyst I",
+      "company": "Insight",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-i-at-insight-4444464359?position=31&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=FxgL0lFppmoAc5P9zw8cwQ%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Business Analyst",
+      "company": "Finkraft",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-finkraft-4433462286?position=32&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=QqA58roe9Hyq7J6jkhbl%2FQ%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Finance Business Analyst",
+      "company": "HP",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/finance-business-analyst-at-hp-4444479229?position=33&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=4B8BrzwrNvhdAe%2BI5kyEDg%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Business Analyst",
+      "company": "Lollypop Design Studio Japan",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-lollypop-design-studio-japan-4444465131?position=34&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=ZJyoV7DcfJiqGpZe0Ebg9w%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Data or Business Analyst",
+      "company": "HRM Counsel",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/data-or-business-analyst-at-hrm-counsel-4444484077?position=35&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=AWPfMil2aI6EJyjPDP0IAg%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Business Analyst",
+      "company": "CodeVyasa",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-codevyasa-4441598321?position=36&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=Jfx50j9NOt8CiEL8ZowZEA%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Business Analyst",
+      "company": "BNP Paribas",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-bnp-paribas-4405167733?position=37&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=jLKbw34bCwJeeHg7n0MCdw%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Business Analyst",
+      "company": "Accenture in India",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-accenture-in-india-4441540443?position=38&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=3XkIZI8RMc6VlOuOhIVDFQ%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Fresher 2024 | Business Analyst",
+      "company": "Propel Consulting Services, Inc.",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/fresher-2024-business-analyst-at-propel-consulting-services-inc-4444094580?position=40&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=TsTmKUAagOyyBtNM6BV0FA%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Business Analyst",
+      "company": "Scoutit",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-scoutit-4444323477?position=41&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=Z17X%2Bi3IzvNuvQrSj1GscQ%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Business Analyst (TCH)",
+      "company": "Golden Gate Restaurant Group Careers",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-tch-at-golden-gate-restaurant-group-careers-4441578709?position=42&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=t8R16GtZnSO6CKjpc7VW5w%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Business Analyst",
+      "company": "ZingHR",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-zinghr-4444450633?position=43&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=B9t%2Bo%2Bg8dnBZpFLMAtUYiA%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Business Analyst",
+      "company": "Propel Consulting Services, Inc.",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-propel-consulting-services-inc-4444090903?position=44&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=4EHjkLY2aS4tlnvXKvt1IA%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Business Advisory Analyst",
+      "company": "Accenture in India",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-advisory-analyst-at-accenture-in-india-4444760635?position=45&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=1eAqH7bzE27XzcayYywN6A%3D%3D",
       "posted": "2026-07-24"
     },
     {
       "title": "Business Analyst II, Relay Product Excellence",
       "company": "Amazon",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-ii-relay-product-excellence-at-amazon-4444488080?position=53&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=jB5EgN8QESnRG070rejs7A%3D%3D",
-      "posted": "2026-07-23"
-    },
-    {
-      "title": "Delivery \u2013 Business Analyst (BA) - Analyst - Hyderabad",
-      "company": "Deloitte",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/delivery-%E2%80%93-business-analyst-ba-analyst-hyderabad-at-deloitte-4443887840?position=54&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=LhXrf8wPRAuXxd4U%2FBZFxw%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-ii-relay-product-excellence-at-amazon-4444488080?position=46&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=4Nz5AmS3iSkN8rbJ3pJHXA%3D%3D",
       "posted": "2026-07-23"
     },
     {
       "title": "Business Analyst",
       "company": "FetchJobs.co",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-fetchjobs-co-4444321573?position=55&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=mXdNaAsGy7xZqEbSFrgRIA%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-fetchjobs-co-4444321573?position=47&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=7hZq7chLc3kbjiM0chVfFQ%3D%3D",
       "posted": "2026-07-24"
     },
     {
-      "title": "Business Sys. Analysis Specialist -Nexthink/ 1E Tachyon/ SysTrack",
-      "company": "NTT DATA North America",
+      "title": "Delivery \u2013 Business Analyst (BA) - Analyst - Hyderabad",
+      "company": "Deloitte",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-sys-analysis-specialist-nexthink-1e-tachyon-systrack-at-ntt-data-north-america-4444718070?position=56&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=gKzbtIWQOSvHSsadX3ZGTA%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/delivery-%E2%80%93-business-analyst-ba-analyst-hyderabad-at-deloitte-4443887840?position=48&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=54xtWPCvfrpY5wPeFJ7%2FUg%3D%3D",
       "posted": "2026-07-23"
     },
     {
       "title": "Assoc Analyst Business Analytics",
       "company": "Medline",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/assoc-analyst-business-analytics-at-medline-4441515811?position=57&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=u5Bmo1RCDW%2BFaUBUyRhX6A%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/assoc-analyst-business-analytics-at-medline-4441515811?position=50&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=zx90fO7oU%2B3ejGQrYjkO6Q%3D%3D",
       "posted": "2026-07-23"
-    },
-    {
-      "title": "Business Advisory Analyst",
-      "company": "Accenture in India",
-      "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-advisory-analyst-at-accenture-in-india-4444760635?position=58&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=3vL8zM6Cm%2FfOaiglPH63vQ%3D%3D",
-      "posted": "2026-07-24"
     },
     {
       "title": "Business Analyst - Loan IQ",
       "company": "BNP Paribas",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/business-analyst-loan-iq-at-bnp-paribas-4408223609?position=59&pageNum=0&refId=tD7g1qgiL6R2ASMpV6bU1A%3D%3D&trackingId=TDVJEGnWXhwG8xjtZuEfVA%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-loan-iq-at-bnp-paribas-4408223609?position=51&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=NDsAAp3h5i7IWKtZGdM03Q%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Business Sys. Analysis Specialist -Nexthink/ 1E Tachyon/ SysTrack",
+      "company": "NTT DATA North America",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-sys-analysis-specialist-nexthink-1e-tachyon-systrack-at-ntt-data-north-america-4444718070?position=52&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=cuISXcbf3NQ4HxmRHfVCQA%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Business Analyst (TCH)",
+      "company": "Golden Gate Restaurant Group",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-tch-at-golden-gate-restaurant-group-4444954129?position=54&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=JKm2xylW%2FRHrRPZza8MJTw%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Business Advisory Analyst-Messaging",
+      "company": "Accenture in India",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-advisory-analyst-messaging-at-accenture-in-india-4444707318?position=57&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=IGHzS7pO94%2FDy2mUy7dI1w%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Business Analyst",
+      "company": "Seereon",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/business-analyst-at-seereon-4441808524?position=58&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=vuBWfsYBkwbjjDLwent7HQ%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Guidewire Business Analyst- Manager",
+      "company": "PwC Acceleration Center India",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/guidewire-business-analyst-manager-at-pwc-acceleration-center-india-4413304365?position=59&pageNum=0&refId=H%2B7A8OT0Rd2Jq9Altvlh8A%3D%3D&trackingId=kAIyWuq6iJtfVijTHIN5eA%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Salesforce Developer",
+      "company": "Riskonnect, Inc.",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-riskonnect-inc-4427193515?position=2&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=EnJogvtjNZ%2FfmZdbmojObQ%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Specialist \u2013 Salesforce CRM",
+      "company": "WSA \u2013 Wonderful Sound for All",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/specialist-%E2%80%93-salesforce-crm-at-wsa-%E2%80%93-wonderful-sound-for-all-4444333213?position=4&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=wFGqcGqEuzmcfCrPm%2FuA%2FQ%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Salesforce Engineer III",
+      "company": "ZoomInfo",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-engineer-iii-at-zoominfo-4397792819?position=7&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=mcfNjYtRtUeUEgwS2HyJfw%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Senior Salesforce Expert",
+      "company": "Siemens Energy",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-expert-at-siemens-energy-4435057539?position=8&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=xg1kRx0MsFXoEbOm8MtnIw%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Senior Software Engineer",
+      "company": "Principal Financial Group",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-at-principal-financial-group-4443866984?position=11&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=Z3e3%2FTvcJ9sRbC7App7Xmg%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Software Engineer-Salesforce",
+      "company": "PTC",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/software-engineer-salesforce-at-ptc-4444902923?position=12&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=arPW25H45Yu2jdCmS227vA%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Application Developer - Salesforce",
+      "company": "Cargill",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/application-developer-salesforce-at-cargill-4441580256?position=13&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=cgVD0PpQ%2BE8AH48rsproBw%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Senior Software Engineer I",
+      "company": "RELX",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-i-at-relx-4444340716?position=15&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=m7r%2FQ0w8J7u2jBDKt4d8nw%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Senior Software Engineer",
+      "company": "Bajaj Finserv",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-at-bajaj-finserv-4444713160?position=19&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=O%2BnwijZAkQ%2B4cZedo%2B9O6A%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Salesforce Developer",
+      "company": "Tata Consultancy Services",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-tata-consultancy-services-4444306122?position=20&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=hoYYR%2B7AqwmrdDzKmSlbHg%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Salesforce Developer",
+      "company": "Live Connections",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-live-connections-4444332192?position=24&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=vvRgyFetYfuXUaYApjyvrA%3D%3D",
       "posted": "2026-07-24"
     },
     {
       "title": "Salesforce Sales & Service Cloud",
       "company": "Tata Consultancy Services",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-sales-service-cloud-at-tata-consultancy-services-4443890353?position=30&pageNum=0&refId=MoDmTCAtU73B2uFQoZ46Yw%3D%3D&trackingId=ZucE3HtMWiwHLPSM5nec1A%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-sales-service-cloud-at-tata-consultancy-services-4443890353?position=30&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=hszGKaMGOjK8nP94vcepDg%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Bajaj Finserv",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/software-engineer-at-bajaj-finserv-4444706486?position=31&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=g3EdhQapNvOd%2FwCaENCGFQ%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Manager, Salesforce Development",
+      "company": "Teach For India",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/manager-salesforce-development-at-teach-for-india-4444946768?position=32&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=6CpvN%2FYRNUvd6GD2vr1ciQ%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Tech Process Specialist - TOMO - Tech Admin & Development",
+      "company": "Google Operations Center",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/tech-process-specialist-tomo-tech-admin-development-at-google-operations-center-4444325796?position=33&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=%2BDpGvsKjOYLnGGesWlKakw%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "SDE II - Salesforce AI.",
+      "company": "InMobi Advertising",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/sde-ii-salesforce-ai-at-inmobi-advertising-4444474263?position=35&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=CrAD0D6nD0OpKaNo5pruNg%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Salesforce Sr Developer",
+      "company": "Trane Technologies",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-sr-developer-at-trane-technologies-4443874851?position=36&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=p3kIGYgBK27m9OmUsfF2zw%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Senior Salesforce Engineer",
+      "company": "Altera",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/senior-salesforce-engineer-at-altera-4415501741?position=37&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=iDRH2OBtxD7Zp6evr6rI0w%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Salesforce LWC Developer",
+      "company": "Tata Consultancy Services",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-lwc-developer-at-tata-consultancy-services-4444006093?position=43&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=Py%2BXHbmU3u6HrqHfj5iaGg%3D%3D",
       "posted": "2026-07-23"
     },
     {
       "title": "Custom Software Engineering Lead",
       "company": "Accenture in India",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/custom-software-engineering-lead-at-accenture-in-india-4444708174?position=46&pageNum=0&refId=MoDmTCAtU73B2uFQoZ46Yw%3D%3D&trackingId=HfO%2FZzENZz3DVrAgz6QScQ%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/custom-software-engineering-lead-at-accenture-in-india-4444708174?position=45&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=vHflTC4pPNWyjJcsVDnz4A%3D%3D",
       "posted": "2026-07-23"
     },
     {
-      "title": "Technical Analyst - Salesforce",
-      "company": "Bunge",
+      "title": "Salesforce Engineer (Premium Finance Platform)",
+      "company": "Saaki Argus and Averil Consulting",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/technical-analyst-salesforce-at-bunge-4444449402?position=48&pageNum=0&refId=MoDmTCAtU73B2uFQoZ46Yw%3D%3D&trackingId=Y58dxnVjclGUNhTwFvYJFA%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-engineer-premium-finance-platform-at-saaki-argus-and-averil-consulting-4444948507?position=46&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=kd4H5dpHrmBbaFRLzdzlPg%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Salesforce Developer",
+      "company": "INTO University Partnerships",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-at-into-university-partnerships-4432551490?position=47&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=e75QJarWEdCiK5Pm%2FWd0Aw%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Tech Lead Salesforce Developer",
+      "company": "Empiric",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/tech-lead-salesforce-developer-at-empiric-4444914302?position=48&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=qcGAmUpYKgXKuRTLJSoN8g%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "SDE II - Salesforce AI",
+      "company": "Job-scouts.com",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/sde-ii-salesforce-ai-at-job-scouts-com-4444002429?position=49&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=MpHj%2Fyemh99Ov36MRrQeaQ%3D%3D",
       "posted": "2026-07-23"
+    },
+    {
+      "title": "Developer III - Enterprise Solutions",
+      "company": "UST",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/developer-iii-enterprise-solutions-at-ust-4441577873?position=50&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=Zc7feyyUv7SUIs8ImRfOQQ%3D%3D",
+      "posted": "2026-07-24"
     },
     {
       "title": "Support Specialist \u2013 Salesforce CRM",
       "company": "WSA \u2013 Wonderful Sound for All",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/support-specialist-%E2%80%93-salesforce-crm-at-wsa-%E2%80%93-wonderful-sound-for-all-4444319418?position=55&pageNum=0&refId=MoDmTCAtU73B2uFQoZ46Yw%3D%3D&trackingId=VqptpSy3MaklltBHXw8bMA%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/support-specialist-%E2%80%93-salesforce-crm-at-wsa-%E2%80%93-wonderful-sound-for-all-4444319418?position=54&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=%2FWahXO4mhtwj20Kpitz5eA%3D%3D",
       "posted": "2026-07-24"
     },
     {
       "title": "Salesrforce Operations Engineer",
       "company": "ACS International India Pvt. Ltd. (ACSII)",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesrforce-operations-engineer-at-acs-international-india-pvt-ltd-acsii-4444049370?position=56&pageNum=0&refId=MoDmTCAtU73B2uFQoZ46Yw%3D%3D&trackingId=SnhDGi7Ljzlml7NrPe5sug%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/salesrforce-operations-engineer-at-acs-international-india-pvt-ltd-acsii-4444049370?position=55&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=fq4lWUKcyMQjgQTTTJjJAw%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "SFDC CRM Developer",
+      "company": "SPADTEK SOLUTIONS",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/sfdc-crm-developer-at-spadtek-solutions-4444339447?position=56&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=aPzIyzTA%2BOq%2BnvA6f9GFmw%3D%3D",
+      "posted": "2026-07-24"
+    },
+    {
+      "title": "Salesforce Lead Developer",
+      "company": "Runmap Infotech Private Ltd.",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-lead-developer-at-runmap-infotech-private-ltd-4444910323?position=57&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=snrFq28y%2B9Odn0JyVDwySw%3D%3D",
       "posted": "2026-07-24"
     },
     {
       "title": "Application Lead",
       "company": "Accenture in India",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/application-lead-at-accenture-in-india-4420753838?position=58&pageNum=0&refId=MoDmTCAtU73B2uFQoZ46Yw%3D%3D&trackingId=LKrNVN2fmpGpIrInRDTWBA%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/application-lead-at-accenture-in-india-4420753838?position=58&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=eSEGBCczXS6ADLHCnu0HQA%3D%3D",
       "posted": "2026-07-24"
     },
     {
       "title": "Salesforce Technical Architect",
       "company": "Trane Technologies",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/salesforce-technical-architect-at-trane-technologies-4443885780?position=59&pageNum=0&refId=MoDmTCAtU73B2uFQoZ46Yw%3D%3D&trackingId=nxmcp7cZAknb6Zr6qQcT9g%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-technical-architect-at-trane-technologies-4443885780?position=59&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=zmRPttVbSTbKnkjOuOnU2w%3D%3D",
       "posted": "2026-07-23"
     },
     {
       "title": "Application Support Engineer",
       "company": "Accenture in India",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/application-support-engineer-at-accenture-in-india-4433135346?position=60&pageNum=0&refId=MoDmTCAtU73B2uFQoZ46Yw%3D%3D&trackingId=JksZfM%2BWxwn%2B1LA4V%2FThig%3D%3D",
+      "url": "https://in.linkedin.com/jobs/view/application-support-engineer-at-accenture-in-india-4433135346?position=60&pageNum=0&refId=%2FRtQIpKbRKZTD9kGOrZUqw%3D%3D&trackingId=FpOdIjfT1%2BGv3CA2EufO5w%3D%3D",
       "posted": "2026-07-24"
     },
     {
-      "title": "Application Developer",
-      "company": "Accenture in India",
+      "title": "Salesforce Developer - VOIS",
+      "company": "VOIS",
       "platform": "LinkedIn",
-      "url": "https://in.linkedin.com/jobs/view/application-developer-at-accenture-in-india-4406002317?position=26&pageNum=0&refId=kT4OnT4OpSuABTj8HrUjRw%3D%3D&trackingId=Q5zcgt75O429M%2Bq%2F7jXtkQ%3D%3D",
-      "posted": "2026-07-24"
+      "url": "https://in.linkedin.com/jobs/view/salesforce-developer-vois-at-vois-4435993193?position=5&pageNum=0&refId=ZgLa3xQJPAtVGRfzsfQJRA%3D%3D&trackingId=rr9F7PcDfUqfuj%2B5c7huGg%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "CRM Developer",
+      "company": "Takeda",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/crm-developer-at-takeda-4423197810?position=12&pageNum=0&refId=ZgLa3xQJPAtVGRfzsfQJRA%3D%3D&trackingId=TeC5me%2FRoBNNAqzTmST6PQ%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Salesforce Lead Developer - B2B Commerce",
+      "company": "Trane Technologies",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-lead-developer-b2b-commerce-at-trane-technologies-4443880817?position=14&pageNum=0&refId=ZgLa3xQJPAtVGRfzsfQJRA%3D%3D&trackingId=oJ%2B4T2BMF4ywQgqo3bliww%3D%3D",
+      "posted": "2026-07-23"
+    },
+    {
+      "title": "Salesforce Architect(12+ years)(Local to Hyderabad)",
+      "company": "Mejenta Systems, Inc.",
+      "platform": "LinkedIn",
+      "url": "https://in.linkedin.com/jobs/view/salesforce-architect-12%2B-years-local-to-hyderabad-at-mejenta-systems-inc-4441523440?position=18&pageNum=0&refId=ZgLa3xQJPAtVGRfzsfQJRA%3D%3D&trackingId=v1FqYVwI5rpIWE7NEAksSQ%3D%3D",
+      "posted": "2026-07-23"
     }
   ],
-  "total": 136,
-  "scraped_at": "2026-07-24T13:00:16Z",
+  "total": 105,
+  "scraped_at": "2026-07-24T13:55:00Z",
   "platforms": [
-    "Indeed",
     "LinkedIn"
   ]
 }
