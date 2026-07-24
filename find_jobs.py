@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
 """
-Salesforce Job Finder
-Searches LinkedIn, Indeed, Naukri, Dice, Glassdoor, and Wellfound
-for jobs posted in the last 24 hours in India and saves them to an Excel sheet.
+Salesforce Job Finder — Multi-Platform India
+Platforms: LinkedIn, Indeed, Naukri, TimesJobs, Foundit, Shine,
+           iimjobs, Glassdoor, Cutshort + Greenhouse & Lever APIs
 """
 import asyncio
 import re
-from datetime import datetime, date, timedelta
+import json
+from datetime import datetime, date, timezone
 from pathlib import Path
-from playwright.async_api import async_playwright, Page, TimeoutError as PWT
+from playwright.async_api import async_playwright, Page
 import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment
 
-OUTPUT_FILE  = Path(__file__).parent / "salesforce_jobs.xlsx"
-JOBS_JSON    = Path(__file__).parent / "jobs.json"
+OUTPUT_FILE = Path(__file__).parent / "salesforce_jobs.xlsx"
+JOBS_JSON   = Path(__file__).parent / "jobs.json"
 
 UA = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -21,453 +22,701 @@ UA = (
     "Chrome/124.0.0.0 Safari/537.36"
 )
 
+# Broader keywords → more hits across all platforms
 KEYWORDS = [
-    "Senior Salesforce Developer",
+    "Salesforce Developer",
     "Salesforce Consultant",
-    "Salesforce Technical Consultant",
-    "Salesforce LWC Developer",
+    "Salesforce LWC",
+    "Salesforce CPQ",
+    "Salesforce Architect",
+    "Salesforce Admin",
 ]
+
+MAX_AGE_HOURS = 72   # 3 days
+
 
 # ── helpers ────────────────────────────────────────────────────────────────────
 
-async def safe_goto(page: Page, url: str, timeout=20000):
-    try:
-        await page.goto(url, wait_until="domcontentloaded", timeout=timeout)
-        await page.wait_for_timeout(2000)
-    except Exception:
-        pass
-
-def parse_age(text: str) -> int:
-    """Return age in days. Returns 0 for unknown/empty (assume recent)."""
+def parse_age_hours(text: str) -> float:
+    """Return job age in hours. 0 = just posted / unknown (keep it)."""
     text = (text or "").lower().strip()
     if not text:
-        return 0
-    # ISO date like 2026-07-18
-    m = re.match(r"(\d{4})-(\d{2})-(\d{2})", text)
+        return 0.0
+
+    # ISO datetime: 2026-07-24T10:30:00Z
+    m = re.match(r"(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})", text)
+    if m:
+        try:
+            dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)),
+                          int(m.group(4)), int(m.group(5)), tzinfo=timezone.utc)
+            return max(0.0, (datetime.now(timezone.utc) - dt).total_seconds() / 3600)
+        except Exception:
+            pass
+
+    # ISO date only: 2026-07-24
+    m = re.match(r"(\d{4})-(\d{2})-(\d{2})$", text)
     if m:
         try:
             d = date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
-            return (date.today() - d).days
+            return max(0.0, (date.today() - d).days * 24.0)
         except Exception:
             pass
-    if any(t in text for t in ("just now", "today", "moments ago", "new")):
-        return 0
-    m = re.search(r"(\d+)\s*(hour|hr|minute|min|sec)", text)
-    if m:
-        return 0
+
+    if any(t in text for t in ("just now", "moments ago", "less than")):
+        return 0.5
+    if "today" in text or "new today" in text:
+        return 4.0
+    if "yesterday" in text:
+        return 28.0
+
+    m = re.search(r"(\d+)\s*sec", text)
+    if m: return round(int(m.group(1)) / 3600, 2)
+    m = re.search(r"(\d+)\s*min", text)
+    if m: return round(int(m.group(1)) / 60, 2)
+    m = re.search(r"(\d+)\s*(hour|hr)", text)
+    if m: return float(m.group(1))
     m = re.search(r"(\d+)\s*day", text)
-    if m:
-        return int(m.group(1))
+    if m: return int(m.group(1)) * 24.0
     m = re.search(r"(\d+)\s*week", text)
-    if m:
-        return int(m.group(1)) * 7
+    if m: return int(m.group(1)) * 168.0
     m = re.search(r"(\d+)\s*month", text)
-    if m:
-        return int(m.group(1)) * 30
-    # unrecognised — assume recent so we don't drop it
-    return 0
+    if m: return int(m.group(1)) * 720.0
 
-def is_recent(age_days: int) -> bool:
-    return age_days <= 3
+    return 0.0   # unknown → treat as fresh
 
-# ── scrapers ───────────────────────────────────────────────────────────────────
+def is_recent(age_h: float) -> bool:
+    return age_h <= MAX_AGE_HOURS
+
+def make_job(title, company, platform, url, age_txt, location="India", age_h=None):
+    h = age_h if age_h is not None else parse_age_hours(age_txt)
+    return {
+        "title":     title.strip(),
+        "company":   (company or "Unknown").strip(),
+        "platform":  platform,
+        "location":  (location or "India").strip(),
+        "url":       url.strip(),
+        "posted":    (age_txt or "Recent").strip(),
+        "age_hours": round(h, 1),
+        "age_days":  int(h / 24),
+    }
+
+async def safe_goto(page: Page, url: str, timeout=25000):
+    try:
+        await page.goto(url, wait_until="domcontentloaded", timeout=timeout)
+        await page.wait_for_timeout(2500)
+    except Exception:
+        pass
+
+
+# ── browser scrapers ───────────────────────────────────────────────────────────
 
 async def scrape_linkedin(page: Page, keyword: str) -> list[dict]:
     jobs = []
     kw = keyword.replace(" ", "%20")
     # f_TPR=r259200 = past 3 days, geoId=102713980 = India
-    url = f"https://www.linkedin.com/jobs/search/?keywords={kw}&f_TPR=r259200&geoId=102713980&sortBy=DD"
-    await safe_goto(page, url)
-
-    cards = await page.query_selector_all(".base-card, .job-search-card")
-    for card in cards:
+    await safe_goto(page, f"https://www.linkedin.com/jobs/search/?keywords={kw}&f_TPR=r259200&geoId=102713980&sortBy=DD")
+    for card in await page.query_selector_all(".base-card, .job-search-card"):
         try:
-            title_el   = await card.query_selector(".base-search-card__title, h3")
-            company_el = await card.query_selector(".base-search-card__subtitle, h4")
-            link_el    = await card.query_selector("a.base-card__full-link, a")
-            date_el    = await card.query_selector("time, .job-search-card__listdate")
-            loc_el     = await card.query_selector(".job-search-card__location, .base-search-card__metadata span")
-
-            if not (title_el and link_el):
-                continue
-
-            title    = (await title_el.inner_text()).strip()
-            company  = (await company_el.inner_text()).strip() if company_el else ""
-            href     = await link_el.get_attribute("href") or ""
-            location = (await loc_el.inner_text()).strip() if loc_el else "India"
-            age_txt  = ""
-            if date_el:
-                age_txt = await date_el.get_attribute("datetime") or await date_el.inner_text()
-
-            age = parse_age(age_txt) if age_txt else 0
-            if not is_recent(age):
-                continue
-
-            jobs.append({
-                "title":    title,
-                "company":  company,
-                "platform": "LinkedIn",
-                "location": location,
-                "url":      href,
-                "posted":   age_txt[:20] if age_txt else "Recent",
-                "age_days": age,
-            })
+            t_el = await card.query_selector(".base-search-card__title, h3")
+            c_el = await card.query_selector(".base-search-card__subtitle, h4")
+            a_el = await card.query_selector("a.base-card__full-link, a")
+            d_el = await card.query_selector("time, .job-search-card__listdate")
+            l_el = await card.query_selector(".job-search-card__location")
+            if not (t_el and a_el): continue
+            title   = (await t_el.inner_text()).strip()
+            company = (await c_el.inner_text()).strip() if c_el else ""
+            href    = await a_el.get_attribute("href") or ""
+            loc     = (await l_el.inner_text()).strip() if l_el else "India"
+            age_txt = ""
+            if d_el:
+                age_txt = await d_el.get_attribute("datetime") or await d_el.inner_text()
+            h = parse_age_hours(age_txt)
+            if is_recent(h):
+                jobs.append(make_job(title, company, "LinkedIn", href, age_txt, loc, h))
         except Exception:
             continue
-
-    print(f"  LinkedIn '{keyword}': {len(jobs)} recent jobs")
+    print(f"  LinkedIn '{keyword}': {len(jobs)}")
     return jobs
 
 
 async def scrape_indeed(page: Page, keyword: str) -> list[dict]:
     jobs = []
     kw = keyword.replace(" ", "+")
-    # fromage=3 = last 3 days, l=India
-    url = f"https://in.indeed.com/jobs?q={kw}&l=India&sort=date&fromage=3"
-    await safe_goto(page, url)
-
+    await safe_goto(page, f"https://in.indeed.com/jobs?q={kw}&l=India&sort=date&fromage=3")
     for sel in ["a.jcs-JobTitle", "[data-testid='job-title'] a", "h2.jobTitle a", ".job_seen_beacon h2 a"]:
         links = await page.query_selector_all(sel)
-        if not links:
-            continue
+        if not links: continue
         for link in links:
             try:
                 title = (await link.inner_text()).strip()
                 href  = await link.get_attribute("href") or ""
-                if not href.startswith("http"):
-                    href = "https://www.indeed.com" + href
-
-                # company
-                parent = await link.evaluate_handle("el => el.closest('[data-jk], .job_seen_beacon, .resultContent')")
-                company = ""
+                if not href.startswith("http"): href = "https://in.indeed.com" + href
+                parent  = await link.evaluate_handle("el => el.closest('[data-jk], .job_seen_beacon, .resultContent')")
+                company = age_txt = loc = ""
                 try:
-                    co = await parent.query_selector("[data-testid='company-name'], .companyName, span.company")
-                    if co:
-                        company = (await co.inner_text()).strip()
-                except Exception:
-                    pass
-
-                # date
-                age_txt = ""
+                    co = await parent.query_selector("[data-testid='company-name'], .companyName")
+                    if co: company = (await co.inner_text()).strip()
+                except Exception: pass
                 try:
-                    dt = await parent.query_selector("[data-testid='myJobsStateDate'], .date, span.date")
-                    if dt:
-                        age_txt = (await dt.inner_text()).strip()
-                except Exception:
-                    pass
-
-                # location
-                location = "India"
+                    dt = await parent.query_selector("[data-testid='myJobsStateDate'], .date")
+                    if dt: age_txt = (await dt.inner_text()).strip()
+                except Exception: pass
                 try:
-                    loc = await parent.query_selector("[data-testid='text-location'], .companyLocation")
-                    if loc:
-                        location = (await loc.inner_text()).strip()
-                except Exception:
-                    pass
-
-                age = parse_age(age_txt) if age_txt else 0
+                    lc = await parent.query_selector("[data-testid='text-location'], .companyLocation")
+                    if lc: loc = (await lc.inner_text()).strip()
+                except Exception: pass
                 if title and href:
-                    jobs.append({
-                        "title":    title,
-                        "company":  company or "Unknown",
-                        "platform": "Indeed",
-                        "location": location,
-                        "url":      href,
-                        "posted":   age_txt or "Recent",
-                        "age_days": age,
-                    })
-            except Exception:
-                continue
-        if jobs:
-            break
-
-    print(f"  Indeed '{keyword}': {len(jobs)} jobs")
+                    jobs.append(make_job(title, company, "Indeed", href, age_txt, loc or "India"))
+            except Exception: continue
+        if jobs: break
+    print(f"  Indeed '{keyword}': {len(jobs)}")
     return jobs
 
 
 async def scrape_naukri(page: Page, keyword: str) -> list[dict]:
     jobs = []
     kw = keyword.lower().replace(" ", "-")
-    # jobAge=1 = last 24 hours, India is default for naukri.com
-    url = f"https://www.naukri.com/{kw}-jobs-in-india?experience=2&jobAge=1"
-    await safe_goto(page, url)
-
-    cards = await page.query_selector_all(".jobTupleHeader, article.jobTuple")
+    await safe_goto(page, f"https://www.naukri.com/{kw}-jobs-in-india?jobAge=3")
+    await page.wait_for_timeout(2000)
+    cards = await page.query_selector_all(
+        "article.jobTuple, .srp-jobtuple-wrapper, .list .listContainer li"
+    )
     for card in cards:
         try:
-            title_el   = await card.query_selector("a.title, .jobTitle a")
-            company_el = await card.query_selector(".companyInfo a, .comp-name, span.comp-name")
-            date_el    = await card.query_selector(".job-post-day, .fleft.grey-text.fs12.fw500")
-
-            if not title_el:
-                continue
-
-            title   = (await title_el.inner_text()).strip()
-            href    = await title_el.get_attribute("href") or ""
-            company = (await company_el.inner_text()).strip() if company_el else ""
-            age_txt = (await date_el.inner_text()).strip() if date_el else ""
-
-            age = parse_age(age_txt)
-            if age > 1:
-                continue
-
-            jobs.append({
-                "title":    title,
-                "company":  company,
-                "platform": "Naukri",
-                "url":      href,
-                "posted":   age_txt or "Recent",
-            })
-        except Exception:
-            continue
-
-    print(f"  Naukri '{keyword}': {len(jobs)} recent jobs")
+            t_el = await card.query_selector("a.title, .title a, a.row1")
+            c_el = await card.query_selector(".comp-name, .companyInfo a")
+            d_el = await card.query_selector(".job-post-day, span.fleft.grey-text")
+            l_el = await card.query_selector(".loc, span.loc-link, .locWdth")
+            if not t_el: continue
+            title   = (await t_el.inner_text()).strip()
+            href    = await t_el.get_attribute("href") or ""
+            company = (await c_el.inner_text()).strip() if c_el else ""
+            age_txt = (await d_el.inner_text()).strip() if d_el else ""
+            loc     = (await l_el.inner_text()).strip() if l_el else "India"
+            h = parse_age_hours(age_txt)
+            if is_recent(h):
+                jobs.append(make_job(title, company, "Naukri", href, age_txt, loc, h))
+        except Exception: continue
+    print(f"  Naukri '{keyword}': {len(jobs)}")
     return jobs
 
 
-async def scrape_dice(page: Page, keyword: str) -> list[dict]:
-    jobs = []
-    kw = keyword.replace(" ", "%20")
-    url = f"https://www.dice.com/jobs?q={kw}&countryCode=IN&filters.postedDate=ONE_DAY&language=en"
-    await safe_goto(page, url)
-    await page.wait_for_timeout(3000)  # Dice is JS-heavy
-
-    cards = await page.query_selector_all("dhi-search-card, .card-title-container")
-    for card in cards:
-        try:
-            title_el   = await card.query_selector("a[data-cy='card-title-link'], h5 a, .card-title a")
-            company_el = await card.query_selector("[data-cy='search-result-company-name'], .card-company")
-            date_el    = await card.query_selector("[data-cy='card-posted-date'], .posted-date")
-
-            if not title_el:
-                continue
-
-            title   = (await title_el.inner_text()).strip()
-            href    = await title_el.get_attribute("href") or ""
-            if not href.startswith("http"):
-                href = "https://www.dice.com" + href
-            company = (await company_el.inner_text()).strip() if company_el else ""
-            age_txt = (await date_el.inner_text()).strip() if date_el else ""
-
-            jobs.append({
-                "title":    title,
-                "company":  company,
-                "platform": "Dice",
-                "url":      href,
-                "posted":   age_txt or "Recent",
-            })
-        except Exception:
-            continue
-
-    print(f"  Dice '{keyword}': {len(jobs)} jobs")
-    return jobs
-
-
-async def scrape_wellfound(page: Page, keyword: str) -> list[dict]:
+async def scrape_timesjobs(page: Page, keyword: str) -> list[dict]:
     jobs = []
     kw = keyword.replace(" ", "+")
-    url = f"https://wellfound.com/jobs?keywords={kw}&location=India"
+    url = (
+        f"https://www.timesjobs.com/candidate/job-search.html"
+        f"?searchType=personalizedSearch&from=submit"
+        f"&txtKeywords={kw}&txtLocation=India&postWeek=1"
+    )
     await safe_goto(page, url)
-
-    cards = await page.query_selector_all("[class*='JobListing'], [data-test*='job']")
-    for card in cards[:30]:
+    for card in await page.query_selector_all("li.clearfix.job-bx, .jobs-container li"):
         try:
-            title_el   = await card.query_selector("a[class*='title'], h2 a, h3 a")
-            company_el = await card.query_selector("[class*='company'], [class*='startup']")
-            date_el    = await card.query_selector("[class*='date'], [class*='time'], time")
-
-            if not title_el:
-                continue
-
-            title   = (await title_el.inner_text()).strip()
-            href    = await title_el.get_attribute("href") or ""
-            if not href.startswith("http"):
-                href = "https://wellfound.com" + href
-            company = (await company_el.inner_text()).strip() if company_el else ""
-            age_txt = (await date_el.inner_text()).strip() if date_el else ""
-
-            age = parse_age(age_txt)
-            if age > 1:
-                continue
-
-            jobs.append({
-                "title":    title,
-                "company":  company,
-                "platform": "Wellfound",
-                "url":      href,
-                "posted":   age_txt or "Recent",
-            })
-        except Exception:
-            continue
-
-    print(f"  Wellfound '{keyword}': {len(jobs)} recent jobs")
+            t_el = await card.query_selector("h2.heading-tit a, h2 a, .info-grp h2 a")
+            c_el = await card.query_selector("h3.joblist-comp-name, .comp-info-detail h3")
+            d_el = await card.query_selector(".dt-post, .job-time, span.sim-posted")
+            if not t_el: continue
+            title   = (await t_el.inner_text()).strip()
+            href    = await t_el.get_attribute("href") or ""
+            company = (await c_el.inner_text()).strip() if c_el else ""
+            age_txt = (await d_el.inner_text()).strip() if d_el else ""
+            h = parse_age_hours(age_txt)
+            if is_recent(h):
+                jobs.append(make_job(title, company, "TimesJobs", href, age_txt, "India", h))
+        except Exception: continue
+    print(f"  TimesJobs '{keyword}': {len(jobs)}")
     return jobs
 
 
-async def scrape_lever_api(keyword: str) -> list[dict]:
-    """Use Lever's public JSON API — no browser needed."""
+async def scrape_foundit(page: Page, keyword: str) -> list[dict]:
+    """Foundit.in — formerly Monster India"""
+    jobs = []
+    kw = keyword.replace(" ", "+")
+    await safe_goto(page, f"https://www.foundit.in/srp/results?query={kw}&location=India&datePosted=3")
+    await page.wait_for_timeout(2000)
+    for card in await page.query_selector_all(".card-apply-content, .srpResultCardContainer, .jobCard"):
+        try:
+            t_el = await card.query_selector(".jobTitle a, .job-tittle a, h2 a")
+            c_el = await card.query_selector(".companyName, .company-name")
+            d_el = await card.query_selector(".posted-time, .job-date, .postedDate")
+            l_el = await card.query_selector(".location, .job-location")
+            if not t_el: continue
+            title   = (await t_el.inner_text()).strip()
+            href    = await t_el.get_attribute("href") or ""
+            if not href.startswith("http"): href = "https://www.foundit.in" + href
+            company = (await c_el.inner_text()).strip() if c_el else ""
+            age_txt = (await d_el.inner_text()).strip() if d_el else ""
+            loc     = (await l_el.inner_text()).strip() if l_el else "India"
+            h = parse_age_hours(age_txt)
+            if is_recent(h):
+                jobs.append(make_job(title, company, "Foundit", href, age_txt, loc, h))
+        except Exception: continue
+    print(f"  Foundit '{keyword}': {len(jobs)}")
+    return jobs
+
+
+async def scrape_shine(page: Page, keyword: str) -> list[dict]:
+    jobs = []
+    kw = keyword.lower().replace(" ", "-")
+    await safe_goto(page, f"https://www.shine.com/job-search/{kw}-jobs-in-india/")
+    for card in await page.query_selector_all(".jobBox, .job-result-box, article"):
+        try:
+            t_el = await card.query_selector(".jobHeadline a, .job-title a, h2 a, h3 a")
+            c_el = await card.query_selector(".companyName a, .company-name")
+            d_el = await card.query_selector(".postedDate, .job-date, .date")
+            l_el = await card.query_selector(".location, .city")
+            if not t_el: continue
+            title   = (await t_el.inner_text()).strip()
+            href    = await t_el.get_attribute("href") or ""
+            if not href.startswith("http"): href = "https://www.shine.com" + href
+            company = (await c_el.inner_text()).strip() if c_el else ""
+            age_txt = (await d_el.inner_text()).strip() if d_el else ""
+            loc     = (await l_el.inner_text()).strip() if l_el else "India"
+            h = parse_age_hours(age_txt)
+            if is_recent(h):
+                jobs.append(make_job(title, company, "Shine", href, age_txt, loc, h))
+        except Exception: continue
+    print(f"  Shine '{keyword}': {len(jobs)}")
+    return jobs
+
+
+async def scrape_iimjobs(page: Page, keyword: str) -> list[dict]:
+    """iimjobs.com — premium India jobs"""
+    jobs = []
+    kw = keyword.lower().replace(" ", "-")
+    await safe_goto(page, f"https://www.iimjobs.com/j/{kw}-jobs-1.html")
+    for card in await page.query_selector_all(".job-hd, .job-container"):
+        try:
+            t_el = await card.query_selector("h2 a, .job-title a, a.job-link")
+            c_el = await card.query_selector(".company, .job-company, .comp-name")
+            d_el = await card.query_selector(".posted, .date-posted, .datelabel")
+            if not t_el: continue
+            title   = (await t_el.inner_text()).strip()
+            href    = await t_el.get_attribute("href") or ""
+            if not href.startswith("http"): href = "https://www.iimjobs.com" + href
+            company = (await c_el.inner_text()).strip() if c_el else ""
+            age_txt = (await d_el.inner_text()).strip() if d_el else ""
+            h = parse_age_hours(age_txt)
+            if is_recent(h):
+                jobs.append(make_job(title, company, "IIMJobs", href, age_txt, "India", h))
+        except Exception: continue
+    print(f"  IIMJobs '{keyword}': {len(jobs)}")
+    return jobs
+
+
+async def scrape_glassdoor(page: Page, keyword: str) -> list[dict]:
+    jobs = []
+    kw = keyword.replace(" ", "-").lower()
+    n  = len(keyword)
+    url = f"https://www.glassdoor.co.in/Job/{kw}-jobs-SRCH_KO0,{n}.htm?fromAge=3&sortBy=date_desc"
+    await safe_goto(page, url)
+    for card in await page.query_selector_all("[data-test='jobListing'], li.react-job-listing"):
+        try:
+            t_el = await card.query_selector("[data-test='job-link'], a.jobLink")
+            c_el = await card.query_selector("[data-test='employer-short-name'], .employer-name")
+            d_el = await card.query_selector("[data-test='job-age'], .listing-age, .css-hvni2g")
+            l_el = await card.query_selector("[data-test='emp-location'], .location, .css-1v5elnn")
+            if not t_el: continue
+            title   = (await t_el.inner_text()).strip()
+            href    = await t_el.get_attribute("href") or ""
+            if not href.startswith("http"): href = "https://www.glassdoor.co.in" + href
+            company = (await c_el.inner_text()).strip() if c_el else ""
+            age_txt = (await d_el.inner_text()).strip() if d_el else ""
+            loc     = (await l_el.inner_text()).strip() if l_el else "India"
+            h = parse_age_hours(age_txt)
+            if is_recent(h):
+                jobs.append(make_job(title, company, "Glassdoor", href, age_txt, loc, h))
+        except Exception: continue
+    print(f"  Glassdoor '{keyword}': {len(jobs)}")
+    return jobs
+
+
+async def scrape_cutshort(page: Page, keyword: str) -> list[dict]:
+    """Cutshort.io — popular tech job platform in India"""
+    jobs = []
+    kw = keyword.replace(" ", "%20")
+    await safe_goto(page, f"https://cutshort.io/jobs#!?keywords={kw}&locations=India")
+    await page.wait_for_timeout(3500)
+    for card in await page.query_selector_all("[class*='JobCard'], .job-card, .job-row"):
+        try:
+            t_el = await card.query_selector("h2 a, [class*='title'] a, .job-title a")
+            c_el = await card.query_selector("[class*='company'], .company-name")
+            d_el = await card.query_selector("[class*='date'], time, .posted-date")
+            if not t_el: continue
+            title   = (await t_el.inner_text()).strip()
+            href    = await t_el.get_attribute("href") or ""
+            if not href.startswith("http"): href = "https://cutshort.io" + href
+            company = (await c_el.inner_text()).strip() if c_el else ""
+            age_txt = (await d_el.inner_text()).strip() if d_el else ""
+            h = parse_age_hours(age_txt)
+            if is_recent(h):
+                jobs.append(make_job(title, company, "Cutshort", href, age_txt, "India", h))
+        except Exception: continue
+    print(f"  Cutshort '{keyword}': {len(jobs)}")
+    return jobs
+
+
+async def scrape_instahyre(page: Page, keyword: str) -> list[dict]:
+    """Instahyre — AI-powered hiring platform, popular in India"""
+    jobs = []
+    kw = keyword.replace(" ", "%20")
+    await safe_goto(page, f"https://www.instahyre.com/search-jobs/?q={kw}&l=India")
+    await page.wait_for_timeout(3000)
+    for card in await page.query_selector_all(".opportunity-card, [class*='JobCard'], .job-item"):
+        try:
+            t_el = await card.query_selector("h2 a, .job-title a, [class*='title'] a")
+            c_el = await card.query_selector(".company-name, [class*='company']")
+            d_el = await card.query_selector(".posted-time, time, [class*='date']")
+            if not t_el: continue
+            title   = (await t_el.inner_text()).strip()
+            href    = await t_el.get_attribute("href") or ""
+            if not href.startswith("http"): href = "https://www.instahyre.com" + href
+            company = (await c_el.inner_text()).strip() if c_el else ""
+            age_txt = (await d_el.inner_text()).strip() if d_el else ""
+            h = parse_age_hours(age_txt)
+            if is_recent(h):
+                jobs.append(make_job(title, company, "Instahyre", href, age_txt, "India", h))
+        except Exception: continue
+    print(f"  Instahyre '{keyword}': {len(jobs)}")
+    return jobs
+
+
+async def scrape_freshersworld(page: Page, keyword: str) -> list[dict]:
+    """Freshersworld — large India jobs board"""
+    jobs = []
+    kw = keyword.replace(" ", "+")
+    await safe_goto(page, f"https://www.freshersworld.com/jobs/jobdetails/{kw}-jobs-in-India?src=freshersworld")
+    for card in await page.query_selector_all(".job-title-name, .jobs-container li"):
+        try:
+            t_el = await card.query_selector("a.job-title-name, h3 a, .title a")
+            c_el = await card.query_selector(".company-name, .comp")
+            d_el = await card.query_selector(".posted-date, .date")
+            if not t_el: continue
+            title   = (await t_el.inner_text()).strip()
+            href    = await t_el.get_attribute("href") or ""
+            if not href.startswith("http"): href = "https://www.freshersworld.com" + href
+            company = (await c_el.inner_text()).strip() if c_el else ""
+            age_txt = (await d_el.inner_text()).strip() if d_el else ""
+            h = parse_age_hours(age_txt)
+            if is_recent(h):
+                jobs.append(make_job(title, company, "Freshersworld", href, age_txt, "India", h))
+        except Exception: continue
+    print(f"  Freshersworld '{keyword}': {len(jobs)}")
+    return jobs
+
+
+# ── API scrapers (no browser) ──────────────────────────────────────────────────
+
+async def scrape_greenhouse_api() -> list[dict]:
+    """Greenhouse public job board API — no auth needed."""
     import httpx
     jobs = []
+    # Companies known to post Salesforce roles and likely use Greenhouse
+    companies = [
+        "veeva", "medallia", "zuora", "docusign", "ringcentral",
+        "zendesk", "mulesoft", "tableau",
+        "capgemini", "slalom", "publicissapient",
+        "mphasis", "hexaware", "mastek", "persistent",
+        "cyient", "coforge", "zs", "syntel",
+        "salesforceben", "cloudcoaching", "cloudsolutions",
+    ]
+    sf_kw = ["salesforce", "lwc", "apex", "crm", "vlocity", "cpq", "einstein"]
+    try:
+        async with httpx.AsyncClient(timeout=12, follow_redirects=True) as client:
+            async def fetch(co: str):
+                try:
+                    r = await client.get(
+                        f"https://boards-api.greenhouse.io/v1/boards/{co}/jobs"
+                    )
+                    if r.status_code != 200:
+                        return
+                    for j in r.json().get("jobs", []):
+                        t = j.get("title", "")
+                        if not any(k in t.lower() for k in sf_kw):
+                            continue
+                        loc = j.get("location", {}).get("name", "")
+                        if loc and "india" not in loc.lower() and "remote" not in loc.lower():
+                            continue
+                        updated = j.get("updated_at", "")
+                        h = parse_age_hours(updated)
+                        if not is_recent(h):
+                            continue
+                        jobs.append(make_job(
+                            t,
+                            co.replace("-", " ").title(),
+                            "Greenhouse",
+                            j.get("absolute_url", ""),
+                            updated,
+                            loc or "India",
+                            h,
+                        ))
+                except Exception:
+                    pass
+            await asyncio.gather(*[fetch(co) for co in companies])
+    except Exception as e:
+        print(f"  Greenhouse API error: {e}")
+    print(f"  Greenhouse API: {len(jobs)}")
+    return jobs
+
+
+async def scrape_lever_api() -> list[dict]:
+    """Lever public posting API — no auth needed."""
+    import httpx
+    jobs = []
+    sf_kw = ["salesforce", "lwc", "apex", "crm", "vlocity", "cpq", "einstein"]
     companies = [
         "salesforce", "slalom", "deloitte", "accenture", "capgemini",
         "cognizant", "publicissapient", "virtusa", "concentrix",
+        "wipro", "infosys", "hcl", "mphasis", "persistent",
+        "mastek", "zendesk", "veeva", "zuora", "coforge",
     ]
-    kw_lower = keyword.lower()
     try:
-        async with httpx.AsyncClient(timeout=10) as client:
-            for company in companies:
+        async with httpx.AsyncClient(timeout=12, follow_redirects=True) as client:
+            async def fetch(co: str):
                 try:
-                    r = await client.get(f"https://api.lever.co/v0/postings/{company}?mode=json")
+                    r = await client.get(f"https://api.lever.co/v0/postings/{co}?mode=json")
                     if r.status_code != 200:
-                        continue
-                    for posting in r.json():
-                        title = posting.get("text", "")
-                        if not any(k in title.lower() for k in ["salesforce", "lwc", "apex", "crm"]):
+                        return
+                    for p in r.json():
+                        t = p.get("text", "")
+                        if not any(k in t.lower() for k in sf_kw):
                             continue
-                        created_ms = posting.get("createdAt", 0)
+                        created_ms = p.get("createdAt", 0)
                         if created_ms:
-                            created = datetime.fromtimestamp(created_ms / 1000)
-                            age = (datetime.now() - created).days
-                            if age > 1:
-                                continue
-                            age_txt = f"{age}d ago" if age > 0 else "Today"
+                            h = (datetime.now(timezone.utc).timestamp() - created_ms / 1000) / 3600
                         else:
-                            age_txt = "Recent"
-                        jobs.append({
-                            "title":    title,
-                            "company":  company.capitalize(),
-                            "platform": "Lever (ATS)",
-                            "url":      posting.get("hostedUrl", ""),
-                            "posted":   age_txt,
-                        })
+                            h = 0.0
+                        if not is_recent(h):
+                            continue
+                        loc = p.get("categories", {}).get("location", "India")
+                        jobs.append(make_job(
+                            t,
+                            co.replace("-", " ").title(),
+                            "Lever",
+                            p.get("hostedUrl", ""),
+                            "",
+                            loc or "India",
+                            h,
+                        ))
                 except Exception:
-                    continue
+                    pass
+            await asyncio.gather(*[fetch(co) for co in companies])
     except Exception as e:
         print(f"  Lever API error: {e}")
-    print(f"  Lever API '{keyword}': {len(jobs)} recent jobs")
+    print(f"  Lever API: {len(jobs)}")
     return jobs
 
 
-# ── JSON writer ────────────────────────────────────────────────────────────────
+async def scrape_workable_api() -> list[dict]:
+    """Workable public job board API."""
+    import httpx
+    jobs = []
+    sf_kw = ["salesforce", "lwc", "apex", "crm", "cpq"]
+    companies = [
+        "mastech", "hcltech", "niit-technologies", "infoobjects",
+        "cloudmasonry", "7summits", "concentrix-catalyst",
+        "cloudcoaching", "simplus", "apexon",
+    ]
+    try:
+        async with httpx.AsyncClient(timeout=10, follow_redirects=True) as client:
+            for co in companies:
+                try:
+                    r = await client.get(
+                        f"https://apply.workable.com/api/v1/widget/accounts/{co}/jobs?details=true"
+                    )
+                    if r.status_code != 200:
+                        continue
+                    for j in r.json().get("results", []):
+                        t = j.get("title", "")
+                        if not any(k in t.lower() for k in sf_kw):
+                            continue
+                        country = (j.get("location") or {}).get("country", "")
+                        if country and country.lower() not in ("india", "in", "remote", ""):
+                            continue
+                        published = j.get("published_on", "")
+                        h = parse_age_hours(published)
+                        if not is_recent(h):
+                            continue
+                        jobs.append(make_job(
+                            t,
+                            j.get("company", co.title()),
+                            "Workable",
+                            f"https://apply.workable.com/{co}/j/{j.get('shortcode', '')}/",
+                            published,
+                            country or "India",
+                            h,
+                        ))
+                except Exception:
+                    continue
+    except Exception as e:
+        print(f"  Workable API error: {e}")
+    print(f"  Workable API: {len(jobs)}")
+    return jobs
+
+
+async def scrape_ashby_api() -> list[dict]:
+    """Ashby HQ public job board API — growing usage among SaaS companies."""
+    import httpx
+    jobs = []
+    sf_kw = ["salesforce", "lwc", "apex", "crm", "cpq", "vlocity"]
+    # Companies on Ashby that may post Salesforce roles
+    companies = [
+        "veeva-systems", "medallia", "ringcentral",
+        "zuora", "docusign", "zendesk",
+        "salesloft", "outreach", "clari", "gong",
+    ]
+    try:
+        async with httpx.AsyncClient(timeout=10, follow_redirects=True) as client:
+            for co in companies:
+                try:
+                    r = await client.get(
+                        f"https://jobs.ashbyhq.com/api/non-user-facing/listing/job-board/all-jobs",
+                        params={"organizationHostedJobsPageName": co},
+                    )
+                    if r.status_code != 200:
+                        continue
+                    for j in (r.json().get("jobPostings") or []):
+                        t = j.get("title", "")
+                        if not any(k in t.lower() for k in sf_kw):
+                            continue
+                        loc = j.get("secondaryLocations", [{}])[0].get("name", "India") if j.get("secondaryLocations") else "India"
+                        published = j.get("publishedDate", "")
+                        h = parse_age_hours(published)
+                        if not is_recent(h):
+                            continue
+                        jobs.append(make_job(
+                            t,
+                            j.get("organizationName", co.title()),
+                            "Ashby",
+                            f"https://jobs.ashbyhq.com/{co}/{j.get('id', '')}",
+                            published,
+                            loc,
+                            h,
+                        ))
+                except Exception:
+                    continue
+    except Exception as e:
+        print(f"  Ashby API error: {e}")
+    print(f"  Ashby API: {len(jobs)}")
+    return jobs
+
+
+# ── writers ───────────────────────────────────────────────────────────────────
 
 def write_json(jobs: list[dict]):
-    import json
-    seen = set()
+    seen: set = set()
     unique = []
     for j in jobs:
-        key = (j["title"].lower().strip(), j["company"].lower().strip())
-        if j["url"] and key not in seen:
+        key = (j["title"].lower().strip(), (j.get("company") or "").lower().strip())
+        if j.get("url") and key not in seen:
             seen.add(key)
             unique.append(j)
-    unique.sort(key=lambda j: j["platform"])
+    unique.sort(key=lambda j: j.get("age_hours", 0))
     payload = {
-        "jobs":      unique,
-        "total":     len(unique),
+        "jobs":       unique,
+        "total":      len(unique),
         "scraped_at": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "platforms": sorted({j["platform"] for j in unique}),
+        "platforms":  sorted({j["platform"] for j in unique}),
     }
     JOBS_JSON.write_text(json.dumps(payload, indent=2))
 
 
-# ── Excel writer ────────────────────────────────────────────────────────────────
-
-def write_excel(jobs: list[dict]):
+def write_excel(jobs: list[dict]) -> int:
     wb = openpyxl.Workbook()
     ws = wb.active
     ws.title = "Salesforce Jobs"
-
-    # Header style
-    header_fill = PatternFill("solid", fgColor="1F4E79")
-    header_font = Font(color="FFFFFF", bold=True, size=11)
+    hfill = PatternFill("solid", fgColor="1F4E79")
+    hfont = Font(color="FFFFFF", bold=True, size=11)
     headers = ["#", "Job Title", "Company", "Platform", "Posted", "Apply Link"]
-    col_widths = [5, 45, 30, 15, 12, 80]
-
-    for col, (h, w) in enumerate(zip(headers, col_widths), 1):
-        cell = ws.cell(row=1, column=col, value=h)
-        cell.fill = header_fill
-        cell.font = header_font
-        cell.alignment = Alignment(horizontal="center", vertical="center")
+    widths  = [5, 45, 30, 15, 15, 80]
+    for col, (h, w) in enumerate(zip(headers, widths), 1):
+        c = ws.cell(row=1, column=col, value=h)
+        c.fill = hfill
+        c.font = hfont
+        c.alignment = Alignment(horizontal="center")
         ws.column_dimensions[openpyxl.utils.get_column_letter(col)].width = w
-
     ws.row_dimensions[1].height = 20
-
-    # Alternate row colors
-    fill_even = PatternFill("solid", fgColor="EBF3FB")
-    fill_odd  = PatternFill("solid", fgColor="FFFFFF")
-
-    # Deduplicate by title+company (URLs vary per platform)
-    seen = set()
+    f_even = PatternFill("solid", fgColor="EBF3FB")
+    f_odd  = PatternFill("solid", fgColor="FFFFFF")
+    seen: set = set()
     unique = []
     for j in jobs:
-        key = (j["title"].lower().strip(), j["company"].lower().strip())
-        if j["url"] and key not in seen:
+        key = (j["title"].lower().strip(), (j.get("company") or "").lower().strip())
+        if j.get("url") and key not in seen:
             seen.add(key)
             unique.append(j)
-
-    unique.sort(key=lambda j: j["platform"])
-
-    for i, job in enumerate(unique, 1):
+    unique.sort(key=lambda j: j.get("age_hours", 0))
+    for i, j in enumerate(unique, 1):
         row = i + 1
-        fill = fill_even if i % 2 == 0 else fill_odd
+        fill = f_even if i % 2 == 0 else f_odd
         for col in range(1, 7):
             ws.cell(row=row, column=col).fill = fill
-
         ws.cell(row=row, column=1, value=i)
-        ws.cell(row=row, column=2, value=job["title"])
-        ws.cell(row=row, column=3, value=job["company"])
-        ws.cell(row=row, column=4, value=job["platform"])
-        ws.cell(row=row, column=5, value=job["posted"])
-
-        # Clickable hyperlink
-        url = job["url"]
-        link_cell = ws.cell(row=row, column=6, value=url)
+        ws.cell(row=row, column=2, value=j["title"])
+        ws.cell(row=row, column=3, value=j.get("company", ""))
+        ws.cell(row=row, column=4, value=j["platform"])
+        ws.cell(row=row, column=5, value=j.get("posted", ""))
+        url = j.get("url", "")
+        lc  = ws.cell(row=row, column=6, value=url)
         if url.startswith("http"):
-            link_cell.hyperlink = url
-            link_cell.font = Font(color="0563C1", underline="single")
-
+            lc.hyperlink = url
+            lc.font = Font(color="0563C1", underline="single")
         ws.row_dimensions[row].height = 15
-
-    # Freeze header row
     ws.freeze_panes = "A2"
-
     wb.save(OUTPUT_FILE)
     return len(unique)
 
 
-# ── main ───────────────────────────────────────────────────────────────────────
+# ── main ──────────────────────────────────────────────────────────────────────
 
 async def main():
-    print(f"\n{'='*55}")
-    print("  Salesforce Job Finder — last 24 hours | India only")
-    print(f"{'='*55}\n")
+    print(f"\n{'='*60}")
+    print("  Salesforce Job Finder — Multi-Platform | India | 72h")
+    print(f"{'='*60}\n")
 
-    all_jobs = []
+    all_jobs: list[dict] = []
 
+    # API scrapers run without a browser — faster, parallel
+    print("[API scrapers — no browser]")
+    api_results = await asyncio.gather(
+        scrape_greenhouse_api(),
+        scrape_lever_api(),
+        scrape_workable_api(),
+        scrape_ashby_api(),
+    )
+    for r in api_results:
+        all_jobs.extend(r)
+
+    # Browser scrapers — one context per scraper per keyword
     async with async_playwright() as pw:
         browser = await pw.chromium.launch(headless=True)
 
         for keyword in KEYWORDS:
             print(f"\n[{keyword}]")
 
-            # Each scraper gets its own page to avoid navigation conflicts
-            async def run_scraper(scraper_fn, kw=keyword):
+            async def run(fn, kw=keyword):
                 ctx = await browser.new_context(user_agent=UA)
                 pg  = await ctx.new_page()
                 try:
-                    return await scraper_fn(pg, kw)
+                    return await fn(pg, kw)
                 except Exception as e:
-                    print(f"  {scraper_fn.__name__} error: {e}")
+                    print(f"  {fn.__name__} error: {e}")
                     return []
                 finally:
                     await ctx.close()
 
             results = await asyncio.gather(
-                run_scraper(scrape_linkedin),
-                run_scraper(scrape_indeed),
-                run_scraper(scrape_naukri),
-                run_scraper(scrape_dice),
-                run_scraper(scrape_wellfound),
-                scrape_lever_api(keyword),
+                run(scrape_linkedin),
+                run(scrape_indeed),
+                run(scrape_naukri),
+                run(scrape_timesjobs),
+                run(scrape_foundit),
+                run(scrape_shine),
+                run(scrape_iimjobs),
+                run(scrape_glassdoor),
+                run(scrape_cutshort),
+                run(scrape_instahyre),
+                run(scrape_freshersworld),
             )
             for r in results:
                 all_jobs.extend(r)
@@ -476,11 +725,10 @@ async def main():
 
     total = write_excel(all_jobs)
     write_json(all_jobs)
-    print(f"\n{'='*55}")
-    print(f"  Done! {total} unique jobs saved to:")
-    print(f"  {OUTPUT_FILE}")
-    print(f"  {JOBS_JSON}")
-    print(f"{'='*55}\n")
+    print(f"\n{'='*60}")
+    print(f"  Done! {total} unique jobs → jobs.json + xlsx")
+    print(f"{'='*60}\n")
+
 
 if __name__ == "__main__":
     asyncio.run(main())

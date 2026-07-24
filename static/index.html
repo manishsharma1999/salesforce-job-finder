@@ -13,11 +13,12 @@
   --text:#1a1a2e;--text2:#6b7280;--muted:#9ca3af;
   --border:#e5e7eb;--radius:16px;
   --c1:#fde8ef;--c2:#dff0fa;--c3:#dcf5ec;--c4:#fef9e7;--c5:#ede9fe;--c6:#fff;
+  --green:#059669;--orange:#d97706;--blue:#0284c7;
 }
 html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:14px}
 body{background:var(--bg);color:var(--text);display:flex;flex-direction:column;min-height:100vh}
 
-/* ── NAV ── */
+/* NAV */
 nav{background:var(--nav);height:58px;display:flex;align-items:center;padding:0 24px;gap:20px;position:sticky;top:0;z-index:200;flex-shrink:0}
 .logo{display:flex;align-items:center;gap:8px;margin-right:12px;text-decoration:none}
 .logo-icon{width:30px;height:30px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:8px;display:grid;place-items:center;font-size:.9rem;flex-shrink:0}
@@ -28,8 +29,6 @@ nav{background:var(--nav);height:58px;display:flex;align-items:center;padding:0 
 .nav-link:hover{color:#fff;background:rgba(255,255,255,.08)}
 .nav-link.active{color:#fff}
 .nav-right{display:flex;align-items:center;gap:10px;margin-left:auto}
-.nav-loc{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.7);font-size:.8rem;background:rgba(255,255,255,.08);padding:6px 12px;border-radius:8px;cursor:pointer;white-space:nowrap}
-.nav-loc:hover{background:rgba(255,255,255,.13);color:#fff}
 .last-updated{font-size:.72rem;color:rgba(255,255,255,.4);white-space:nowrap}
 .nav-avatar{width:32px;height:32px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:50%;display:grid;place-items:center;color:#fff;font-size:.8rem;font-weight:700;flex-shrink:0}
 #refresh-btn{display:flex;align-items:center;gap:5px;padding:7px 16px;background:var(--accent);color:#fff;border:none;border-radius:9px;font-size:.8rem;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap}
@@ -38,12 +37,11 @@ nav{background:var(--nav);height:58px;display:flex;align-items:center;padding:0 
 .spin{display:inline-block}.spin.active{animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* ── FILTER BAR ── */
+/* FILTER BAR */
 .filter-bar{background:var(--nav2);border-bottom:1px solid rgba(255,255,255,.07);padding:0 24px;height:50px;display:flex;align-items:center;gap:10px;flex-shrink:0}
 .fb-pill{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;font-size:.78rem;font-weight:600;border:1.5px solid rgba(255,255,255,.15);color:rgba(255,255,255,.6);background:transparent;cursor:pointer;transition:all .18s;white-space:nowrap}
 .fb-pill:hover{border-color:var(--accent2);color:var(--accent2)}
 .fb-pill.active{background:var(--accent);border-color:var(--accent);color:#fff}
-.fb-pill svg{opacity:.7}
 .fb-sep{width:1px;height:24px;background:rgba(255,255,255,.1);margin:0 4px;flex-shrink:0}
 .fb-right{margin-left:auto;display:flex;align-items:center;gap:8px}
 .sort-sel{padding:6px 12px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.12);border-radius:8px;color:rgba(255,255,255,.75);font-size:.78rem;outline:none;cursor:pointer}
@@ -52,31 +50,42 @@ nav{background:var(--nav);height:58px;display:flex;align-items:center;padding:0 
 .fb-search input{border:none;outline:none;background:transparent;color:#fff;font-size:.8rem;width:160px}
 .fb-search input::placeholder{color:rgba(255,255,255,.35)}
 
-/* ── LAYOUT ── */
+/* LAYOUT */
 .app-body{display:flex;flex:1;overflow:hidden}
 
-/* ── SIDEBAR ── */
-.sidebar{width:220px;flex-shrink:0;background:var(--sidebar);display:flex;flex-direction:column;gap:0;overflow-y:auto;padding:20px 16px 32px}
+/* SIDEBAR */
+.sidebar{width:230px;flex-shrink:0;background:var(--sidebar);display:flex;flex-direction:column;overflow-y:auto;padding:20px 16px 32px}
 .cta-card{background:linear-gradient(135deg,#6c5ce7 0%,#a855f7 60%,#f59e0b 100%);border-radius:14px;padding:20px 18px;margin-bottom:22px;position:relative;overflow:hidden}
 .cta-card::before{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;background:rgba(255,255,255,.1);border-radius:50%}
-.cta-card::after{content:'';position:absolute;bottom:-30px;left:-10px;width:100px;height:100px;background:rgba(255,255,255,.06);border-radius:50%}
-.cta-title{font-size:.95rem;font-weight:800;color:#fff;line-height:1.35;margin-bottom:14px;position:relative}
+.cta-title{font-size:.92rem;font-weight:800;color:#fff;line-height:1.35;margin-bottom:14px;position:relative}
 .cta-btn{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;background:#fff;color:var(--accent);border-radius:8px;font-size:.75rem;font-weight:700;border:none;cursor:pointer;transition:all .2s;position:relative}
-.cta-btn:hover{background:#f0edff;transform:translateY(-1px)}
+.cta-btn:hover{background:#f0edff}
 .sidebar-section{margin-bottom:20px}
-.sidebar-heading{font-size:.7rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;display:flex;align-items:center;justify-content:space-between}
-.sidebar-heading svg{opacity:.4;cursor:pointer}
+.sidebar-heading{font-size:.7rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
 .cb-item{display:flex;align-items:center;gap:9px;padding:5px 2px;cursor:pointer;border-radius:6px}
 .cb-item:hover .cb-box{border-color:var(--accent2)}
 .cb-box{width:15px;height:15px;border:1.5px solid rgba(255,255,255,.2);border-radius:4px;flex-shrink:0;display:grid;place-items:center;transition:all .15s}
 .cb-box.checked{background:var(--accent);border-color:var(--accent)}
 .cb-box.checked::after{content:'✓';font-size:.6rem;color:#fff;font-weight:900}
 .cb-label{font-size:.78rem;color:rgba(255,255,255,.6);transition:color .15s}
-.cb-item:hover .cb-label{color:rgba(255,255,255,.9)}
-.cb-item.active .cb-label{color:rgba(255,255,255,.92);font-weight:600}
+.cb-item:hover .cb-label,.cb-item.active .cb-label{color:rgba(255,255,255,.9);font-weight:600}
 .cb-count{margin-left:auto;font-size:.65rem;color:rgba(255,255,255,.25);background:rgba(255,255,255,.06);padding:1px 6px;border-radius:10px}
 
-/* ── CONTENT ── */
+/* HOUR SLIDER */
+.hour-slider-wrap{margin-top:4px;padding:4px 2px}
+.hour-slider-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.hour-val{font-size:.85rem;font-weight:800;color:var(--accent2)}
+.hour-unit{font-size:.7rem;color:rgba(255,255,255,.35)}
+input[type=range].hour-slider{width:100%;height:4px;-webkit-appearance:none;appearance:none;background:rgba(255,255,255,.15);border-radius:4px;outline:none;cursor:pointer}
+input[type=range].hour-slider::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--accent2);border:2px solid #fff;cursor:pointer;transition:transform .15s}
+input[type=range].hour-slider::-webkit-slider-thumb:hover{transform:scale(1.2)}
+input[type=range].hour-slider::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--accent2);border:2px solid #fff;cursor:pointer}
+.hour-ticks{display:flex;justify-content:space-between;margin-top:6px}
+.hour-tick{font-size:.62rem;color:rgba(255,255,255,.25);cursor:pointer;transition:color .15s}
+.hour-tick:hover{color:rgba(255,255,255,.7)}
+.hour-tick.hit{color:var(--accent2);font-weight:700}
+
+/* CONTENT */
 .content{flex:1;overflow-y:auto;padding:24px 28px 48px;min-width:0}
 .content-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px}
 .content-title{font-size:1.15rem;font-weight:800;color:var(--text)}
@@ -85,39 +94,34 @@ nav{background:var(--nav);height:58px;display:flex;align-items:center;padding:0 
 .active-chip{display:flex;align-items:center;gap:5px;padding:3px 10px;background:var(--accent-light);border:1px solid #c4b5fd;border-radius:20px;font-size:.72rem;color:var(--accent);font-weight:600;cursor:pointer}
 .active-chip:hover{background:#ddd6fe}
 
-/* ── CARDS GRID ── */
+/* GRID */
 .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media(max-width:1100px){.cards-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.cards-grid{grid-template-columns:1fr}}
 
-.job-card{border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:12px;position:relative;transition:all .2s;animation:fadeUp .3s ease both;border:1.5px solid transparent;cursor:default}
+/* CARD */
+.job-card{border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:12px;position:relative;transition:all .2s;animation:fadeUp .3s ease both;border:1.5px solid transparent}
 .job-card:hover{transform:translateY(-3px);box-shadow:0 10px 40px rgba(0,0,0,.12);border-color:rgba(108,92,231,.2)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-
-/* Pastel backgrounds rotating */
 .job-card:nth-child(6n+1){background:var(--c1)}
 .job-card:nth-child(6n+2){background:var(--c2)}
 .job-card:nth-child(6n+3){background:var(--c3)}
 .job-card:nth-child(6n+4){background:var(--c4)}
 .job-card:nth-child(6n+5){background:var(--c5)}
 .job-card:nth-child(6n+0){background:var(--c6);border-color:var(--border)}
-
 .card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
 .card-date{font-size:.68rem;color:var(--text2);font-weight:500}
-.card-date.today{color:#059669;font-weight:700}
+.card-date.fresh{color:#059669;font-weight:700}
 .company-logo{width:38px;height:38px;border-radius:10px;background:#fff;display:grid;place-items:center;font-size:.9rem;font-weight:800;color:var(--accent);flex-shrink:0;border:1.5px solid rgba(0,0,0,.07);box-shadow:0 2px 8px rgba(0,0,0,.08)}
-.card-cat{font-size:.7rem;color:var(--text2);font-weight:500;margin-top:2px}
-
 .card-company{font-size:.72rem;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
 .card-title{font-size:.97rem;font-weight:800;color:var(--text);line-height:1.3}
-.new-dot{width:7px;height:7px;background:#10b981;border-radius:50%;display:inline-block;margin-left:6px;vertical-align:middle;flex-shrink:0}
-
+.new-dot{width:7px;height:7px;background:#10b981;border-radius:50%;display:inline-block;margin-left:6px;vertical-align:middle}
 .card-tags{display:flex;flex-wrap:wrap;gap:5px}
 .ctag{font-size:.68rem;padding:3px 9px;border-radius:20px;font-weight:600;background:rgba(0,0,0,.06);color:var(--text2);border:1px solid rgba(0,0,0,.06)}
 .ctag.loc{background:rgba(2,132,199,.1);color:#0284c7;border-color:rgba(2,132,199,.15)}
 .ctag.plat{background:rgba(108,92,231,.1);color:var(--accent);border-color:rgba(108,92,231,.15)}
 .ctag.new{background:rgba(5,150,105,.1);color:#059669;border-color:rgba(5,150,105,.15)}
-
+.ctag.old{background:rgba(217,119,6,.1);color:var(--orange);border-color:rgba(217,119,6,.15)}
 .card-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:4px;border-top:1px solid rgba(0,0,0,.06)}
 .card-meta-loc{font-size:.72rem;color:var(--text2);display:flex;align-items:center;gap:4px}
 .card-actions{display:flex;gap:6px}
@@ -127,10 +131,9 @@ nav{background:var(--nav);height:58px;display:flex;align-items:center;padding:0 
 .btn-save:hover{border-color:var(--accent);color:var(--accent)}
 .btn-save.saved{background:var(--accent-light);border-color:var(--accent);color:var(--accent)}
 
-/* ── SKELETON ── */
+/* SKELETON */
 .skeleton{background:linear-gradient(90deg,rgba(0,0,0,.06) 25%,rgba(0,0,0,.1) 50%,rgba(0,0,0,.06) 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;border-radius:8px}
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-
 .state-box{text-align:center;padding:80px 20px;color:var(--text2);grid-column:1/-1}
 .state-icon{font-size:3rem;margin-bottom:12px}
 .state-box h3{font-size:1rem;color:var(--text);margin-bottom:5px;font-weight:700}
@@ -138,18 +141,8 @@ nav{background:var(--nav);height:58px;display:flex;align-items:center;padding:0 
 #toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(10px);background:var(--text);color:#fff;border-radius:10px;padding:9px 20px;font-size:.8rem;opacity:0;pointer-events:none;transition:all .3s;z-index:999;white-space:nowrap;font-weight:600}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
-@media(max-width:900px){
-  .sidebar{width:200px}
-  .nav-links,.nav-loc{display:none}
-  .last-updated{display:none}
-}
-@media(max-width:700px){
-  .app-body{flex-direction:column}
-  .sidebar{width:100%;flex-direction:row;flex-wrap:wrap;padding:14px}
-  .cta-card{display:none}
-  .filter-bar{overflow-x:auto;gap:6px}
-  .content{padding:16px}
-}
+@media(max-width:900px){.sidebar{width:200px}.nav-links,.last-updated{display:none}}
+@media(max-width:700px){.app-body{flex-direction:column}.sidebar{width:100%;flex-direction:row;flex-wrap:wrap;padding:14px}.cta-card{display:none}.filter-bar{overflow-x:auto;gap:6px}.content{padding:16px}}
 </style>
 </head>
 <body>
@@ -167,10 +160,6 @@ nav{background:var(--nav);height:58px;display:flex;align-items:center;padding:0 
   </div>
   <div class="nav-right">
     <span class="last-updated" id="last-updated"></span>
-    <div class="nav-loc" onclick="document.getElementById('loc-search').focus()">
-      <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      India
-    </div>
     <button id="refresh-btn" onclick="triggerRefresh()">
       <span class="spin" id="spin-icon">↻</span> Refresh
     </button>
@@ -185,9 +174,9 @@ nav{background:var(--nav);height:58px;display:flex;align-items:center;padding:0 
     <input type="text" id="fb-search" placeholder="Search title, company…" oninput="applyFilters()"/>
   </div>
   <div class="fb-sep"></div>
-  <div id="platform-pills" style="display:flex;gap:6px;flex-wrap:nowrap"></div>
+  <div id="platform-pills" style="display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto"></div>
   <div class="fb-sep"></div>
-  <select id="loc-search" class="sort-sel" onchange="setLocFromBar(this.value)">
+  <select id="loc-bar" class="sort-sel" onchange="setLocFromBar(this.value)">
     <option value="">All Locations</option>
   </select>
   <div class="fb-right">
@@ -206,38 +195,39 @@ nav{background:var(--nav);height:58px;display:flex;align-items:center;padding:0 
   <aside class="sidebar">
     <div class="cta-card">
       <div class="cta-title">Find your next Salesforce opportunity in India</div>
-      <button class="cta-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">Explore Jobs ↗</button>
+      <button class="cta-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">Explore ↗</button>
     </div>
 
+    <!-- HOUR PICKER -->
     <div class="sidebar-section">
-      <div class="sidebar-heading">
-        Posted Within
-        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-      </div>
-      <div id="time-cb">
-        <div class="cb-item active" data-days="3" onclick="setTime(this)">
-          <div class="cb-box checked"></div>
-          <span class="cb-label">Last 3 days</span>
-          <span class="cb-count" id="tc-3">—</span>
+      <div class="sidebar-heading">⏰ Posted Within</div>
+      <div class="hour-slider-wrap">
+        <div class="hour-slider-label">
+          <span id="hour-display" class="hour-val">72</span>
+          <span class="hour-unit" id="hour-unit-lbl">hours (3 days)</span>
         </div>
-        <div class="cb-item" data-days="1" onclick="setTime(this)">
-          <div class="cb-box"></div>
-          <span class="cb-label">Last 24 hours</span>
-          <span class="cb-count" id="tc-1">—</span>
-        </div>
-        <div class="cb-item" data-days="0" onclick="setTime(this)">
-          <div class="cb-box"></div>
-          <span class="cb-label">Today only</span>
-          <span class="cb-count" id="tc-0">—</span>
+        <input type="range" class="hour-slider" id="hour-slider"
+               min="1" max="72" value="72" step="1" oninput="onSlider(this.value)"/>
+        <div class="hour-ticks">
+          <span class="hour-tick" onclick="setHours(1)">1h</span>
+          <span class="hour-tick" onclick="setHours(6)">6h</span>
+          <span class="hour-tick" onclick="setHours(12)">12h</span>
+          <span class="hour-tick" onclick="setHours(24)">24h</span>
+          <span class="hour-tick" onclick="setHours(48)">48h</span>
+          <span class="hour-tick hit" onclick="setHours(72)">72h</span>
         </div>
       </div>
     </div>
 
+    <!-- PLATFORM (checkboxes) -->
     <div class="sidebar-section">
-      <div class="sidebar-heading">
-        Location
-        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-      </div>
+      <div class="sidebar-heading">📊 Platform</div>
+      <div id="plat-cb"></div>
+    </div>
+
+    <!-- LOCATION -->
+    <div class="sidebar-section">
+      <div class="sidebar-heading">📍 City</div>
       <div id="loc-cb"></div>
     </div>
   </aside>
@@ -252,7 +242,6 @@ nav{background:var(--nav);height:58px;display:flex;align-items:center;padding:0 
     </div>
     <div class="active-chips" id="active-chips"></div>
     <div class="cards-grid" id="cards-grid">
-      <!-- skeleton -->
       <div class="job-card" style="background:#f3f4f6">
         <div class="card-top"><div class="skeleton" style="height:12px;width:70px"></div><div class="skeleton" style="width:38px;height:38px;border-radius:10px"></div></div>
         <div><div class="skeleton" style="height:10px;width:60px;margin-bottom:6px"></div><div class="skeleton" style="height:16px;width:80%"></div></div>
@@ -280,32 +269,56 @@ nav{background:var(--nav);height:58px;display:flex;align-items:center;padding:0 
 <script>
 const JOBS_URL   = 'https://manishsharma1999.github.io/salesforce-job-finder/jobs.json';
 const WORKER_URL = 'https://job-finder-refresh.manishsharma1k9909.workers.dev';
-const CITIES = ['Mumbai','Delhi','Bengaluru','Bangalore','Hyderabad','Chennai','Pune','Kolkata','Ahmedabad','Noida','Gurugram','Gurgaon','Jaipur','Chandigarh','Kochi','Lucknow','Bhopal','Indore','Nagpur','Surat','Vadodara','Coimbatore','Visakhapatnam','Remote'];
+const CITIES = ['Mumbai','Delhi','Bengaluru','Bangalore','Hyderabad','Chennai','Pune','Kolkata',
+  'Ahmedabad','Noida','Gurugram','Gurgaon','Jaipur','Chandigarh','Kochi','Lucknow',
+  'Bhopal','Indore','Nagpur','Surat','Vadodara','Coimbatore','Visakhapatnam','Remote'];
 
 let ALL=[], saved=new Set(JSON.parse(localStorage.getItem('sf-saved-v2')||'[]'));
-let activeTime=3, activePlatform='All', activeLoc='';
+let activeHours=72, activePlatform='All', activeLoc='';
 
 function city(j){
   const h=[(j.location||''),j.title,(j.company||''),(j.posted||'')].join(' ');
-  for(const c of CITIES){
-    if(h.toLowerCase().includes(c.toLowerCase()))
-      return(c==='Bangalore'?'Bengaluru':c);
-  }
+  for(const c of CITIES){if(h.toLowerCase().includes(c.toLowerCase()))return c==='Bangalore'?'Bengaluru':c;}
   return 'India';
 }
 
-function fmtDate(j){
-  const a=j.age_days||0;
-  if(a===0) return {txt:'Today',cls:'today'};
-  if(a===1) return {txt:'Yesterday',cls:''};
-  return {txt:a+'d ago',cls:''};
+function fmtAge(h){
+  if(h==null||h===0) return {txt:'Just now',cls:'fresh'};
+  if(h<1) return {txt:Math.round(h*60)+'m ago',cls:'fresh'};
+  if(h<24) return {txt:Math.round(h)+'h ago',cls:'fresh'};
+  if(h<48) return {txt:'Yesterday',cls:''};
+  return {txt:Math.floor(h/24)+'d ago',cls:''};
+}
+
+function hoursLabel(h){
+  if(h<24) return h+'h';
+  if(h===24) return '1 day';
+  if(h===48) return '2 days';
+  if(h===72) return '3 days';
+  return Math.round(h/24*10)/10+' days';
+}
+
+// ── slider ──
+function onSlider(val){
+  activeHours = +val;
+  document.getElementById('hour-display').textContent = val;
+  document.getElementById('hour-unit-lbl').textContent = +val<24 ? 'hours' : 'hours ('+hoursLabel(+val)+')';
+  document.querySelectorAll('.hour-tick').forEach(t=>{
+    t.classList.toggle('hit', +t.textContent.replace('h','')===+val || (t.textContent==='72h'&&+val===72));
+  });
+  updateSidebarCounts();
+  applyFilters();
+}
+function setHours(h){
+  document.getElementById('hour-slider').value=h;
+  onSlider(h);
 }
 
 async function load(){
   try{
     const r=await fetch(JOBS_URL+'?t='+Date.now());
     const d=await r.json();
-    ALL=(d.jobs||[]).map(j=>({...j,_city:city(j)}));
+    ALL=(d.jobs||[]).map(j=>({...j,_city:city(j),_h:j.age_hours!=null?+j.age_hours:+j.age_days*24}));
     window._lastTs=d.scraped_at;
     if(d.scraped_at){
       const dt=new Date(d.scraped_at);
@@ -313,15 +326,18 @@ async function load(){
         'Updated '+dt.toLocaleString('en-IN',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
     }
     buildPlatformPills();
-    buildLocSidebar();
+    buildPlatformCb();
+    buildLocCb();
     buildLocDropdown();
-    updateTimeCounts();
+    updateSidebarCounts();
     applyFilters();
   }catch(e){
     document.getElementById('cards-grid').innerHTML=
       '<div class="state-box"><div class="state-icon">⚠️</div><h3>Could not load jobs</h3><p>Check your connection.</p></div>';
   }
 }
+
+function visible(){return ALL.filter(j=>j._h<=activeHours);}
 
 function buildPlatformPills(){
   const plats=['All',...new Set(ALL.map(j=>j.platform))];
@@ -330,99 +346,92 @@ function buildPlatformPills(){
   ).join('');
 }
 
-function buildLocSidebar(){
+function buildPlatformCb(){
+  const plats=['All',...new Set(ALL.map(j=>j.platform))];
+  document.getElementById('plat-cb').innerHTML=plats.map(p=>{
+    const cnt=p==='All'?ALL.length:ALL.filter(j=>j.platform===p).length;
+    return `<div class="cb-item${p===activePlatform?' active':''}" onclick="setPlatform('${p}',this,true)">
+      <div class="cb-box${p===activePlatform?' checked':''}"></div>
+      <span class="cb-label">${p}</span>
+      <span class="cb-count">${cnt}</span>
+    </div>`;
+  }).join('');
+}
+
+function buildLocCb(){
   const top=[...new Set(ALL.map(j=>j._city))]
     .map(c=>({c,n:ALL.filter(j=>j._city===c).length}))
-    .sort((a,b)=>b.n-a.n).slice(0,7);
+    .sort((a,b)=>b.n-a.n).slice(0,8);
   document.getElementById('loc-cb').innerHTML=top.map(({c,n})=>`
     <div class="cb-item${activeLoc===c?' active':''}" onclick="setLoc('${c}',this)">
       <div class="cb-box${activeLoc===c?' checked':''}"></div>
-      <span class="cb-label">${c}</span>
-      <span class="cb-count">${n}</span>
+      <span class="cb-label">${c}</span><span class="cb-count">${n}</span>
     </div>`).join('');
 }
 
 function buildLocDropdown(){
   const cities=[...new Set(ALL.map(j=>j._city))].sort();
-  document.getElementById('loc-search').innerHTML=
+  document.getElementById('loc-bar').innerHTML=
     '<option value="">All Locations</option>'+
     cities.map(c=>`<option value="${c}"${c===activeLoc?' selected':''}>${c}</option>`).join('');
 }
 
-function updateTimeCounts(){
-  document.getElementById('tc-3').textContent=ALL.filter(j=>(j.age_days||0)<=3).length;
-  document.getElementById('tc-1').textContent=ALL.filter(j=>(j.age_days||0)<=1).length;
-  document.getElementById('tc-0').textContent=ALL.filter(j=>(j.age_days||0)===0).length;
+function updateSidebarCounts(){
+  // Update time counts in the slider area
+  const v=visible();
+  document.querySelector('.content-title.count') && (document.querySelector('.content-title.count').textContent='');
 }
 
-function setTime(el){
-  document.querySelectorAll('#time-cb .cb-item').forEach(e=>{
-    e.classList.remove('active');
-    e.querySelector('.cb-box').classList.remove('checked');
-  });
-  el.classList.add('active');
-  el.querySelector('.cb-box').classList.add('checked');
-  activeTime=+el.dataset.days;
-  applyFilters();
-}
-
-function setPlatform(p,el){
+function setPlatform(p, el, fromSidebar){
   activePlatform=p;
-  document.querySelectorAll('#platform-pills .fb-pill').forEach(e=>e.classList.remove('active'));
-  el.classList.add('active');
-  applyFilters();
-}
-
-function setLoc(loc,el){
-  activeLoc=(activeLoc===loc)?'':loc;
-  document.querySelectorAll('#loc-cb .cb-item').forEach(e=>{
-    const active=e.querySelector('.cb-label').textContent===activeLoc;
-    e.classList.toggle('active',active);
-    e.querySelector('.cb-box').classList.toggle('checked',active);
+  // sync both pill bar and sidebar checkboxes
+  document.querySelectorAll('#platform-pills .fb-pill').forEach(e=>e.classList.toggle('active',e.textContent===p));
+  document.querySelectorAll('#plat-cb .cb-item').forEach(e=>{
+    const lbl=e.querySelector('.cb-label').textContent;
+    e.classList.toggle('active',lbl===p);
+    e.querySelector('.cb-box').classList.toggle('checked',lbl===p);
   });
-  document.getElementById('loc-search').value=activeLoc;
   applyFilters();
 }
 
-function setLocFromBar(val){
-  activeLoc=val;
-  buildLocSidebar();
+function setLoc(loc, el){
+  activeLoc=activeLoc===loc?'':loc;
+  buildLocCb();
+  document.getElementById('loc-bar').value=activeLoc;
   applyFilters();
 }
+function setLocFromBar(val){activeLoc=val;buildLocCb();applyFilters();}
 
 function applyFilters(){
   const q=(document.getElementById('fb-search').value||'').toLowerCase().trim();
   const sort=document.getElementById('sort').value;
   let jobs=ALL.filter(j=>{
-    const a=j.age_days||0;
-    if(activeTime===0&&a!==0) return false;
-    if(activeTime===1&&a>1) return false;
-    if(activeTime===3&&a>3) return false;
+    if(j._h>activeHours) return false;
     if(activePlatform!=='All'&&j.platform!==activePlatform) return false;
     if(activeLoc&&j._city!==activeLoc) return false;
     if(q&&!j.title.toLowerCase().includes(q)&&!(j.company||'').toLowerCase().includes(q)) return false;
     return true;
   });
   if(sort==='title') jobs.sort((a,b)=>a.title.localeCompare(b.title));
-  if(sort==='company') jobs.sort((a,b)=>(a.company||'').localeCompare(b.company||''));
+  else if(sort==='company') jobs.sort((a,b)=>(a.company||'').localeCompare(b.company||''));
+  else jobs.sort((a,b)=>a._h-b._h); // freshest first
 
   document.querySelector('.content-title.count').textContent=jobs.length;
 
   const chips=[];
-  if(activeTime<3) chips.push({l:activeTime===0?'Today only':'Last 24h',f:'resetTime()'});
+  if(activeHours<72) chips.push({l:'≤'+hoursLabel(activeHours),f:'resetHours()'});
   if(activePlatform!=='All') chips.push({l:activePlatform,f:'resetPlatform()'});
   if(activeLoc) chips.push({l:activeLoc,f:'resetLoc()'});
-  if(q) chips.push({l:`"${q}"`,f:'clearSearch()'});
+  if(q) chips.push({l:'"'+q+'"',f:'clearSearch()'});
   document.getElementById('active-chips').innerHTML=chips.map(c=>
-    `<div class="active-chip" onclick="${c.f}">${c.l} ×</div>`
-  ).join('');
+    `<div class="active-chip" onclick="${c.f}">${c.l} ×</div>`).join('');
 
   renderCards(jobs);
 }
 
-function resetTime(){activeTime=3;setTime(document.querySelector('#time-cb .cb-item[data-days="3"]'));}
-function resetPlatform(){setPlatform('All',document.querySelector('#platform-pills .fb-pill'));}
-function resetLoc(){activeLoc='';buildLocSidebar();buildLocDropdown();applyFilters();}
+function resetHours(){setHours(72);}
+function resetPlatform(){setPlatform('All',null,false);}
+function resetLoc(){activeLoc='';buildLocCb();document.getElementById('loc-bar').value='';applyFilters();}
 function clearSearch(){document.getElementById('fb-search').value='';applyFilters();}
 
 function initials(s){
@@ -433,27 +442,26 @@ function initials(s){
 function renderCards(jobs){
   const grid=document.getElementById('cards-grid');
   if(!jobs.length){
-    grid.innerHTML='<div class="state-box"><div class="state-icon">🔍</div><h3>No jobs found</h3><p>Try different filters.</p></div>';
+    grid.innerHTML='<div class="state-box"><div class="state-icon">🔍</div><h3>No jobs found</h3><p>Try different filters or extend the time window.</p></div>';
     return;
   }
   grid.innerHTML=jobs.map((j,i)=>{
-    const {txt,cls}=fmtDate(j);
+    const {txt,cls}=fmtAge(j._h);
     const isSaved=saved.has(j.url||'');
     const av=initials(j.company||j.title);
     const safeUrl=(j.url||'').replace(/'/g,"\\'");
+    const timeCls=j._h<=6?'ctag new':j._h<=24?'ctag':'ctag old';
     return `<div class="job-card" style="animation-delay:${Math.min(i*18,450)}ms">
       <div class="card-top">
-        <div>
-          <div class="card-date ${cls}">${txt}</div>
-        </div>
+        <div class="card-date ${cls}">${txt}</div>
         <div class="company-logo">${av}</div>
       </div>
       <div>
         <div class="card-company">${esc(j.company||'—')}</div>
-        <div class="card-title">${esc(j.title)}${(j.age_days||0)===0?'<span class="new-dot"></span>':''}</div>
+        <div class="card-title">${esc(j.title)}${j._h<=6?'<span class="new-dot"></span>':''}</div>
       </div>
       <div class="card-tags">
-        <span class="ctag${(j.age_days||0)===0?' new':''}">${txt}</span>
+        <span class="${timeCls}">${txt}</span>
         <span class="ctag loc">📍 ${esc(j._city||'India')}</span>
         <span class="ctag plat">${esc(j.platform)}</span>
       </div>
@@ -463,9 +471,7 @@ function renderCards(jobs){
           ${esc(j._city||'India')}
         </div>
         <div class="card-actions">
-          <button class="btn-save${isSaved?' saved':''}" onclick="toggleSave('${safeUrl}',this)" title="${isSaved?'Saved':'Save'}">
-            ${isSaved?'★':'☆'}
-          </button>
+          <button class="btn-save${isSaved?' saved':''}" onclick="toggleSave('${safeUrl}',this)">${isSaved?'★':'☆'}</button>
           ${j.url?`<a href="${esc(j.url)}" target="_blank" rel="noopener" class="btn-details">Details</a>`:''}
         </div>
       </div>
@@ -485,7 +491,7 @@ async function triggerRefresh(){
   const btn=document.getElementById('refresh-btn');
   btn.classList.add('running');
   btn.innerHTML='<span class="spin active">↻</span> Scraping…';
-  showToast('Scraper started — refreshes in ~90s');
+  showToast('Scraper started — new results in ~2 min');
   try{await fetch(WORKER_URL,{method:'POST'});}catch(e){}
   let n=0;
   _poll=setInterval(async()=>{
@@ -496,9 +502,9 @@ async function triggerRefresh(){
       if(d.scraped_at&&d.scraped_at!==window._lastTs){
         clearInterval(_poll);
         btn.classList.remove('running');btn.innerHTML='<span class="spin">↻</span> Refresh';
-        ALL=(d.jobs||[]).map(j=>({...j,_city:city(j)}));
+        ALL=(d.jobs||[]).map(j=>({...j,_city:city(j),_h:j.age_hours!=null?+j.age_hours:+j.age_days*24}));
         window._lastTs=d.scraped_at;
-        buildPlatformPills();buildLocSidebar();buildLocDropdown();updateTimeCounts();applyFilters();
+        buildPlatformPills();buildPlatformCb();buildLocCb();buildLocDropdown();applyFilters();
         showToast('✓ Jobs updated!');
       }
     }catch(e){}
