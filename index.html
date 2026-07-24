@@ -93,6 +93,9 @@ td{padding:13px 16px;font-size:.82rem;color:var(--text);vertical-align:middle}
 .td-company-name{font-size:.78rem;color:var(--text2);font-weight:600;line-height:1.2}
 .td-platform span,.td-loc span{display:inline-flex;align-items:center;gap:3px;padding:3px 9px;border-radius:20px;font-size:.7rem;font-weight:700}
 .plat-LinkedIn{background:#e0f2fe;color:#0369a1}
+.seniority-senior{background:#f0fdf4;color:#15803d;font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:20px;white-space:nowrap}
+.seniority-mid{background:#f5f3ff;color:#7c3aed;font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:20px;white-space:nowrap}
+.seniority-junior{background:#fef9c3;color:#854d0e;font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:20px;white-space:nowrap}
 .plat-Indeed{background:#eff6ff;color:#1d4ed8}
 .plat-Greenhouse{background:#dcfce7;color:#15803d}
 .plat-Lever{background:#fdf4ff;color:#9333ea}
@@ -215,12 +218,20 @@ td{padding:13px 16px;font-size:.82rem;color:var(--text);vertical-align:middle}
   </select>
   <!-- Time -->
   <select id="time-sel" class="tb-btn" style="border-radius:7px;outline:none;font-family:inherit;cursor:pointer" onchange="setTime(this.value)">
-    <option value="72">⏰ Last 72h</option>
+    <option value="168">⏰ Last 7d</option>
+    <option value="72">Last 72h</option>
     <option value="48">Last 48h</option>
     <option value="24">Last 24h</option>
     <option value="12">Last 12h</option>
     <option value="6">Last 6h</option>
     <option value="1">Last 1h</option>
+  </select>
+  <!-- Seniority -->
+  <select id="seniority-sel" class="tb-btn" style="border-radius:7px;outline:none;font-family:inherit;cursor:pointer" onchange="setSeniority(this.value)">
+    <option value="">👤 All Levels</option>
+    <option value="senior">Senior / Lead (4-5+ yrs)</option>
+    <option value="mid">Mid Level</option>
+    <option value="junior">Junior / Fresher</option>
   </select>
   <div class="tb-right">
     <select class="tb-btn" id="sort-sel" style="border-radius:7px;outline:none;font-family:inherit;cursor:pointer" onchange="applyFilters()">
@@ -284,7 +295,7 @@ const CITIES = ['Mumbai','Delhi','Bengaluru','Bangalore','Hyderabad','Chennai','
   'Bhopal','Indore','Nagpur','Surat','Vadodara','Coimbatore','Visakhapatnam','Remote'];
 
 let ALL=[], saved=new Set(JSON.parse(localStorage.getItem('sf-saved-v3')||'[]'));
-let activePlatform='All', activeLoc='', activeHours=72, sortField='default', sortDir=1;
+let activePlatform='All', activeLoc='', activeHours=168, activeSeniority='', sortField='default', sortDir=1;
 let currentPage=1, perPage=20;
 let filtered=[];
 
@@ -358,6 +369,7 @@ function setPlatform(p, el){
 
 function setLoc(v){activeLoc=v; currentPage=1; applyFilters();}
 function setTime(v){activeHours=+v; currentPage=1; applyFilters();}
+function setSeniority(v){activeSeniority=v; currentPage=1; applyFilters();}
 function setPerPage(v){perPage=+v; currentPage=1; renderTable();}
 
 function cycleSort(field){
@@ -389,6 +401,7 @@ function applyFilters(){
     }
     if(activePlatform!=='All'&&j.platform!==activePlatform) return false;
     if(activeLoc&&j._city!==activeLoc) return false;
+    if(activeSeniority&&j.seniority&&j.seniority!==activeSeniority) return false;
     if(q&&!j.title.toLowerCase().includes(q)&&!(j.company||'').toLowerCase().includes(q)) return false;
     return true;
   });
@@ -414,17 +427,19 @@ function applyFilters(){
 
 function buildChips(q){
   const chips=[];
-  if(activeHours<72) chips.push({l:'≤'+activeHours+'h',f:'resetTime()'});
+  if(activeHours<168) chips.push({l:'≤'+activeHours+'h',f:'resetTime()'});
   if(activePlatform!=='All') chips.push({l:activePlatform,f:'resetPlatform()'});
+  if(activeSeniority) chips.push({l:activeSeniority==='senior'?'Senior/Lead':activeSeniority==='mid'?'Mid Level':'Junior',f:'resetSeniority()'});
   if(activeLoc) chips.push({l:'📍 '+activeLoc,f:'resetLoc()'});
   if(q) chips.push({l:'"'+q+'"',f:'clearSearch()'});
   document.getElementById('filter-chips').innerHTML=chips.map(c=>
     `<div class="f-chip" onclick="${c.f}">${c.l} ×</div>`).join('');
 }
 
-function resetTime(){document.getElementById('time-sel').value='72';setTime(72);}
+function resetTime(){document.getElementById('time-sel').value='168';setTime(168);}
 function resetPlatform(){setPlatform('All',null);}
 function resetLoc(){document.getElementById('loc-sel').value='';setLoc('');}
+function resetSeniority(){document.getElementById('seniority-sel').value='';setSeniority('');}
 function clearSearch(){document.getElementById('tb-search').value='';applyFilters();}
 
 function renderTable(){
@@ -452,6 +467,7 @@ function renderTable(){
       <td><input type="checkbox" class="row-check" style="cursor:pointer"/></td>
       <td class="td-title">
         ${esc(j.title)}${j._h!==null&&j._h<=6?'<span class="new-dot"></span>':''}
+        ${j.seniority?(()=>{const sl={'senior':'Senior','mid':'Mid','junior':'Junior'};return `<span class="seniority-${j.seniority}">${sl[j.seniority]||j.seniority}</span>`;})():''}
       </td>
       <td>
         <div class="td-company">

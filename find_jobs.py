@@ -103,18 +103,43 @@ def is_recent(age_h) -> bool:
         return True   # unknown age → include in main scrape (UI will exclude from tight filters)
     return age_h <= MAX_AGE_HOURS
 
+# Title must contain at least one of these to be a Salesforce role
+TITLE_MUST = [
+    "salesforce", "sfdc", "lightning", "lwc", "apex",
+    "vlocity", "omnistudio", "cpq", "revenue cloud", "experience cloud",
+    "agentforce", "mulesoft",
+]
+
+def is_sf_title(title: str) -> bool:
+    """Return True only if the job title is clearly a Salesforce role."""
+    t = title.lower()
+    return any(kw in t for kw in TITLE_MUST)
+
+_SENIOR = ["senior", "sr.", "sr ", "lead", "principal", "staff", "architect",
+           "manager", "director", "head of", "vp ", "vice president",
+           "solution engineer", "consultant", "specialist"]
+_JUNIOR = ["junior", "jr.", "jr ", "fresher", "trainee", "intern",
+           "entry", "associate developer", "graduate"]
+
+def _seniority(title: str) -> str:
+    t = title.lower()
+    if any(k in t for k in _JUNIOR):  return "junior"
+    if any(k in t for k in _SENIOR):  return "senior"
+    return "mid"
+
 def make_job(title, company, platform, url, age_txt, location="India", age_h=None):
     h = age_h if age_h is not None else parse_age_hours(age_txt)
     return {
-        "title":     title.strip(),
-        "company":   (company or "Unknown").strip(),
-        "platform":  platform,
-        "location":  (location or "India").strip(),
-        "url":       url.strip(),
-        "posted":    (age_txt or "").strip(),
+        "title":      title.strip(),
+        "company":    (company or "Unknown").strip(),
+        "platform":   platform,
+        "location":   (location or "India").strip(),
+        "url":        url.strip(),
+        "posted":     (age_txt or "").strip(),
+        "seniority":  _seniority(title),
         # None = unparseable age; UI treats this as "unknown/old" and excludes from tight filters
-        "age_hours": round(h, 1) if h is not None else None,
-        "age_days":  int(h / 24) if h is not None else None,
+        "age_hours":  round(h, 1) if h is not None else None,
+        "age_days":   int(h / 24) if h is not None else None,
     }
 
 async def safe_goto(page: Page, url: str, timeout=20000):
@@ -210,7 +235,7 @@ async def scrape_linkedin_companies(page: Page) -> list[dict]:
                 age_txt = inner if inner else dt_attr
             h = parse_age_hours(age_txt)
             # Use 30-day window for company-specific search
-            if h is None or h <= MAX_AGE_COMPANY:
+            if is_sf_title(title) and (h is None or h <= MAX_AGE_COMPANY):
                 jobs.append(make_job(title, company, "LinkedIn", href, age_txt, loc, h))
         except Exception:
             continue
@@ -243,7 +268,7 @@ async def scrape_linkedin(page: Page, keyword: str) -> list[dict]:
                 dt_attr = (await d_el.get_attribute("datetime") or "").strip()
                 age_txt = inner if inner else dt_attr
             h = parse_age_hours(age_txt)
-            if is_recent(h):
+            if is_sf_title(title) and is_recent(h):
                 jobs.append(make_job(title, company, "LinkedIn", href, age_txt, loc, h))
         except Exception:
             continue
@@ -277,7 +302,7 @@ async def scrape_indeed(page: Page, keyword: str) -> list[dict]:
                     lc = await parent.query_selector("[data-testid='text-location'], .companyLocation")
                     if lc: loc = (await lc.inner_text()).strip()
                 except Exception: pass
-                if title and href:
+                if title and href and is_sf_title(title):
                     jobs.append(make_job(title, company, "Indeed", href, age_txt, loc or "India"))
             except Exception: continue
         if jobs: break
@@ -436,7 +461,7 @@ async def scrape_glassdoor(page: Page, keyword: str) -> list[dict]:
             age_txt = (await d_el.inner_text()).strip() if d_el else ""
             loc     = (await l_el.inner_text()).strip() if l_el else "India"
             h = parse_age_hours(age_txt)
-            if is_recent(h):
+            if is_sf_title(title) and is_recent(h):
                 jobs.append(make_job(title, company, "Glassdoor", href, age_txt, loc, h))
         except Exception: continue
     print(f"  Glassdoor '{keyword}': {len(jobs)}")
@@ -461,7 +486,7 @@ async def scrape_cutshort(page: Page, keyword: str) -> list[dict]:
             company = (await c_el.inner_text()).strip() if c_el else ""
             age_txt = (await d_el.inner_text()).strip() if d_el else ""
             h = parse_age_hours(age_txt)
-            if is_recent(h):
+            if is_sf_title(title) and is_recent(h):
                 jobs.append(make_job(title, company, "Cutshort", href, age_txt, "India", h))
         except Exception: continue
     print(f"  Cutshort '{keyword}': {len(jobs)}")
@@ -486,7 +511,7 @@ async def scrape_instahyre(page: Page, keyword: str) -> list[dict]:
             company = (await c_el.inner_text()).strip() if c_el else ""
             age_txt = (await d_el.inner_text()).strip() if d_el else ""
             h = parse_age_hours(age_txt)
-            if is_recent(h):
+            if is_sf_title(title) and is_recent(h):
                 jobs.append(make_job(title, company, "Instahyre", href, age_txt, "India", h))
         except Exception: continue
     print(f"  Instahyre '{keyword}': {len(jobs)}")
