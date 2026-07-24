@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Salesforce Job Finder</title>
+<style>
+  /* ── Reset & Base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #0a0e1a;
+    --surface:   #111827;
+    --card:      #1a2236;
+    --card-hover:#1f2c45;
+    --border:    #2a3a55;
+    --accent:    #3b82f6;
+    --accent2:   #8b5cf6;
+    --green:     #10b981;
+    --yellow:    #f59e0b;
+    --red:       #ef4444;
+    --text:      #e2e8f0;
+    --muted:     #64748b;
+    --radius:    14px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── Background mesh ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% -10%, rgba(59,130,246,.15) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 110%, rgba(139,92,246,.12) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Header ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(10,14,26,.85);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    gap: 16px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -.3px;
+  }
+
+  .logo-icon {
+    width: 34px; height: 34px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .logo-sub {
+    font-size: .7rem;
+    font-weight: 400;
+    color: var(--muted);
+    display: block;
+    letter-spacing: .5px;
+    line-height: 1;
+  }
+
+  #refresh-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: .85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity .2s, transform .1s;
+    white-space: nowrap;
+  }
+  #refresh-btn:hover { opacity: .88; }
+  #refresh-btn:active { transform: scale(.97); }
+  #refresh-btn.running { opacity: .6; pointer-events: none; }
+
+  .spin { display: inline-block; }
+  .spin.active { animation: spin .8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── Main layout ── */
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+
+  /* ── Stats row ── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    text-align: center;
+    transition: transform .2s;
+  }
+  .stat-card:hover { transform: translateY(-2px); }
+
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: .75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .8px;
+  }
+
+  /* ── Controls ── */
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+    align-items: center;
+  }
+
+  .search-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    pointer-events: none;
+  }
+
+  #search {
+    width: 100%;
+    padding: 10px 14px 10px 38px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: .9rem;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  #search:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(59,130,246,.15);
+  }
+  #search::placeholder { color: var(--muted); }
+
+  .filter-group {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .pill {
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: .8rem;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--muted);
+    cursor: pointer;
+    transition: all .2s;
+    white-space: nowrap;
+  }
+  .pill:hover { border-color: var(--accent); color: var(--accent); }
+  .pill.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .sort-select {
+    padding: 9px 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: .85rem;
+    outline: none;
+    cursor: pointer;
+  }
+  .sort-select:focus { border-color: var(--accent); }
+
+  /* ── Result info ── */
+  .result-info {
+    font-size: .82rem;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .result-info strong { color: var(--text); }
+
+  /* ── Job grid ── */
+  #jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 14px;
+  }
+
+  /* ── Job card ── */
+  .job-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform .2s, border-color .2s, box-shadow .2s;
+    animation: fadeUp .35s ease both;
+  }
+
+  .job-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(59,130,246,.4);
+    box-shadow: 0 8px 32px rgba(0,0,0,.3);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .company-avatar {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    color: #fff;
+  }
+
+  .platform-badge {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  .badge-LinkedIn  { background: rgba(10,102,194,.2);  color: #4fa3e8; border: 1px solid rgba(10,102,194,.3); }
+  .badge-Indeed    { background: rgba(34,197,94,.15);  color: #4ade80; border: 1px solid rgba(34,197,94,.25); }
+  .badge-Naukri    { background: rgba(249,115,22,.15); color: #fb923c; border: 1px solid rgba(249,115,22,.25); }
+  .badge-Dice      { background: rgba(168,85,247,.15); color: #c084fc; border: 1px solid rgba(168,85,247,.25); }
+  .badge-Wellfound { background: rgba(236,72,153,.15); color: #f472b6; border: 1px solid rgba(236,72,153,.25); }
+  .badge-Lever     { background: rgba(245,158,11,.15); color: #fbbf24; border: 1px solid rgba(245,158,11,.25); }
+  .badge-default   { background: rgba(100,116,139,.15);color: #94a3b8; border: 1px solid rgba(100,116,139,.25); }
+
+  .job-title {
+    font-size: .97rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--text);
+  }
+
+  .job-company {
+    font-size: .82rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .meta-chip {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: .75rem;
+    color: var(--muted);
+    background: rgba(255,255,255,.04);
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+
+  .apply-btn {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+    background: rgba(59,130,246,.1);
+    border: 1px solid rgba(59,130,246,.25);
+    border-radius: 10px;
+    color: var(--accent);
+    font-size: .85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .2s, border-color .2s, transform .1s;
+  }
+  .apply-btn:hover {
+    background: rgba(59,130,246,.2);
+    border-color: rgba(59,130,246,.5);
+    transform: scale(1.01);
+  }
+  .apply-btn:active { transform: scale(.98); }
+
+  /* ── Empty / loading states ── */
+  .state-box {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+  }
+  .state-box .icon { font-size: 3rem; margin-bottom: 12px; }
+  .state-box p { font-size: .9rem; }
+
+  /* ── Toast ── */
+  #toast {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: .85rem;
+    color: var(--text);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s, transform .3s;
+    z-index: 999;
+    white-space: nowrap;
+    backdrop-filter: blur(10px);
+  }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ── Refreshed timestamp ── */
+  #last-refreshed {
+    font-size: .75rem;
+    color: var(--muted);
+    text-align: right;
+    margin-bottom: 8px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    main { padding: 20px 14px 48px; }
+    #jobs-grid { grid-template-columns: 1fr; }
+    .header-inner { height: 56px; }
+    .logo-sub { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon">⚡</div>
+      <div>
+        Salesforce Jobs
+        <span class="logo-sub">India &nbsp;·&nbsp; Last 24 hours</span>
+      </div>
+    </div>
+    <button id="refresh-btn" onclick="triggerRefresh()">
+      <span class="spin" id="spin-icon">↻</span> Refresh Jobs
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- Stats -->
+  <div class="stats" id="stats-row">
+    <div class="stat-card">
+      <div class="stat-value" id="stat-total">—</div>
+      <div class="stat-label">Total Jobs</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="stat-linkedin">—</div>
+      <div class="stat-label">LinkedIn</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="stat-indeed">—</div>
+      <div class="stat-label">Indeed</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="stat-other">—</div>
+      <div class="stat-label">Other</div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search" placeholder="Search title, company…" oninput="render()" />
+    </div>
+    <div class="filter-group" id="platform-filters"></div>
+    <select class="sort-select" id="sort" onchange="render()">
+      <option value="default">Sort: Default</option>
+      <option value="title">Title A–Z</option>
+      <option value="company">Company A–Z</option>
+      <option value="platform">Platform</option>
+    </select>
+  </div>
+
+  <div id="last-refreshed"></div>
+  <div class="result-info" id="result-info"></div>
+
+  <div id="jobs-grid">
+    <div class="state-box">
+      <div class="icon">⏳</div>
+      <p>Loading jobs…</p>
+    </div>
+  </div>
+</main>
+
+<div id="toast"></div>
+
+<script>
+  let ALL_JOBS = [];
+  let activePlatform = 'All';
+
+  /* ── Fetch data ── */
+  async function loadJobs() {
+    try {
+      const res = await fetch('/api/jobs');
+      const data = await res.json();
+      ALL_JOBS = data.jobs || [];
+
+      // Stats
+      document.getElementById('stat-total').textContent = data.total;
+      document.getElementById('stat-linkedin').textContent = ALL_JOBS.filter(j => j.platform === 'LinkedIn').length;
+      document.getElementById('stat-indeed').textContent   = ALL_JOBS.filter(j => j.platform === 'Indeed').length;
+      const other = ALL_JOBS.filter(j => j.platform !== 'LinkedIn' && j.platform !== 'Indeed').length;
+      document.getElementById('stat-other').textContent = other;
+
+      // Last scraped
+      if (data.scraped_at) {
+        const d = new Date(data.scraped_at);
+        document.getElementById('last-refreshed').textContent =
+          'Last scraped: ' + d.toLocaleString('en-IN', { dateStyle:'medium', timeStyle:'short' });
+      }
+
+      // Hide Refresh button when accessed from a non-local origin (Render)
+      const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+      if (!isLocal) document.getElementById('refresh-btn').style.display = 'none';
+
+      // Platform pills
+      buildFilters(['All', ...data.platforms]);
+      render();
+    } catch(e) {
+      document.getElementById('jobs-grid').innerHTML =
+        `<div class="state-box"><div class="icon">⚠️</div><p>Failed to load jobs. Is the server running?</p></div>`;
+    }
+  }
+
+  /* ── Build platform filter pills ── */
+  function buildFilters(platforms) {
+    const wrap = document.getElementById('platform-filters');
+    wrap.innerHTML = '';
+    platforms.forEach(p => {
+      const btn = document.createElement('button');
+      btn.className = 'pill' + (p === activePlatform ? ' active' : '');
+      btn.textContent = p;
+      btn.onclick = () => { activePlatform = p; buildFilters(platforms); render(); };
+      wrap.appendChild(btn);
+    });
+  }
+
+  /* ── Badge class by platform ── */
+  function badgeClass(platform) {
+    const map = { LinkedIn:'LinkedIn', Indeed:'Indeed', Naukri:'Naukri', Dice:'Dice', Wellfound:'Wellfound' };
+    for (const k of Object.keys(map)) if (platform.includes(k)) return 'badge-' + map[k];
+    if (platform.includes('Lever')) return 'badge-Lever';
+    return 'badge-default';
+  }
+
+  /* ── Avatar letter(s) ── */
+  function avatar(company) {
+    const words = (company || '?').trim().split(/\s+/);
+    return words.length >= 2
+      ? (words[0][0] + words[1][0]).toUpperCase()
+      : (company[0] || '?').toUpperCase();
+  }
+
+  /* ── Render filtered/sorted list ── */
+  function render() {
+    const q = document.getElementById('search').value.toLowerCase().trim();
+    const sort = document.getElementById('sort').value;
+
+    let jobs = ALL_JOBS.filter(j => {
+      const matchPlatform = activePlatform === 'All' || j.platform === activePlatform;
+      const matchSearch   = !q ||
+        j.title.toLowerCase().includes(q) ||
+        j.company.toLowerCase().includes(q);
+      return matchPlatform && matchSearch;
+    });
+
+    if (sort === 'title')    jobs.sort((a,b) => a.title.localeCompare(b.title));
+    if (sort === 'company')  jobs.sort((a,b) => a.company.localeCompare(b.company));
+    if (sort === 'platform') jobs.sort((a,b) => a.platform.localeCompare(b.platform));
+
+    document.getElementById('result-info').innerHTML =
+      `Showing <strong>${jobs.length}</strong> of <strong>${ALL_JOBS.length}</strong> jobs`;
+
+    const grid = document.getElementById('jobs-grid');
+    if (!jobs.length) {
+      grid.innerHTML = `<div class="state-box"><div class="icon">🔍</div><p>No jobs match your filters.</p></div>`;
+      return;
+    }
+
+    grid.innerHTML = jobs.map((j, i) => `
+      <div class="job-card" style="animation-delay:${Math.min(i*20,300)}ms">
+        <div class="card-top">
+          <div class="company-avatar">${avatar(j.company)}</div>
+          <span class="platform-badge ${badgeClass(j.platform)}">${j.platform}</span>
+        </div>
+        <div class="job-title">${escHtml(j.title)}</div>
+        <div class="job-company">🏢 ${escHtml(j.company || 'Company not listed')}</div>
+        <div class="card-meta">
+          <span class="meta-chip">🕐 ${escHtml(j.posted || 'Recent')}</span>
+          <span class="meta-chip">📍 India</span>
+        </div>
+        ${j.url ? `<a href="${escAttr(j.url)}" target="_blank" rel="noopener" class="apply-btn">Apply Now ↗</a>` : ''}
+      </div>
+    `).join('');
+  }
+
+  /* ── Trigger scraper refresh ── */
+  let refreshPoll;
+  async function triggerRefresh() {
+    const btn  = document.getElementById('refresh-btn');
+    const spin = document.getElementById('spin-icon');
+    btn.classList.add('running');
+    spin.classList.add('active');
+    btn.innerHTML = '<span class="spin active" id="spin-icon">↻</span> Scraping…';
+    showToast('Job scraper started — takes ~60s…');
+
+    await fetch('/api/refresh', { method: 'POST' });
+
+    // Poll every 5s for up to 120s
+    let attempts = 0;
+    const prevMtime = document.getElementById('last-refreshed').textContent;
+    refreshPoll = setInterval(async () => {
+      attempts++;
+      await loadJobs();
+      const newMtime = document.getElementById('last-refreshed').textContent;
+      if (newMtime !== prevMtime || attempts > 24) {
+        clearInterval(refreshPoll);
+        btn.classList.remove('running');
+        btn.innerHTML = '<span class="spin" id="spin-icon">↻</span> Refresh Jobs';
+        showToast('Jobs updated!');
+      }
+    }, 5000);
+  }
+
+  /* ── Toast ── */
+  let toastTimer;
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  /* ── Escape helpers ── */
+  function escHtml(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  function escAttr(s) { return escHtml(s); }
+
+  loadJobs();
+</script>
+</body>
+</html>
