@@ -1151,15 +1151,11 @@ async def main():
                 finally:
                     await ctx.close()
 
-            # Only include scrapers that actually return results.
-            # Naukri/TimesJobs/Foundit/Shine/IIMJobs/Freshersworld are blocked
-            # by Akamai/bot-detection on GitHub Actions IPs → always 0, waste time.
+            # Indeed/Glassdoor/Cutshort/Instahyre → 0 on GH Actions IPs (bot-blocked).
+            # Naukri works (less aggressive bot-detection).
             results = await asyncio.gather(
                 run(scrape_linkedin),
-                run(scrape_indeed),
-                run(scrape_glassdoor),
-                run(scrape_cutshort),
-                run(scrape_instahyre),
+                run(scrape_naukri),
             )
             for r in results:
                 all_jobs.extend(r)
